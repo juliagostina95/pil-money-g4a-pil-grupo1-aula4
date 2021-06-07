@@ -1,0 +1,15 @@
+.container{
+  position: absolute;
+  z-index: 1;
+  background-color: #e8eaf6;
+  padding-right: 1800px;
+}
+
+.loader{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+}

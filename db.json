@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "email": "rioalan264@gmail.com",
+      "password": "$2a$10$3mA3tdPbu7IU97qmoU74tOqzZyznvfDvYp9GZgt5QmUxehy4eTEoi",
+      "file": "C:\\fakepath\\registrationPage.png",
+      "id": 1
+    }
+  ],
+  "login": [
+    {
+      "email": "riosalan264@gmail.com",
+      "password": "$2a$10$9FEAgt1We7zYfd5i2sEkAOm77QlGgntISBomFJ0WiB1dx4ER9FqbW",
+      "id": 1
+    }
+  ]
+}
