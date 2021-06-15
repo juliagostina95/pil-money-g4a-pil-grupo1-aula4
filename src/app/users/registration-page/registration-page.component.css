@@ -1,0 +1,214 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900");
+
+h1, h2{
+   text-align: center;
+   padding: 73.3px;
+   color: #4d2c91;
+}
+
+h2{
+  position: relative;
+  bottom: 50px;
+}
+
+.imagen-uno{
+  position: relative;
+  margin-left: 50px;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+
+}
+
+.imagen-dos{
+  margin-left: 900px;
+  position: relative;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+}
+
+.imagen-dos:hover{
+  -webkit-transform:scale(1.3);
+  transform:scale(1.3);
+  transition: all 0.5s ease 0.5s
+}
+
+.imagen-uno:hover{
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+  transition: all 0.5s ease 0.5s;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  border-radius: 7px;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-width: 600px;
+  position: relative;
+ top: -60px;
+  margin-top: -330px;
+}
+
+input{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background-color:aliceblue;
+  font-weight: 500;
+}
+
+.label-uno{
+  font-weight: 500;
+  color: #7e57c2;
+
+}
+
+.button-eye{
+  background-color:transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  right: 28px;
+}
+
+ .full-width-input{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-weight: 600;
+  }
+
+ .error{
+    margin-left: 30px;
+    font-weight: 500;
+  }
+
+  input[type="file"]#mi-archivo {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
+
+    label[for="mi-archivo"]{
+      width: 100%;
+      outline: none;
+      border: none;
+      background-color: #7e57c2;
+      max-width: 100px;
+      padding: 10px;
+      font-weight: 500;
+      color: rgb(247, 241, 241);
+      margin-left: 75px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    label[for="mi-archivo"] span{
+      color: white;
+      position: relative;
+      left: 20px;
+      top: 0px;
+    }
+
+    label[for="mi-archivo"]:hover{
+      background-color: #4d2c91;
+    }
+
+    .img-default{
+      position: relative;
+      top: 55px;
+      left: 53px;
+      padding-bottom: 40px;
+    }
+
+  .opción{
+    color:black;
+    font-weight: 500;
+    font-size: large;
+    position: relative;
+    top: 30px;
+    left: 118px;
+    opacity: 0.6;
+    margin-bottom: 80px;
+    padding-top: 80px;
+  }
+
+  .label-tres{
+    padding-bottom: 40px;
+    padding-top: 40px;
+
+  }
+
+  .button-foto{
+    padding-bottom: 20px;
+  }
+
+ .button-registro{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #7e57c2;
+    max-width: 150px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: 500;
+    color: rgb(247, 241, 241)!important;
+    border-radius: 5px;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+ .button-registro{
+    position: relative;
+    right: 140px;
+    bottom: 30px;
+    margin-top: -70px;
+  }
+
+   .button-registro:hover{
+    background-color: #4d2c91;
+  }
+
+  .button-registro:disabled{
+    background-color: #c7a4ff;
+  }
+
+  .button-inicioSesion button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #7e57c2;
+    max-width: 150px;
+    padding: 13px;
+    font-weight: 500;
+    color: rgb(247, 241, 241);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 3px;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 258px;
+    bottom: 80px;
+    margin-bottom: -55px;
+  }
+
+  .button-inicioSesion button:hover{
+    background-color: #4d2c91;
+  }
