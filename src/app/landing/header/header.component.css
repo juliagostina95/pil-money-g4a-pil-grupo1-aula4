@@ -28,13 +28,31 @@ img{
   bottom: 3px;
 }
 
+.btn-aboutus{
+  margin-top: 35px;
+  color:white;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  right: 200px;
+  margin-left: auto;
+}
+
+.btn-contact{
+  margin-top: 35px;
+  color:white;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  right: 150px;
+}
+
 .btn-register{
   margin-top: 35px;
   color:white;
   position: relative;
   font-size: 20px;
   text-decoration: none;
-  margin-left: auto;
   right: 100px;
 }
 

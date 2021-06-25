@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -11,11 +12,12 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     HeaderComponent,
     FooterComponent,
     LandingPageComponent,
+    AboutUsComponent,
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [HeaderComponent, FooterComponent, LandingPageComponent]
+  exports: [HeaderComponent, FooterComponent, LandingPageComponent, AboutUsComponent,]
 })
 export class LandingModule { }
