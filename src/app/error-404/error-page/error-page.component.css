@@ -1,0 +1,32 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900");
+
+.box{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8eaf6;
+}
+
+.errorImg{
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  width: 700px;
+  margin-top: 100px;
+  padding-bottom: 30px;
+}
+
+.errorImg:hover{
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+  transition: all 0.5s ease 0.5s
+}
+
+h2{
+  text-align: center;
+  color: #4d2c91;
+  margin-top: 200px;
+  margin-bottom: -100px;
+}
+

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900");
+
+h1{
+  text-align: center;
+  margin-top: 233.3px;
+  color: #4d2c91;
+}
+
+.imgFondo{
+  width: 700px;
+  position: relative;
+  filter: brightness(1.1);
+  mix-blend-mode: multiply;
+  height: auto;
+  bottom: 30px;
+  margin-top: 100px;
+}
+
+.imgFondo:hover{
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+  transition: all 0.5s ease 0.5s;
+
+}
+
+.box{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+

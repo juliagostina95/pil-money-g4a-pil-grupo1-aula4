@@ -2,14 +2,20 @@
   position: absolute;
   z-index: 1;
   background-color: #e8eaf6;
-  padding-right: 1800px;
+  padding-right: 1908px;
 }
+
+
 
 .loader{
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
   margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.container{
+  position: fixed;
 }

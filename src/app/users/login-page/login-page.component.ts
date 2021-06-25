@@ -3,8 +3,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
-import { LoginI } from '../../models/login.interface';
+import { LoginI } from '../../interfaces/login.interface';
 import { ToastrService } from 'ngx-toastr';
+import { FormService } from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-login-page',
@@ -17,7 +18,7 @@ export class LoginPageComponent implements OnInit {
   fullImagePathDos: string
   hide: boolean = false;
 
-  constructor(public formBuilder: FormBuilder, public sanitizer: DomSanitizer, private router: Router, private user: UsersService, private toast: ToastrService) {
+  constructor(public formBuilder: FormBuilder, public sanitizer: DomSanitizer, private router: Router, private user: UsersService, private toast: ToastrService, public commonForm: FormService) {
 
     this.fullImagePath = '/assets/imagenes/img3.jpg'
     this.fullImagePathDos = '/assets/imagenes/img4.jpg'
@@ -25,38 +26,9 @@ export class LoginPageComponent implements OnInit {
   }
 
   myForm = this.formBuilder.group({
-    email: ['', Validators.required],
-    password: ['', Validators.required]
+    email : this.commonForm.email,
+    password : this.commonForm.password
   })
-
-
-  nombreErrores(){
-    let mensaje;
-    if((this.myForm.get('email')?.dirty && this.myForm.get('email')?.errors)){
-      mensaje = "El campo esta sin llenar";
-    }
-    if(this.myForm.get('email')?.hasError('pattern') && this.myForm.get('email')?.errors){
-      mensaje = "El campo esta incorrecto";
-    }
-
-    return mensaje;
-  }
-
-  passwordErrores(){
-    let mensaje;
-    if((this.myForm.get('password')?.dirty && this.myForm.get('password')?.errors)){
-      mensaje = "El campo esta sin llenar";
-     }
-
-     if(this.myForm.get('password')?.hasError('pattern') && this.myForm.get('password')?.errors){
-      mensaje = "El campo esta incorrecto";
-    }
-
-    else if(this.myForm.get('password')?.hasError('minlength') && this.myForm.get('password')?.errors){
-      mensaje = "El minimo de letras es 8";
-    }
-    return mensaje;
-  }
 
   login(form : LoginI) {
 
@@ -81,5 +53,3 @@ export class LoginPageComponent implements OnInit {
 
   }
 }
-
-

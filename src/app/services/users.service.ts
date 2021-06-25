@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { RegisterI } from '../models/register.interface';
+import { RegisterI } from '../interfaces/register.interface';
 import { map} from 'rxjs/operators'
-import { LoginI } from '../models/login.interface';
-import { ResponseI, ResponseU } from '../models/response.interface';
+import { LoginI } from '../interfaces/login.interface';
+import { ResponseI } from '../interfaces/response.interface';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -33,10 +33,10 @@ export class UsersService {
     localStorage.removeItem('token');
   }
 
-  login(form:LoginI):Observable<ResponseU | void>{
+  login(form:LoginI):Observable<ResponseI | void>{
     let direccion = this.urlLogin;
-    return this.http.post<ResponseU>(direccion,form).pipe(
-      map((res: ResponseU) =>{
+    return this.http.post<ResponseI>(direccion,form).pipe(
+      map((res: ResponseI) =>{
             this.saveToken(res.accessToken)
             return res;
       })

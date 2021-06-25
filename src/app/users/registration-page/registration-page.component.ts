@@ -1,4 +1,4 @@
-import { RegisterI } from '../../models/register.interface';
+import { RegisterI } from '../../interfaces/register.interface';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
 import { DomSanitizer } from '@angular/platform-browser';
@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { error } from '@angular/compiler/src/util';
 import { ToastrService } from 'ngx-toastr';
+import { FormService } from 'src/app/services/form.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class RegistrationPageComponent implements OnInit {
   fullImagePathDos: string;
   hide: boolean = false;
 
-  constructor(public formBuilder: FormBuilder, public sanitizer: DomSanitizer, private router: Router, private userService: UsersService, private toast: ToastrService) {
+  constructor(public formBuilder: FormBuilder, public sanitizer: DomSanitizer, private router: Router, private userService: UsersService, private toast: ToastrService, public commonForm: FormService) {
 
     this.fullImagePath = '/assets/imagenes/img1.jpg'
     this.fullImagePathDos = '/assets/imagenes/img2.jpg'
@@ -27,12 +28,10 @@ export class RegistrationPageComponent implements OnInit {
 
   public previsualizacion: string = '';
   public archivos: any = []
-
   myForm = this.formBuilder.group({
-    file: ['', Validators.required],
-    email: ['', Validators.required],
-    password: ['', Validators.required]
-
+    file : new FormControl('', [Validators.required]),
+    email : this.commonForm.email,
+    password : this.commonForm.password
   })
 
   extraerBase64 = async ($event: any) => new Promise((resolve, _reject) => {
@@ -70,55 +69,19 @@ export class RegistrationPageComponent implements OnInit {
     this.archivos = [];
   }
 
-  nombreErrores(){
-    let mensaje;
-    if((this.myForm.get('email')?.dirty || this.myForm.get('email')?.touched) && this.myForm.get('email')?.errors){
-      mensaje = "El campo esta sin llenar";
-
-    }
-    if(this.myForm.get('email')?.hasError('pattern') && this.myForm.get('email')?.errors){
-      mensaje = "El campo esta incorrecto";
-
-    }
-    return mensaje;
-  }
-
-  passwordErrores(){
-    let mensaje;
-    if((this.myForm.get('password')?.dirty || this.myForm.get('password')?.touched) && this.myForm.get('password')?.errors){
-      mensaje = "El campo esta sin llenar";
-
-     }
-
-     if(this.myForm.get('password')?.hasError('pattern') && this.myForm.get('password')?.errors){
-      mensaje = "El campo esta incorrecto";
-
-    }
-
-    else if(this.myForm.get('password')?.hasError('minlength') && this.myForm.get('password')?.errors){
-      mensaje = "El minimo de letras es 8";
-
-    }
-    return mensaje;
-  }
-
   register(form : RegisterI) {
     this.userService.register(form).subscribe(data =>{
       if(data){
         setTimeout(() =>{
           this.router.navigate(['/login']);
-         }, 2000)
+         }, 1500)
          this.toast.success('Cuenta Registrada', 'Correcto')
         this.userService.loged = true;
-
       }
-
-
     }, error =>{
       console.log(error)
       this.toast.error('La cuenta ya esta Registrada', 'Error')
     })
-
   }
   ngOnInit(): void {
 

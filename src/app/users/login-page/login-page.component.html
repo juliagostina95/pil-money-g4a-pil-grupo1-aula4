@@ -1,7 +1,12 @@
-<div class="fondo" >
-  <h2 class="titulo">Inicio de Sesion</h2>
-  <img class="imagen-uno" [src]="fullImagePath" alt="">
-  <img class="imagen-dos" [src]="fullImagePathDos" alt="">
+<div class="box">
+  <h2 class="titulo">Inicia Sesion</h2>
+</div>
+<div class="box-left">
+  <img class="imagen-uno" [src]="fullImagePath" alt="" />
+</div>
+<div class="box-right">
+  <img class="imagen-dos" [src]="fullImagePathDos" alt="" />
+</div>
   <section class="container">
     <form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">
       <mat-form-field class="full-width-input">
@@ -14,7 +19,7 @@
         matInput
         />
      </mat-form-field>
-      <mat-error class="error">{{ nombreErrores() }}</mat-error>
+      <mat-error class="error">{{ commonForm.emailErrores() }}</mat-error>
       <mat-form-field class="full-width-input">
         <mat-label class="label-uno">Contraseña*</mat-label>
         <input
@@ -26,12 +31,11 @@
         matInput
         />
         </mat-form-field>
-       <button class="button-eye" matSuffix (click) ="hide = !hide">
+       <button type="button" class="button-eye" matSuffix (click) ="hide = !hide">
          <mat-icon>{{hide ? "visibility_off" : "visibility"}}</mat-icon>
        </button>
-       <mat-error class="error">{{ passwordErrores() }}</mat-error>
+       <mat-error class="error">{{ commonForm.passwordErrores() }}</mat-error>
        <button type="submit" class="button-confirmar" [disabled] = "myForm.invalid" mat-stroked-button disabled>Aceptar</button>
     </form>
   </section>
 
-</div>

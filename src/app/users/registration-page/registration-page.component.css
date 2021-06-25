@@ -1,28 +1,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900");
 
-h1, h2{
+ h2{
    text-align: center;
    padding: 73.3px;
    color: #4d2c91;
-}
-
-h2{
-  position: relative;
-  bottom: 50px;
+   position: relative;
+   top: 80px;
 }
 
 .imagen-uno{
   position: relative;
-  margin-left: 50px;
+  bottom: -150px;
   filter: brightness(1.1);
   mix-blend-mode: multiply;
 
 }
 
 .imagen-dos{
-  margin-left: 900px;
   position: relative;
+  top: -170px;
   filter: brightness(1.1);
   mix-blend-mode: multiply;
 }
@@ -51,8 +48,8 @@ h2{
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   max-width: 600px;
   position: relative;
- top: -60px;
-  margin-top: -330px;
+ margin-top: -500px;
+
 }
 
 input{
@@ -130,18 +127,6 @@ input{
       padding-bottom: 40px;
     }
 
-  .opción{
-    color:black;
-    font-weight: 500;
-    font-size: large;
-    position: relative;
-    top: 30px;
-    left: 118px;
-    opacity: 0.6;
-    margin-bottom: 80px;
-    padding-top: 80px;
-  }
-
   .label-tres{
     padding-bottom: 40px;
     padding-top: 40px;
@@ -152,7 +137,7 @@ input{
     padding-bottom: 20px;
   }
 
- .button-registro{
+ .button-registro button{
     width: 100%;
     outline: none;
     border: none;
@@ -161,7 +146,7 @@ input{
     padding-bottom: 10px;
     padding-top: 10px;
     font-weight: 500;
-    color: rgb(247, 241, 241)!important;
+    color: rgb(247, 241, 241);
     border-radius: 5px;
     font-size: 1.4em;
     display: flex;
@@ -169,20 +154,17 @@ input{
     align-items: center;
     justify-content: center;
     position: relative;
-  }
-
- .button-registro{
-    position: relative;
     right: 140px;
     bottom: 30px;
-    margin-top: -70px;
+   margin-top: 100px;
   }
 
-   .button-registro:hover{
+
+   .button-registro button:hover{
     background-color: #4d2c91;
   }
 
-  .button-registro:disabled{
+  .button-registro button:disabled{
     background-color: #c7a4ff;
   }
 
@@ -205,10 +187,49 @@ input{
     justify-content: center;
     position: relative;
     left: 258px;
-    bottom: 80px;
+    bottom: 83px;
     margin-bottom: -55px;
   }
 
   .button-inicioSesion button:hover{
     background-color: #4d2c91;
+  }
+
+  .box{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box-left{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #e8eaf6;
+
+  }
+
+  .box-right{
+    display: flex;
+    justify-content: flex-end;
+    background-color: #e8eaf6;
+  }
+
+  @media screen and (max-width: 1520px){
+    .box-left, .box-right{
+      visibility: hidden;
+    }
+  }
+
+  @media screen and (max-width: 610px){
+    .container{
+      max-width: 400px;
+    }
+    .button-registro button{
+     right: 40px;
+
+    }
+    .button-inicioSesion button{
+      left: 150px;
+    }
   }

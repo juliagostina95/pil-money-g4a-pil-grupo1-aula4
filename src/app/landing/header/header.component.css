@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900");
+
+
+.header{
+  background-color:  #5e35b1;
+  position: fixed;
+  display: flex;
+  flex-flow: row;
+
+}
+
+.logo{
+  margin: 25px;
+  color:white;
+  text-align: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  text-decoration: none;
+  padding-right: 22px;
+  position: relative;
+
+}
+
+img{
+  width: 35px;
+  position: relative;
+  left: 15px;
+  bottom: 3px;
+}
+
+.btn-register{
+  margin-top: 35px;
+  color:white;
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+  margin-left: auto;
+  right: 100px;
+}
+
+.btn-login{
+  margin-top: 35px;
+  color:white;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  left: auto;
+  right: 50px;
+}
+
+

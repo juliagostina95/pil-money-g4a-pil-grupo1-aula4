@@ -10,7 +10,6 @@ import{MatDialogModule} from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [LoginPageComponent, RegistrationPageComponent],
   imports: [

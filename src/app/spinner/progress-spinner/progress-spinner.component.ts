@@ -23,7 +23,7 @@ showSpinner: boolean
      else if(event instanceof NavigationEnd){
       setTimeout(() =>{
         this.showSpinner = false
-       }, 1500)
+       }, 1000)
      }
    })
   }

@@ -11,16 +11,15 @@ h2{
 
 .imagen-uno{
   position: relative;
-  margin-left: 50px;
-  margin-top: 100px;
+  bottom: -150px;
   filter: brightness(1.1);
   mix-blend-mode: multiply;
 }
 
-.imagen-dos{
-  margin-top: 100px;
-  margin-left: 840px;
+ .imagen-dos{
+  width: 450px;
   position: relative;
+  top: -110px;
   filter: brightness(1.1);
   mix-blend-mode: multiply;
 }
@@ -49,8 +48,7 @@ h2{
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   max-width: 600px;
   position: relative;
- top: -60px;
-  margin-top: -250px;
+  margin-top: -400px;
 
 }
 
@@ -115,4 +113,36 @@ input{
 .button-confirmar:disabled{
   background-color: #c7a4ff;
   color: white;
+}
+
+.box{
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-left{
+  display: flex;
+  justify-content: flex-start;
+  background-color: #e8eaf6;
+
+}
+
+.box-right{
+  display: flex;
+  justify-content: flex-end;
+  background-color: #e8eaf6;
+}
+
+@media screen and (max-width: 1520px){
+  .box-left, .box-right{
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 610px){
+  .container{
+    max-width: 400px;
+  }
 }
