@@ -6,7 +6,7 @@
   position: fixed;
   display: flex;
   flex-flow: row;
-
+  z-index: 900;
 }
 
 .logo{

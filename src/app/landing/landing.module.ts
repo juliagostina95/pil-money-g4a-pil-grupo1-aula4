@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -13,11 +14,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
     FooterComponent,
     LandingPageComponent,
     AboutUsComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [HeaderComponent, FooterComponent, LandingPageComponent, AboutUsComponent,]
+  exports: [HeaderComponent, FooterComponent, LandingPageComponent, AboutUsComponent, ContactComponent]
 })
 export class LandingModule { }
