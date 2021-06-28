@@ -6,7 +6,7 @@
   position: fixed;
   display: flex;
   flex-flow: row;
-
+  z-index: 900;
 }
 
 .logo{
@@ -28,42 +28,42 @@ img{
   bottom: 3px;
 }
 
-.btn-aboutus{
-  margin-top: 35px;
-  color:white;
-  font-size: 20px;
-  text-decoration: none;
+.navbar-toggler{
+  border: none;
+  color: white; 
+  margin-left: auto;
   position: relative;
-  right: 200px;
+  bottom: 18px;
+}
+
+.navbar-toggler:focus, .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.custom-toggler .navbar-toggler-icon{
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-collapse {
+  margin-top: 10px;
+}
+
+nav {
   margin-left: auto;
 }
 
-.btn-contact{
-  margin-top: 35px;
-  color:white;
-  font-size: 20px;
-  text-decoration: none;
-  position: relative;
-  right: 150px;
+li {
+  text-align: right;
 }
 
-.btn-register{
-  margin-top: 35px;
-  color:white;
-  position: relative;
-  font-size: 20px;
-  text-decoration: none;
-  right: 100px;
+.button {
+  padding-top: 42px;
 }
 
-.btn-login{
-  margin-top: 35px;
-  color:white;
-  font-size: 20px;
-  text-decoration: none;
-  position: relative;
-  left: auto;
-  right: 50px;
+@media screen and (min-width:992px) {
+  .button {
+    padding-top: 0;
+  }
 }
-
-
