@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class AboutUsComponent implements OnInit {
 
   imgFondo: string
+  imgIcon: string
 
-  constructor() { 
+  constructor(private router: Router) {
     this.imgFondo = '/assets/imagenes/nosotros.jpg'
+    this.imgIcon = '/assets/imagenes/money-check-alt-solid.svg'
   }
+
+  redirectToAbout(){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['aboutus'])) && console.log('navengado por el about')
+ }
 
   ngOnInit(): void {
   }

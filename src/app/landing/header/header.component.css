@@ -3,13 +3,13 @@
 
 .header{
   background-color:  #5e35b1;
-  position: fixed;
+   position: fixed;
   display: flex;
   flex-flow: row;
-  z-index: 900;
+
 }
 
-.logo{
+/* .logo{
   margin: 25px;
   color:white;
   text-align: 20px;
@@ -26,11 +26,11 @@ img{
   position: relative;
   left: 15px;
   bottom: 3px;
-}
+} */
 
 .navbar-toggler{
   border: none;
-  color: white; 
+  color: white;
   margin-left: auto;
   position: relative;
   bottom: 18px;
@@ -56,6 +56,8 @@ nav {
 
 li {
   text-align: right;
+  position: relative;
+  right: 15px;
 }
 
 .button {
@@ -65,5 +67,8 @@ li {
 @media screen and (min-width:992px) {
   .button {
     padding-top: 0;
+  }
+  a{
+    margin-right: 20px;
   }
 }
