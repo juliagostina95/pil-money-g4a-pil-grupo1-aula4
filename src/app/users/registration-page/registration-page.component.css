@@ -216,7 +216,7 @@ input{
   }
 
   @media screen and (max-width: 1520px){
-    .box-left, .box-right{
+     .box-left, .box-right{
       visibility: hidden;
     }
   }

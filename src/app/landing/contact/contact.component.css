@@ -1,11 +1,11 @@
 .box-front {
     background-color: #e8eaf6;
     display: flex;
-    flex-direction: column;
+    flex-direction: column wrap;
     align-items: center;
     justify-content: center;
     }
-  
+
   .titulo {
     text-align: center;
     margin-top: 150px;
@@ -43,13 +43,13 @@
         margin-right: 0px;
         position: relative;
         right: 50px;
-     } 
+     }
 
       .box-main {
           background-color: #e8eaf6;
           display: flex;
           flex-flow: row;
-      } 
+      }
 
       .box-left{
         display: flex;
@@ -59,10 +59,10 @@
         margin-bottom: 100px;
         margin-top: 300px;
         margin-right: 100px;
-        margin-left: 280px;
-    
+        margin-left: 300px;
+
       }
-    
+
       .box-right{
         display: flex;
         justify-content: flex-end;
@@ -79,4 +79,24 @@
 
       .texto2 {
         font-size: 20px;
+    }
+
+    .logo{
+      margin: 25px;
+      color:white;
+      text-align: 20px;
+      cursor: pointer;
+      font-size: 30px;
+      text-decoration: none;
+      padding-right: 22px;
+      position: relative;
+
+
+    }
+
+    img{
+      width: 35px;
+      position: relative;
+      left: 15px;
+      bottom: 2px;
     }
