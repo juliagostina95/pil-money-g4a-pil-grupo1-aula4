@@ -8,13 +8,13 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  imgIcon: string
+ 
   @Input() template!: TemplateRef<any>;
   @Input() templateDos!: TemplateRef<any>
   @Input() templateTres!: TemplateRef<any>
 
-  constructor(private router: Router) {
-    this.imgIcon = '/assets/imagenes/money-check-alt-solid.svg'
+  constructor() {
+    
   }
 
   ngOnInit(): void {

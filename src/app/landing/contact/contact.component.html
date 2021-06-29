@@ -104,7 +104,9 @@
 <app-footer></app-footer>
 
 <ng-template #headerComponentContact>
-  <a (click)="redirectToContact()" class="logo"
-    >PIL MONEY<img [src]="imgIcon"
+  <a appHeader (click)="redirectToContact()" class="logo"
+    >PIL MONEY<img
+      src="/assets/imagenes/money-check-alt-solid.svg"
+      [ngStyle]="styles.logo"
   /></a>
 </ng-template>

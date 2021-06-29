@@ -24,7 +24,9 @@
 <app-footer></app-footer>
 
 <ng-template #headerComponentAbout>
-  <a (click)="redirectToAbout()" class="logo"
-    >PIL MONEY<img [src]="imgIcon"
+  <a appHeader (click)="redirectToAbout()" class="logo"
+    >PIL MONEY<img
+      src="/assets/imagenes/money-check-alt-solid.svg"
+      [ngStyle]="styles.logo"
   /></a>
 </ng-template>
