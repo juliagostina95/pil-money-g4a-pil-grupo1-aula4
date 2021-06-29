@@ -1,3 +1,4 @@
+import { StylesService } from 'src/app/services/styles.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,11 +10,10 @@ import { Router } from '@angular/router';
 export class ContactComponent implements OnInit {
 
   imgFondo: string
-  imgIcon: string
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public styles: StylesService) {
     this.imgFondo = '/assets/imagenes/contacto.jpg'
-    this.imgIcon = '/assets/imagenes/money-check-alt-solid.svg'
+
   }
 
 

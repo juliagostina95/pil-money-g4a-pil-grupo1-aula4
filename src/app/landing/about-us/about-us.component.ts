@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StylesService } from 'src/app/services/styles.service';
 
 
 @Component({
@@ -10,11 +11,10 @@ import { Router } from '@angular/router';
 export class AboutUsComponent implements OnInit {
 
   imgFondo: string
-  imgIcon: string
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public styles: StylesService) {
     this.imgFondo = '/assets/imagenes/nosotros.jpg'
-    this.imgIcon = '/assets/imagenes/money-check-alt-solid.svg'
+
   }
 
   redirectToAbout(){

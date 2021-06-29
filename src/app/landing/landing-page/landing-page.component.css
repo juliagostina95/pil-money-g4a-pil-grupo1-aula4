@@ -36,22 +36,3 @@ h1{
   text-align: center;
 }
 
-.logo{
-  margin: 25px;
-  color:white;
-  text-align: 20px;
-  cursor: pointer;
-  font-size: 30px;
-  text-decoration: none;
-  padding-right: 22px;
-  position: relative;
-
-
-}
-
-img{
-  width: 35px;
-  position: relative;
-  left: 15px;
-  bottom: 2px;
-}
