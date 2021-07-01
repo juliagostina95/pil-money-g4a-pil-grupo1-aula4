@@ -1,35 +1,13 @@
 <app-header [templateDos]="headerComponentAbout"></app-header>
-
 <div class="box-front">
   <h1 class="titulo">Somos el Equipo 4A del programa PIL</h1>
 </div>
-
-
-
-    <main class="main-acercade">
-        <div class="container-acercade">
-            <div class="acercade-img">
-                <img class="imgFondo" [src]="imgFondo" alt="" />
-            </div>
-            <div class="acercade-texto">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at dictum
-                    enim, vitae dignissim ex. Mauris accumsan ligula non elit molestie
-                    imperdiet. Curabitur nec purus tellus. Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Donec nunc dui, dictum at suscipit ac,
-                    rhoncus sit amet est. Curabitur aliquet dui arcu, eget ullamcorper metus
-                    pulvinar quis. Morbi eu dolor risus. Proin sodales velit ut eros
-                    condimentum efficitur.
-                  </p>
-            </div>
-        </div>
-
-    </main>
-
-<!-- 
-    <section class="box-left container-fluid">
-    <section class="conteiner-about">    
-     <section class="conteiner-texto">
+<main class="main-acercade">
+  <div class="container-acercade">
+    <div class="acercade-img">
+      <img class="imgFondo" [src]="imgFondo" alt="" />
+    </div>
+    <div class="acercade-texto">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at dictum
         enim, vitae dignissim ex. Mauris accumsan ligula non elit molestie
@@ -39,16 +17,13 @@
         pulvinar quis. Morbi eu dolor risus. Proin sodales velit ut eros
         condimentum efficitur.
       </p>
-    </section>
-  </section>
-</section> -->
-
+    </div>
+  </div>
+</main>
 <app-footer></app-footer>
 
 <ng-template #headerComponentAbout>
   <a appHeader (click)="redirectToAbout()" class="logo"
-    >PIL MONEY<img
-      src="/assets/imagenes/money-check-alt-solid.svg"
-      [ngStyle]="styles.logo"
+    >PIL MONEY<img appLogo src="/assets/imagenes/money-check-alt-solid.svg"
   /></a>
 </ng-template>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StylesService } from 'src/app/services/styles.service';
+
 
 
 @Component({
@@ -12,13 +12,13 @@ export class AboutUsComponent implements OnInit {
 
   imgFondo: string
 
-  constructor(private router: Router, public styles: StylesService) {
+  constructor(private router: Router) {
     this.imgFondo = '/assets/imagenes/nosotros.jpg'
 
   }
 
   redirectToAbout(){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['aboutus'])) && console.log('navengado por el about')
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['aboutus']))
  }
 
   ngOnInit(): void {

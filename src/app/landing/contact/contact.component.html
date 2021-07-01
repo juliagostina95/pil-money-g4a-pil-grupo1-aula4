@@ -1,9 +1,7 @@
 <app-header [templateTres]="headerComponentContact"></app-header>
-
 <div class="box-front">
   <h1 class="titulo">Podes contactarte por medio de las siguientes líneas</h1>
 </div>
-
 <section class="box-main">
   <div class="box-left">
     <span class="texto1">
@@ -100,13 +98,10 @@
     </span>
   </div>
 </section>
-
 <app-footer></app-footer>
 
 <ng-template #headerComponentContact>
   <a appHeader (click)="redirectToContact()" class="logo"
-    >PIL MONEY<img
-      src="/assets/imagenes/money-check-alt-solid.svg"
-      [ngStyle]="styles.logo"
+    >PIL MONEY<img appLogo src="/assets/imagenes/money-check-alt-solid.svg"
   /></a>
 </ng-template>

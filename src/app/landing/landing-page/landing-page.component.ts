@@ -1,4 +1,4 @@
-import { StylesService } from './../../services/styles.service';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,7 +12,7 @@ export class LandingPageComponent implements OnInit {
   imgFondo: string
 
 
-  constructor(private router: Router, public styles: StylesService) {
+  constructor(private router: Router) {
     this.imgFondo = '/assets/imagenes/img-fondo.png'
 
   }
@@ -21,7 +21,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   redirectToLanding(){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate([''])) && console.log('navengado por la landing')
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['']))
  }
 
 

@@ -7,9 +7,6 @@ import { Directive } from '@angular/core';
 
 export class HeaderDirective {
 
-
-
-
   constructor(elementRef: ElementRef, private renderer2: Renderer2) {
 
         this.renderer2.setStyle(elementRef.nativeElement, 'color', 'white')
@@ -19,12 +16,6 @@ export class HeaderDirective {
         this.renderer2.setStyle(elementRef.nativeElement, 'text-decoration', 'none')
         this.renderer2.setStyle(elementRef.nativeElement, 'padding-right', '22px')
 
-
-
   }
-
-
-
-
 
 }
