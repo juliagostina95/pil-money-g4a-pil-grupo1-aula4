@@ -74,10 +74,12 @@
       }
 
     .texto {
+          color: #397dd6;
           font-size: 20px;
       }
 
     .texto2 {
+        color: #397dd6;
         font-size: 20px;
     }
 
@@ -113,13 +115,14 @@
       display: none;
     }
 
-    @media only screen and (min-width:1025px) and (max-width: 1366px) {
+    @media only screen and (max-width: 1600px) {
       .caja {
         display: block;
       }
       .texto {
         display: block;
-        font-size: 20px;
+        font-size: 18px;
+        margin-left: 2rem;
       }
       .parrafo {
         display: block;
@@ -142,8 +145,12 @@
       }
     }
     
-    @media only screen and (max-width: 1024px) {
-      .caja {
+    @media only screen and (min-width: 1196px) and (max-width: 1600px) {
+
+      .box-left {
+        margin-top: 300px;
+      }
+     /*  .caja {
         display: block;
       }
       .texto {
@@ -171,5 +178,7 @@
       }
       .titulo {
         font-size: calc(1rem + 1.5vw);
-      }
+      } */
     }
+
+    
