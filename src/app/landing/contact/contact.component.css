@@ -150,35 +150,6 @@
       .box-left {
         margin-top: 300px;
       }
-     /*  .caja {
-        display: block;
-      }
-      .texto {
-        display: block;
-        font-size: 16px;
-      }
-      .parrafo {
-        display: block;
-      }
-      .imgfondo:hover{
-        -webkit-transform:scale(1.0);
-        transform:scale(1.0);
-        transition: all 0.0s ease 0.0s;
-      }
-      .box-img .imgfondo {
-        width: 300px;
-      }
-      .box-left {
-        flex-wrap: wrap;
-        margin-left: 100px;
-        margin-top: 200px;
-      }
-      .box-right {
-        display: none;
-      }
-      .titulo {
-        font-size: calc(1rem + 1.5vw);
-      } */
     }
 
     
