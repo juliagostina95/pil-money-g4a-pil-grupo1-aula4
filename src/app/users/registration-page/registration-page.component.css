@@ -223,6 +223,10 @@ input{
     cursor: pointer
   }
 
+  .imagen {
+    display: none;
+  }
+
   @media screen and (max-width: 1520px){
     .box-left img{
       width: 350px;
@@ -243,25 +247,63 @@ input{
   }
 
   @media screen and (max-width: 1375px) {
-    .box-left, .box-right{
+    a img{
+      right: 350px;
+    }
+
+      .box-right {
+        display: none;
+      }
+
+      .imagen{
+        display: block;
+        filter: brightness(1.1);
+      mix-blend-mode: multiply;
+      }
+
+      .box-left{
+        flex-direction: column;
+        margin-left: 100px;
+        margin-top: -100px;
+      }
+
+    .container{
+      position: relative;
+      left: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1128px) {
+
+    a img{
+      right: 250px;
+    }
+    .container {
+      max-width: 400px;
+    }
+
+    .button-registro button{
+      right: 40px;
+
+     }
+     .button-inicioSesion button{
+       left: 150px;
+     }
+
+  }
+
+
+  @media screen and (max-width: 977px){
+    .box-left{
       visibility: hidden;
     }
-    a img{
+     .container{
+       left: 0;
+     }
+     a img {
       right: 0px;
       align-items: center;
       justify-content: center;
     }
   }
 
-  @media screen and (max-width: 610px){
-    .container{
-      max-width: 400px;
-    }
-    .button-registro button{
-     right: 40px;
-
-    }
-    .button-inicioSesion button{
-      left: 150px;
-    }
-  }
