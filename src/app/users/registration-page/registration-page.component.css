@@ -6,7 +6,7 @@
    padding: 73.3px;
    color: #4d2c91;
    position: relative;
-   top: 80px;
+   top: 50px;
 }
 
 .imagen-uno{
@@ -19,20 +19,21 @@
 
 .imagen-dos{
   position: relative;
-  top: -170px;
+  top: -160px;
+  right: 30px;
   filter: brightness(1.1);
   mix-blend-mode: multiply;
 }
 
 .imagen-dos:hover{
-  -webkit-transform:scale(1.3);
-  transform:scale(1.3);
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
   transition: all 0.5s ease 0.5s
 }
 
 .imagen-uno:hover{
-  -webkit-transform:scale(1.2);
-  transform:scale(1.2);
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
   transition: all 0.5s ease 0.5s;
 }
 
@@ -48,7 +49,7 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   max-width: 600px;
   position: relative;
- margin-top: -500px;
+ margin-top: -600px;
 
 }
 
@@ -215,21 +216,94 @@ input{
     background-color: #e8eaf6;
   }
 
+  a img{
+    position: relative;
+    top: 60px;
+    right: 600px;
+    cursor: pointer
+  }
+
+  .imagen {
+    display: none;
+  }
+
   @media screen and (max-width: 1520px){
-    .box-left, .box-right{
-      visibility: hidden;
+    .box-left img{
+      width: 350px;
+      position: relative;
+      top: 150px
+    }
+    .box-right img{
+      width: 250px;
+      top: -75px
+    }
+    .container{
+      margin-top: -400px;
+    }
+
+    a img {
+      right: 550px;
     }
   }
 
-  @media screen and (max-width: 610px){
+  @media screen and (max-width: 1375px) {
+    a img{
+      right: 350px;
+    }
+
+      .box-right {
+        display: none;
+      }
+
+      .imagen{
+        display: block;
+        filter: brightness(1.1);
+      mix-blend-mode: multiply;
+      }
+
+      .box-left{
+        flex-direction: column;
+        margin-left: 100px;
+        margin-top: -100px;
+      }
+
     .container{
+      position: relative;
+      left: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1128px) {
+
+    a img{
+      right: 250px;
+    }
+    .container {
       max-width: 400px;
     }
-    .button-registro button{
-     right: 40px;
 
+    .button-registro button{
+      right: 40px;
+
+     }
+     .button-inicioSesion button{
+       left: 150px;
+     }
+
+  }
+
+
+  @media screen and (max-width: 977px){
+    .box-left{
+      visibility: hidden;
     }
-    .button-inicioSesion button{
-      left: 150px;
+     .container{
+       left: 0;
+     }
+     a img {
+      right: 0px;
+      align-items: center;
+      justify-content: center;
     }
   }
+

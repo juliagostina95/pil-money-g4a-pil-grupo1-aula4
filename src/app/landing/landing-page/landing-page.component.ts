@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,11 +11,19 @@ export class LandingPageComponent implements OnInit {
 
   imgFondo: string
 
-  constructor() {
+
+  constructor(private router: Router) {
     this.imgFondo = '/assets/imagenes/img-fondo.png'
+
   }
 
   ngOnInit(): void {
   }
+
+  redirectToLanding(){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['']))
+ }
+
+
 
 }

@@ -1,0 +1,49 @@
+<app-header [templateTres]="headerComponentContact"></app-header>
+<div class="box-front">
+  <h1 class="titulo">Podes contactarte por medio de las siguientes líneas</h1>
+</div>
+<section class="box-main">
+  <div class="box-left">
+    <span class="texto">
+      <p>
+        <img class="icono-izq" src="/assets/imagenes/phone.svg">teléfono: +54 351234567
+      </p>
+      <br/>
+      <p>
+        <img class="icono-izq" src="/assets/imagenes/email.svg">E-mail: Pilmoney@gmail.com
+      </p>
+    </span>
+    <span class="texto caja">
+      <p class="parrafo">
+        <img class="icono-der" src="/assets/imagenes/facebook.svg">Facebook: PIL Money
+      </p>
+      <br/>
+      <p class="parrafo">
+        <img class="icono-der" src="/assets/imagenes/github.svg">Github: PIL Money 4A
+      </p>
+    </span>
+  </div>
+
+  <div class="box-img">
+    <img class="imgfondo" [src]="imgFondo" alt="" />
+  </div>
+
+  <div class="box-right">
+    <span class="texto2">
+      <p>
+        <img class="icono-der" src="/assets/imagenes/facebook.svg"> Facebook: PIL Money
+      </p>
+      <br/>
+      <p>
+        <img class="icono-der" src="/assets/imagenes/github.svg">Github: PIL Money 4A
+      </p>
+    </span>
+  </div>
+</section>
+<app-footer></app-footer>
+
+<ng-template #headerComponentContact>
+  <a appHeader (click)="redirectToContact()" class="logo"
+    >PIL MONEY<img appLogo src="/assets/imagenes/money-check-alt-solid.svg"
+  /></a>
+</ng-template>

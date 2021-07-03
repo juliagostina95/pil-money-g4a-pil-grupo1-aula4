@@ -1,41 +1,56 @@
-<div class="box">
-  <h2 class="titulo">Inicia Sesion</h2>
-</div>
-<div class="box-left">
-  <img class="imagen-uno" [src]="fullImagePath" alt="" />
-</div>
-<div class="box-right">
-  <img class="imagen-dos" [src]="fullImagePathDos" alt="" />
-</div>
+<div class="caja">
+  <div class="box">
+    <a (click)="commonForm.goBack()">
+      <img src="/assets/imagenes/arrow-left-solid.svg" alt="" />
+    </a>
+    <h2 class="titulo">Inicia Sesion</h2>
+  </div>
+  <div class="box-left">
+    <img class="imagen-uno" [src]="fullImagePath" alt="" />
+    <img class="imagen" [src]="fullImagePathDos" alt="" />
+  </div>
+
+  <div class="box-right">
+    <img class="imagen-dos" [src]="fullImagePathDos" alt="" />
+  </div>
   <section class="container">
     <form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">
       <mat-form-field class="full-width-input">
-       <mat-label class="label-uno">Correo Electronico*</mat-label>
-       <input type="email"
-        formControlName="email"
-        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-        minlength="5"
-        maxlength="25"
-        matInput
+        <mat-label class="label-uno">Correo Electronico*</mat-label>
+        <input
+          type="email"
+          formControlName="email"
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+          minlength="5"
+          maxlength="25"
+          matInput
         />
-     </mat-form-field>
+      </mat-form-field>
       <mat-error class="error">{{ commonForm.emailErrores() }}</mat-error>
       <mat-form-field class="full-width-input">
         <mat-label class="label-uno">Contraseña*</mat-label>
         <input
-        formControlName="password"
-        pattern="^[0-9a-zA-ZÀ-ÿ\s]{1,40}$"
-        minlength="8"
-        maxlength="15"
-        [type]="hide ? 'text' : 'password'"
-        matInput
+          formControlName="password"
+          pattern="^[0-9a-zA-ZÀ-ÿ\s]{1,40}$"
+          minlength="8"
+          maxlength="15"
+          [type]="hide ? 'text' : 'password'"
+          matInput
         />
-        </mat-form-field>
-       <button type="button" class="button-eye" matSuffix (click) ="hide = !hide">
-         <mat-icon>{{hide ? "visibility_off" : "visibility"}}</mat-icon>
-       </button>
-       <mat-error class="error">{{ commonForm.passwordErrores() }}</mat-error>
-       <button type="submit" class="button-confirmar" [disabled] = "myForm.invalid" mat-stroked-button disabled>Aceptar</button>
+      </mat-form-field>
+      <button type="button" class="button-eye" matSuffix (click)="hide = !hide">
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error class="error">{{ commonForm.passwordErrores() }}</mat-error>
+      <button
+        type="submit"
+        class="button-confirmar"
+        [disabled]="myForm.invalid"
+        mat-stroked-button
+        disabled
+      >
+        Aceptar
+      </button>
     </form>
   </section>
-
+</div>

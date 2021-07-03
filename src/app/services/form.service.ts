@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import {FormGroup, FormBuilder, Validators, FormControl} from "@angular/forms";
 import { DomSanitizer } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
 
-  constructor(private formBuilder: FormBuilder, public sanitizer: DomSanitizer) { }
+  constructor(public sanitizer: DomSanitizer, private _location: Location) {
+
+   }
   public previsualizacion: string = '';
   public archivos: any = []
 
-
   email = new FormControl('', [Validators.required]);
   password =  new FormControl('', [Validators.required])
-
 
    emailErrores(){
     let mensaje;
@@ -27,7 +28,7 @@ export class FormService {
 
     }
     return mensaje;
-  } 
+  }
 
   passwordErrores(){
     let mensaje;
@@ -46,6 +47,10 @@ export class FormService {
 
     }
     return mensaje;
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 }

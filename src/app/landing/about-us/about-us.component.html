@@ -1,0 +1,27 @@
+<app-header [templateDos]="headerComponentAbout"></app-header>
+<div class="box-front">
+  <h1 class="titulo">Equipo 4A - Programa PIL</h1>
+</div>
+<main class="main-acercade">
+  <div class="container-acercade">
+    <div class="acercade-img">
+      <img class="imgFondo" [src]="imgFondo" alt="" />
+    </div>
+    <div class="acercade-texto">
+      <p>
+        Somos un grupo de desarrolladores capacitándonos en el Programa de
+        Inserción Laboral en Nuevas Tecnologías. Nuestro objetivo es que 
+        a través de la enseñanza del ISPC, incluyendo las prácticas laborales
+        de las empresas, logremos conseguir nuestro primer empleo en IT 
+        y a su vez poder seguir adquiriendo conocimientos.
+      </p>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
+
+<ng-template #headerComponentAbout>
+  <a appHeader (click)="redirectToAbout()" class="logo"
+    >PIL MONEY<img appLogo src="/assets/imagenes/money-check-alt-solid.svg"
+  /></a>
+</ng-template>

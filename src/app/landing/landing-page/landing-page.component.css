@@ -2,7 +2,7 @@
 
 h1{
   text-align: center;
-  margin-top: 233.3px;
+  margin-top: 203.3px;
   color: #4d2c91;
 }
 
@@ -28,5 +28,11 @@ h1{
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
+}
+
+.subtitulo {
+  color: #397dd6;
+  margin-top: 25px;
+  text-align: center;
 }
 

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutUsComponent } from './landing/about-us/about-us.component';
+import { ContactComponent } from './landing/contact/contact.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { RegistrationPageComponent } from './users/registration-page/registration-page.component';
 import { RoutesGuard } from './guards/routes.guard';
@@ -33,6 +35,14 @@ const routes: Routes = [
   {
     path: '404',
     component: ErrorPageComponent
+  },
+  {
+    path: 'aboutus',
+    component: AboutUsComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
   },
   {
     path: '**',

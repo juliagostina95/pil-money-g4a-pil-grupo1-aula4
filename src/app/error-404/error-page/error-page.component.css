@@ -30,3 +30,8 @@ h2{
   margin-bottom: -100px;
 }
 
+@media screen and (max-width: 809px) {
+     .box .errorImg{
+       width: 400px;
+     }
+}

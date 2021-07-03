@@ -11,11 +11,10 @@ import { UsersModule } from './users/users.module'
 import { ToastrModule } from 'ngx-toastr';
 import { LandingModule} from './landing/landing.module';
 
-
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
+
   ],
   imports: [
     BrowserModule,
@@ -28,8 +27,6 @@ import { LandingModule} from './landing/landing.module';
     UsersModule,
     LandingModule,
     ToastrModule.forRoot()
-
-
   ],
   providers: [
 
