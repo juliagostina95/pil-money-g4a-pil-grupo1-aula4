@@ -11,6 +11,12 @@
       "password": "$2a$10$a2lOYJX6JsweidMCQV91a.N486x3Ff03ilbO5pIiO9aUlI50UFAY2",
       "file": "C:\\fakepath\\app.png",
       "id": 2
+    },
+    {
+      "email": "pil4a@gmail.com",
+      "password": "$2a$10$xIugfnG89jgURJWCMx3qZe8TKURzvecbjGQ7Hpk0dCUoEi7QVvimK",
+      "file": "C:\\fakepath\\cromo1.png",
+      "id": 3
     }
   ],
   "login": [

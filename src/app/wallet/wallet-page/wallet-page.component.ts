@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WalletPageComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+
+  redirectToWallet(){
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['']))
+ }
+
 
 }
