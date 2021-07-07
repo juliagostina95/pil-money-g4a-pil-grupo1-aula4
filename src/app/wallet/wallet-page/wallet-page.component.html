@@ -1,9 +1,10 @@
-<app-header-wallet [templateTres]="headerComponentWallet"></app-header-wallet>
+<!-- <app-header-wallet [templateTres]="headerComponentWallet"></app-header-wallet> -->
 
-<h1>Hola desde la Pagina de la Billetera Digital</h1>
 
+
+<app-sidebar></app-sidebar>
 <ng-template #headerComponentWallet>
     <a appHeader (click)="redirectToWallet()" class="logo"
       >PIL MONEY<img appLogo src="/assets/imagenes/money-check-alt-solid.svg"
     /></a>
-  </ng-template>
+</ng-template>
