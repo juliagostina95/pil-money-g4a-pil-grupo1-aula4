@@ -1,0 +1,36 @@
+<mat-drawer-container class="sidebar">
+  <!-- SIDEBAR IZQUIERDA -->
+  <mat-drawer mode="side" opened class="sidebar-izq">
+
+    <h4>PIL MONEY</h4>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" vertical class="list-button">
+      <mat-button-toggle value="bold">
+        <mat-icon>account_circle</mat-icon>
+        Cuenta
+      </mat-button-toggle>
+      <mat-button-toggle value="italic"><mat-icon>payments</mat-icon>
+        Ingresar y Retirar</mat-button-toggle>
+      <mat-button-toggle value="underline"><mat-icon>multiple_stop</mat-icon>
+        Transferencias</mat-button-toggle>
+      <mat-button-toggle value="underline"><mat-icon>miscellaneous_services</mat-icon>
+        Servicios</mat-button-toggle>
+      <mat-button-toggle value="underline"><mat-icon>logout</mat-icon>
+        Cerrar Sesión</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-drawer>
+
+  <!-- SIDEBAR MAIN CONTENT -->
+  <mat-drawer-content class="sidebar-main">
+    <h2>Hola desde la Pagina de la Billetera Digital</h2>
+    <mat-card>
+      <mat-card-title>Mi Saldo</mat-card-title>
+      <mat-card-content>{{50000 | currency}}</mat-card-content>
+      <mat-card-actions>Retirar</mat-card-actions>
+      <mat-card-actions>Depositar</mat-card-actions>
+    </mat-card>
+
+
+  </mat-drawer-content>
+
+
+</mat-drawer-container>
