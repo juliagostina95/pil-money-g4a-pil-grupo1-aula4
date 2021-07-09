@@ -19,6 +19,7 @@ export class UsersService {
   constructor(private http:HttpClient, private toast: ToastrService) { }
 
   loged: boolean = false;
+  tokenOtro: any = localStorage.getItem('token')
 
   register(form:RegisterI):Observable<ResponseI | void>{
     let direccion = this.urlRegister;
@@ -38,13 +39,19 @@ export class UsersService {
     return this.http.post<ResponseI>(direccion,form).pipe(
       map((res: ResponseI) =>{
             this.saveToken(res.accessToken)
+            this.getToken(res.accessToken)
             return res;
-      })
+      }),
     )
   }
 
   saveToken(token: string) : void{
      localStorage.setItem('token', token);
+
+  }
+
+  getToken(token: string) : void{
+    localStorage.getItem(token);
   }
 
 }
