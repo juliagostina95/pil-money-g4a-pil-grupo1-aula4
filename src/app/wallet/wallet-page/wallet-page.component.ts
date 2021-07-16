@@ -14,9 +14,9 @@ export class WalletPageComponent implements OnInit {
   ngOnInit(): void {}
 
 
-  redirectToWallet(){
+/*   redirectToWallet(){
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> this.router.navigate(['']))
- }
+ } */
 
 
 }

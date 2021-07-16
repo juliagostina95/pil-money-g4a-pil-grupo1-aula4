@@ -10,9 +10,18 @@ body { margin: auto; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: Montserrat, sans-serif;
 }
 
-.fondo{
-    background-color: #e8eaf6;
+:root {
+  --violeta      :#5E35B1;
+  --violeta-claro:#8856EE;
+  --rojo         :#DD4343;
+  --verde        :#21CA7B;
+  --blanco       :#E8EAF6;
 }
+
+.fondo{
+    background-color: var(--blanco);
+}
+
 
 
 

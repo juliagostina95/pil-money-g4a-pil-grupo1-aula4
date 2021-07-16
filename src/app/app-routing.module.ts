@@ -4,10 +4,9 @@ import { AboutUsComponent } from './landing/about-us/about-us.component';
 import { ContactComponent } from './landing/contact/contact.component';
 import { LoginPageComponent } from './users/login-page/login-page.component';
 import { RegistrationPageComponent } from './users/registration-page/registration-page.component';
-import { RoutesGuard } from './guards/routes.guard';
-import { WalletPageComponent } from './wallet/wallet-page/wallet-page.component';
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
 import { ErrorPageComponent } from './error-404/error-page/error-page.component';
+import { WalletPageComponent } from './wallet/wallet-page/wallet-page.component';
 
 const routes: Routes = [
   {
@@ -21,8 +20,7 @@ const routes: Routes = [
   },
   {
     path:'wallet',
-    component: WalletPageComponent,
-    canActivate: [RoutesGuard]
+    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule)
   },
   {
     path: 'register',
@@ -52,8 +50,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)]
 })
 export class AppRoutingModule { }
 
