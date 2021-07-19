@@ -1,0 +1,17 @@
+.sidebar{
+  width: 100%;
+  height: 100%;
+  border: 1px solid #555;
+}
+
+.sidebar-izq{
+  background-color: #5e35b1;
+  width: 20%;
+  color: var(--blanco);
+}
+
+.sidebar-main{
+  padding: 5px;
+  background-color: var(--blanco);
+}
+

@@ -8,7 +8,7 @@ import { PagosComponent } from './pages/pagos/pagos.component';
 import { InversionesComponent } from './pages/inversiones/inversiones.component';
 import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 const routes:Routes = [
   {
@@ -16,7 +16,7 @@ const routes:Routes = [
     children:[
       {
         path:'inicio',
-        component:SidebarComponent
+        component:InicioComponent
       },
       {
         path:'ingresaryretirar',
@@ -44,8 +44,8 @@ const routes:Routes = [
       },
       {
         path:'**',
-        redirectTo:'./404'
-      },
+        redirectTo:'inicio'
+      }
     ]
   }
 ]

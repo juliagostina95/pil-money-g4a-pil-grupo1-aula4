@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -19,25 +18,20 @@ import { PagosComponent } from './pages/pagos/pagos.component';
 import { InversionesComponent } from './pages/inversiones/inversiones.component';
 import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
-
-
-
-
-
-
+import { InicioComponent } from './pages/inicio/inicio.component';
 
 
 @NgModule({
   declarations: [
     WalletPageComponent,
     HeaderWalletComponent,
-    SidebarComponent,
     TransferenciaComponent,
     IngresaryretirarComponent,
     PagosComponent,
     InversionesComponent,
     CompraComponent,
-    MisDatosComponent
+    MisDatosComponent,
+    InicioComponent
   ],
   imports: [
     CommonModule,

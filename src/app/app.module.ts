@@ -12,8 +12,15 @@ import { UsersModule } from './users/users.module'
 import { ToastrModule } from 'ngx-toastr';
 import { LandingModule} from './landing/landing.module';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,13 @@ import { RouterModule } from '@angular/router';
     UsersModule,
     LandingModule,
     FlexLayoutModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    SharedModule,
     ToastrModule.forRoot()
   ],
   exports:[RouterModule],

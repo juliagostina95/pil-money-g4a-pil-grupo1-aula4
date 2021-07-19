@@ -1,5 +1,14 @@
 <!-- <app-header-wallet [templateTres]="headerComponentWallet"></app-header-wallet> -->
 
 
-<router-outlet></router-outlet>
+  <!-- SIDEBAR IZQUIERDA -->
+  <mat-drawer mode="side" opened class="sidebar-izq">
+  </mat-drawer>
+
+  <!-- SIDEBAR MAIN CONTENT -->
+
+  <mat-drawer-content class="sidebar-main" fxLayout="column" fxLayoutGap="50px"  fxLayoutAlign="center strech">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
 
