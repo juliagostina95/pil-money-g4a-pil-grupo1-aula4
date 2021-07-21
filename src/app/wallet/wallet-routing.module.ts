@@ -10,6 +10,7 @@ import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
+import { InvertirComponent } from './pages/invertir/invertir.component';
 
 const routes:Routes = [
   {
@@ -34,6 +35,10 @@ const routes:Routes = [
       {
         path:'inversiones',
         component:InversionesComponent
+      },
+      {
+        path:'invertir',
+        component:InvertirComponent
       },
       {
         path:'compra',

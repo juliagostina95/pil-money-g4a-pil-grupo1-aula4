@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatTableModule } from '@angular/material/table';
 
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
@@ -20,6 +21,7 @@ import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
+import { InvertirComponent } from './pages/invertir/invertir.component';
 
 
 @NgModule({
@@ -33,9 +35,11 @@ import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component'
     CompraComponent,
     MisDatosComponent,
     InicioComponent,
-    SugerenciasComponent
+    SugerenciasComponent,
+    InvertirComponent
   ],
   imports: [
+    MatTableModule,
     CommonModule,
     MatListModule,
     MatCardModule,
