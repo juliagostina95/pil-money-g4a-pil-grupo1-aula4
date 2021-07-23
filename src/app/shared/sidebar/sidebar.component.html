@@ -1,0 +1,102 @@
+<!-- SIDEBAR IZQUIERDA -->
+
+<span
+  class="titulo-pil justify-content-between px-4 py-2"
+  routerLink="/wallet/inicio"
+>
+  <h5 class="mt-2">PIL MONEY</h5>
+  <i class="fas fa-money-check-alt fa-2x"></i>
+</span>
+
+<div class="container-fluid">
+  <span class="titulo"
+    ><mat-icon>miscellaneous_services</mat-icon>
+    <h6>Servicios</h6></span
+  >
+  <section class="texto">
+    <mat-button-toggle-group
+      name="servicios"
+      aria-label="Servicios"
+      vertical
+      class="list-button"
+      role="group"
+    >
+      <mat-button-toggle
+        value="bold"
+        routerLink="/wallet/inicio"
+        routerLinkActive="./wallet/inicio"
+      >
+        <mat-icon>account_balance_wallet</mat-icon>
+        Mi cuenta
+      </mat-button-toggle>
+      <mat-button-toggle
+        value="underline"
+        routerLink="./wallet/ingresaryretirar"
+      >
+        <mat-icon>payments</mat-icon>
+        Ingresar y Retirar
+      </mat-button-toggle>
+
+      <mat-button-toggle value="underline" routerLink="./wallet/transferencias">
+        <mat-icon>multiple_stop</mat-icon>
+        Transferencias
+      </mat-button-toggle>
+
+      <mat-button-toggle value="italic" routerLink="./wallet/pagos">
+        <mat-icon>paid</mat-icon>
+        Pagos y Servicios
+      </mat-button-toggle>
+
+      <mat-button-toggle value="underline" routerLink="./wallet/inversiones">
+        <mat-icon>trending_up</mat-icon>
+        Inversiones
+      </mat-button-toggle>
+
+      <mat-button-toggle value="underline" routerLink="./wallet/compra">
+        <mat-icon>local_atm</mat-icon>
+        Compra y Venta
+      </mat-button-toggle>
+
+      <mat-button-toggle value="underline" routerLink="./wallet/misdatos">
+        <mat-icon>account_circle</mat-icon>
+        Mis Datos
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </section>
+
+  <span class="titulo"
+    ><mat-icon>help_outline</mat-icon>
+    <h6>Ayuda</h6></span
+  >
+  <section class="texto">
+    <mat-button-toggle-group
+      name="servicios"
+      aria-label="Servicios"
+      vertical
+      class="list-button"
+      role="group"
+    >
+      <mat-button-toggle value="bold">
+        <mat-icon>question_answer</mat-icon>
+        Preguntas
+      </mat-button-toggle>
+
+      <mat-button-toggle value="underline">
+        <mat-icon>contact_support</mat-icon>
+        Contactos
+      </mat-button-toggle>
+
+      <mat-button-toggle value="italic" routerLink="./wallet/sugerencias">
+        <mat-icon>settings_suggest</mat-icon>
+        Sugerencias
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </section>
+  <div class="row mt-4 text-center">
+    <div class="col">
+      <button mat-raised-button color="warn">
+        <mat-icon>logout</mat-icon>Cerrar Sesión
+      </button>
+    </div>
+  </div>
+</div>

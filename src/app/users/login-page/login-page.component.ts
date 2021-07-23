@@ -35,11 +35,12 @@ export class LoginPageComponent implements OnInit {
     this.user.login(form).subscribe(data =>{
       if(data){
         setTimeout(() =>{
-          this.router.navigate(['/wallet']);
+          this.router.navigate(['./wallet/inicio']);
          }, 2000)
          this.toast.success('Se Inicio Sesion con la Cuenta Registrada', 'Correcto')
 
-        this.user.loged = true;
+       this.user.loged = true
+
       }
 
     }, error =>{
@@ -49,7 +50,8 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.user.logout();
+
+    this.user.logout()
 
   }
 }

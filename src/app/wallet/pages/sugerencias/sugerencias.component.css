@@ -1,0 +1,16 @@
+.sugerencias{
+  text-align: center;
+  color: var(--violeta);
+  font-weight: 600;
+  margin-bottom: 150px;
+}
+
+h4{
+  color: var(--violeta);
+  font-weight: 600;
+  position: relative;
+  bottom: 100px;
+  padding-top: 100px;
+  padding-left: 40px;
+
+}

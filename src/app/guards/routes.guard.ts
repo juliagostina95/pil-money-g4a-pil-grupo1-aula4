@@ -16,10 +16,12 @@ export class RoutesGuard implements CanActivate {
   | boolean
   | UrlTree{
 
- if(!this.auth.loged){
+ if(!this.auth.tokenOtro && !this.auth.loged){
    this._location.back()
+   return false
  }
-     return this.auth.loged;
+     return true
+
    }
 
 }

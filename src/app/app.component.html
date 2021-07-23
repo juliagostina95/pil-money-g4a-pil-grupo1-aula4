@@ -1,4 +1,23 @@
-   <app-spinner></app-spinner>
-   <router-outlet>
-   </router-outlet>
+   <div *ngIf="rutas(); else wallet">
+    <app-spinner></app-spinner>
+    <router-outlet></router-outlet>
+   </div>
+
+
+   <ng-template #wallet>
+    <mat-drawer-container class="sidebar" fullscreen>
+      <!-- SIDEBAR IZQUIERDA-->
+      <mat-drawer mode="side" opened class="sidebar-izq">
+        <app-sidebar></app-sidebar>
+      </mat-drawer>
+      <!-- SIDEBAR MAIN CONTENT-->
+
+      <mat-drawer-content class="sidebar-main" fxLayout="column"  fxLayoutAlign="center strech">
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+
+    </mat-drawer-container>
+   </ng-template>
+
+
 
