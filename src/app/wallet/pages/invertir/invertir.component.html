@@ -1,1 +1,21 @@
-<p>invertir works!</p>
+<div class="container">
+    <div class="row invertir-title">
+        <div class="col-12">
+            ¿Qué tipo de inversión querés realizar?
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-sm-3 offset-2">  
+            <section class="example-section">
+                <mat-radio-group [(ngModel)]="labelPosition">
+                  <p><mat-radio-button class="example-margin" value="plazoFijoARS">Plazo fijo (ARS)</mat-radio-button></p>
+                  <p><mat-radio-button class="example-margin" value="plazoFijoUSD">Plazo fijo (USD)</mat-radio-button></p>
+                  <p><mat-radio-button class="example-margin" value="FCIARS">FCI (ARS)</mat-radio-button></p>
+                  <p><mat-radio-button class="example-margin" value="FCIUSD">FCI (USD)</mat-radio-button></p>
+                </mat-radio-group>
+            </section>
+        </div>
+        <div class="col-sm-7">a</div>
+    </div>
+</div>
