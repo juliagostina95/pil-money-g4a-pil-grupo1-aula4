@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
@@ -10,6 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
@@ -20,6 +25,7 @@ import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
+import { InvertirComponent } from './pages/invertir/invertir.component';
 
 
 @NgModule({
@@ -33,9 +39,15 @@ import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component'
     CompraComponent,
     MisDatosComponent,
     InicioComponent,
-    SugerenciasComponent
+    SugerenciasComponent,
+    InvertirComponent
   ],
   imports: [
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
+    MatTableModule,
     CommonModule,
     MatListModule,
     MatCardModule,
