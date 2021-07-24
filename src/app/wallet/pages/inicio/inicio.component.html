@@ -1,7 +1,23 @@
-<mat-card class='text-center mx-5 mb-5 texto-violeta'>
-  <mat-card-title>¡Hola “usuario”, estas en tu cuenta!</mat-card-title>
-  <mat-card-content><img mat-card-lg-image [src]="imgMoney"></mat-card-content>
-</mat-card>
+<div class="principio">
+ PIL MONEY</div>
+
+ <div class="cuenta">
+   Cuenta MN
+ </div>
+ 
+ <div class="v1"></div>
+ <div class="arrow-up"></div>
+
+<mat-card class='text-center mx-5 mb-5 texto-violeta tamano'>
+<h4 class="bienvenidos"> ¡Hola “usuario”, estas en tu cuenta!
+</h4>
+    <mat-card-content class="dosImg">
+      <img [src]="logoPil" class= "mat-card-image logopil" >
+    <div class="contienepag">
+       <img [src]="imgMoney" class= "mat-card-image imagen1" >
+    </div>
+    </mat-card-content>
+  </mat-card>
 
 <mat-card class='mx-5 texto-violeta'>
   <mat-card-title class="text-center">Cuenta - 12345678</mat-card-title>
@@ -20,3 +36,17 @@
     </div>
   </mat-card-content>
 </mat-card>
+
+
+<!--
+  
+.bienvenidos{
+  color: white;
+  align: center;
+  position: absolute;
+  margin-left: 25%;
+  font-size: 2rem;
+  top: 70%;
+ 
+}
+-->

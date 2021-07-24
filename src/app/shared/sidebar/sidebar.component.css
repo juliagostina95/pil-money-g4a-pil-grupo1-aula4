@@ -38,3 +38,18 @@
   padding: 0px;
   max-height: 40px;
 }
+
+.logopil{
+  height: 45px;
+  margin-left: 70px;
+  top:5px;
+  margin-bottom: 5px;
+  width: auto;
+  position: absolute;
+  z-index: 1;
+ 
+}
+
+.titulo-money{
+  visibility: hidden;
+}

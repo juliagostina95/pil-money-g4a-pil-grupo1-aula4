@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-
+  logoPil    : string = 'assets/imagenes/pil-Money-Logo.png';
 
 
 
