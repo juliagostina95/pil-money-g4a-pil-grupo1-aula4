@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
@@ -11,6 +13,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
@@ -40,6 +44,10 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
     InvertirComponent
   ],
   imports: [
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatCheckboxModule,
     MatTableModule,
     CommonModule,
     MatListModule,

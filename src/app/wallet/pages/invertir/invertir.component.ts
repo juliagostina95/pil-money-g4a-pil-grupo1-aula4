@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-invertir',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvertirComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
   }
 
+  checked = false;
+    indeterminate = false;
+    labelPosition: 'plazoFijoARS' | 'plazoFijoUSD' | 'FCIARS' | 'FCIUSD' = 'plazoFijoARS';
+    disabled = false;
 }
+
+
+  
+
