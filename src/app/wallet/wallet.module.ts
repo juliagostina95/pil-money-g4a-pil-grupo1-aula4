@@ -20,9 +20,9 @@ import { InversionesComponent } from './pages/inversiones/inversiones.component'
 import { CompraComponent } from './pages/compra/compra.component';
 import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
+import { ContactosComponent } from './pages/contactos/contactos.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
-
 
 @NgModule({
   declarations: [
@@ -35,6 +35,7 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
     CompraComponent,
     MisDatosComponent,
     InicioComponent,
+    ContactosComponent,
     SugerenciasComponent,
     InvertirComponent
   ],
