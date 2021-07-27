@@ -15,6 +15,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
@@ -43,6 +46,9 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
     InvertirComponent
   ],
   imports: [
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,
