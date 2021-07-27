@@ -1,0 +1,80 @@
+table {
+    width: 200%;
+}
+
+.agendaTitulo {
+    text-align: center;
+    color: var(--violeta);
+    font-weight: 600;
+    margin-bottom: 70px;
+}
+
+
+.table-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid currentColor;
+    cursor: pointer;
+}
+.mat-row:hover .mat-cell {
+    background-color: var(--blanco);
+}
+.botonConfirmar {
+    height: 35px;
+    background-color: var(--verde);
+    font-weight: bold;
+    color: white;
+    font-size: 23px;
+    margin-top: 25px;
+}
+
+.tabla {
+    padding-right: 250px;
+}
+
+p {
+    text-align: center;
+    color: var(--violeta);
+    font-weight: 520;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.mat-radio-button {
+    display: flex;
+}
+
+
+.col-sm-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.col-sm-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mat-flat-button {
+    height: 45px;
+    background-color: var(--verde);
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+.botonSiguiente {
+    margin-top: 100px;
+    font-weight: 600;
+    width: 50%;
+
+}

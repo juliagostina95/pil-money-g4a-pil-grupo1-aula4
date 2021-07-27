@@ -11,6 +11,7 @@ import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
+import { TransferirComponent } from './pages/transferir/transferir.component';
 
 const routes:Routes = [
   {
@@ -51,6 +52,10 @@ const routes:Routes = [
       {
          path: 'sugerencias',
          component: SugerenciasComponent
+      },
+      {
+        path: 'transferir',
+        component: TransferirComponent
       },
       {
         path:'**',

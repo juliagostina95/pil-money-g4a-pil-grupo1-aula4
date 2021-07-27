@@ -29,6 +29,7 @@ import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
+import { TransferirComponent } from './pages/transferir/transferir.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
     MisDatosComponent,
     InicioComponent,
     SugerenciasComponent,
-    InvertirComponent
+    InvertirComponent,
+    TransferirComponent
   ],
   imports: [
     MatSelectModule,
