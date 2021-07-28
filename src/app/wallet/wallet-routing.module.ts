@@ -12,6 +12,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
+import { ContactosComponent } from './pages/contactos/contactos.component';
 
 const routes:Routes = [
   {
@@ -48,6 +49,10 @@ const routes:Routes = [
       {
         path:'misdatos',
         component:MisDatosComponent
+      },
+      {
+        path: 'contactos',
+        component: ContactosComponent
       },
       {
          path: 'sugerencias',
