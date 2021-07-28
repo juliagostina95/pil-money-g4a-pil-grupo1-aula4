@@ -1,0 +1,25 @@
+.password-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+h3{
+  padding-bottom: 20px;
+  padding-top: 40px;
+  color: var(--violeta);
+  font-weight: bold;
+}
+
+.confirmar{
+  height: 35px;
+background-color: var(--verde);
+font-weight: bold;
+color: white;
+font-size: 15px;
+width: 10%;
+margin-top: 50px;
+}
