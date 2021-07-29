@@ -13,6 +13,7 @@ import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component'
 import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
+import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
 
 const routes:Routes = [
   {
@@ -53,6 +54,10 @@ const routes:Routes = [
       {
         path: 'contactos',
         component: ContactosComponent
+      },
+      {
+        path: 'password',
+        component: ContraseniaComponent
       },
       {
          path: 'sugerencias',
