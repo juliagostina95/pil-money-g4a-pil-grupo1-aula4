@@ -1,91 +1,212 @@
-<mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Cuenta
-        </mat-panel-title>
-        <mat-panel-description>
-            <p></p>
-            <mat-icon>account_circle</mat-icon>
-          </mat-panel-description>
-      </mat-expansion-panel-header>
-      <!-- contenido -->
+<div class="container" style="padding: 0px 20px;">
+
+  <mat-accordion class="example-headers-align">
+
+      <!-- cuenta -->
       <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Cuenta
+          </mat-panel-title>
+          <mat-panel-description>
+              <p></p>
+              <mat-icon>account_balance_wallet</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+          <!-- cuenta sub -->
+          <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Abrir una cuenta
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>Ingresá a la aplicación web de PIL Money en tu computadora y completa el formulario de registro.</p>
+                <p>En las siguientes 48hs recibirás nuestro link de invitación por mail, que te llevará a nuestra página. Allí validaremos tus datos y estarás listo para operar.</p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
             <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Abrir una cuenta
+                  Cerrar sesión
                 </mat-panel-title>
             </mat-expansion-panel-header>
-            <p>Ingresá a la aplicación web de PIL Money en tu computadora y completa el formulario de registro.</p>
-            <p>En las siguientes 48hs recibirás nuestro link de invitación por mail, que te llevará a nuestra página. Allí validaremos tus datos y estarás listo para operar</p>
+            <p>Clickeá en "cerrar sesión" en la parte inferior de la barra de navegación a la ezquierda.</p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Olvidé mi contraseña
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Si olvidaste tu contraseña podés recuperarla realizando el proceso de recuperación desde la opción "olvidé mi contraseña" en nuestra página de ingreso.</p>
+            <p>La demora del proceso es de 24hs como máximo. Cuendo un email de confirmación, podrás acceder nuevamente y cambiar tu contraseña.</p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Cambiar contraseña
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Abrí la sección "mis datos", en la barra de navegación a la izquierda de la pantalla.</p>
+            <p>Clickeá botón que dice "cambiar contraseña" y seguí las indicaciones.</p>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Obtener número de cuenta, alias, CVU
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Abrí la sección "mi cuenta", en la barra de navegación a la izquierda de la pantalla. Allí verás tu saldo actual, número de cuenta, alias y CBU</p>
+          </mat-expansion-panel>
       </mat-expansion-panel>
 
+
+      <!-- ingresar y retirar dinero -->
       <mat-expansion-panel>
-        <mat-expansion-panel-header>
+          <mat-expansion-panel-header>
             <mat-panel-title>
-                Olvidé mi contraseña
+              Ingresar y retirar dinero
             </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>Si olvidaste tu contraseña podés recuperarla realizando el proceso de recuperación desde la opción "olvidé mi contraseña" en nuestra página de ingreso.</p>
-        <p>La demora del proceso es de 24hs como máximo. Cuendo un email de confirmación, podrás acceder nuevamente y cambiar tu contraseña</p>
+            <mat-panel-description>
+              <p></p>
+              <mat-icon>payments</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        <!-- ingresar y retirar dinero sub -->
       </mat-expansion-panel>
 
 
-        <!-- contenido -->
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Ingresar y retirar dinero
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-    <!-- contenido -->
-    </mat-expansion-panel>
-
-    <mat-expansion-panel >
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Transferencias
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>I'm visible because I am open</p>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Pagos y servicios
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
-
+      <!-- transferencias  -->
       <mat-expansion-panel >
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Inversiones
+            Transferencias
           </mat-panel-title>
+          <mat-panel-description>
+            <p></p>
+            <mat-icon>multiple_stop</mat-icon>
+          </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
+
+          <!-- transferencias sub  -->
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Realizar una transferencia
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Abrí la sección "Transferencias", en la barra de navegación a la izquierda de la pantalla.</p>
+            <p>Seleccioná el contacto al que querés transferirle, si no está registrado, ingresalo y presioná "siguiente".</p>
+            <p>Ingresá el monto que deseas transferir y presioná "enviar".</p>
+          </mat-expansion-panel>
+
       </mat-expansion-panel>
 
+
+      <!-- pagos y servicios  -->
       <mat-expansion-panel >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Compra y venta de moneda extranjera
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Pagos y servicios
+            </mat-panel-title>
+            <mat-panel-description>
+              <p></p>
+              <mat-icon>paid</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
 
-      <mat-expansion-panel >
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Datos personales
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <p>I'm visible because I am open</p>
-      </mat-expansion-panel>
+          <!-- pagos y servicios  sub -->
+            <mat-expansion-panel >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Pagar un servicio
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>Ingresá a "servicios" y selecciona la factura a pagar y la cuenta con la que vas a abonar la factura, luego clickeá en "Pagar factura"</p>
+            </mat-expansion-panel>
 
-  </mat-accordion>
+        </mat-expansion-panel>
+
+
+        <!-- inversiones  -->
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Inversiones
+            </mat-panel-title>
+            <mat-panel-description>
+              <p></p>
+              <mat-icon>trending_up</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+            <!-- inversiones sub  -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Cómo realizar inversiones
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>Ingresá en "Inversiones" y cliclkeá en "realizar una inversión", seleccioná el tipo de inversión, el monto, el plazo y si lo deseas renovación automática.</p>
+            </mat-expansion-panel>
+
+        </mat-expansion-panel>
+
+
+        <!-- compra y venta de moneda extranjera  -->
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Compra y venta de moneda extranjera y bitcoins
+            </mat-panel-title>
+            <mat-panel-description>
+              <p></p>
+              <mat-icon>local_atm</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+            <!-- compra y venta de moneda extranjera -->
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Cómo comprar y vender dólares y bitcoins
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>Ingresá en "Compra y Venta" y seleccioná una opción de compra o venta, luego ingresá el monto y finalizá la operación.</p>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Límite de compra de dólares
+                  </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p>El límite de compra de moneda extranjera permitido por mes calendario es de USD 200 mensuales en la totalidad del sistema financiero.</p>
+            </mat-expansion-panel>
+
+        </mat-expansion-panel>
+
+
+        <!-- datos personales  -->
+        <mat-expansion-panel >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Datos personales
+            </mat-panel-title>
+            <mat-panel-description>
+              <p></p>
+              <mat-icon>account_circle</mat-icon>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>Desde nuestra wallet nunca te vamos a pedir datos de tu tarjeta, como el número, código de seguridad y fecha de vencimiento.</p>
+          <p>Tus datos personales, como el número de DNI, teléfono, fecha de nacimiento, etc. se cargan una única vez al crear una cuenta y sólo el usuario los puede actualizar.</p>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+
+  </div>
