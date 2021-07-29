@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -31,6 +32,7 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 
 
 @NgModule({
@@ -48,9 +50,11 @@ import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component'
     InvertirComponent,
     TransferirComponent,
     ContactosComponent,
-    ContraseniaComponent
+    ContraseniaComponent,
+    PreguntasComponent
   ],
   imports: [
+    MatExpansionModule,
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,

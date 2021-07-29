@@ -14,6 +14,7 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component'
 
 const routes:Routes = [
   {
@@ -58,6 +59,10 @@ const routes:Routes = [
       {
         path: 'password',
         component: ContraseniaComponent
+      },
+      {
+        path: 'preguntas',
+        component: PreguntasComponent
       },
       {
          path: 'sugerencias',
