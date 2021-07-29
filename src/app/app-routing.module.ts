@@ -1,3 +1,4 @@
+import { RoutesGuard } from './guards/routes.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './landing/about-us/about-us.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   },
   {
     path:'wallet',
-    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule)
+    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule),
+
   },
   {
     path: 'register',
