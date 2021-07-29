@@ -18,7 +18,6 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { IngresaryretirarComponent } from './pages/ingresaryretirar/ingresaryretirar.component';

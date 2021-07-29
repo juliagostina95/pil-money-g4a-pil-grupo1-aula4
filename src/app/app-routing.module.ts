@@ -6,7 +6,6 @@ import { LoginPageComponent } from './users/login-page/login-page.component';
 import { RegistrationPageComponent } from './users/registration-page/registration-page.component';
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
 import { ErrorPageComponent } from './error-404/error-page/error-page.component';
-import { WalletPageComponent } from './wallet/wallet-page/wallet-page.component';
 
 const routes: Routes = [
   {
