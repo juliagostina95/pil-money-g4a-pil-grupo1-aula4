@@ -15,10 +15,12 @@ import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
 import { PreguntasComponent } from './pages/preguntas/preguntas.component'
+import { RoutesGuard } from '../guards/routes.guard';
 
 const routes:Routes = [
   {
     path:'',
+    canActivate: [RoutesGuard],
     children:[
       {
         path:'inicio',

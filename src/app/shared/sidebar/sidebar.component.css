@@ -1,4 +1,4 @@
-.titulo{
+.titulo {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,50 +6,63 @@
   font-size: 13px;
 }
 
-
-.titulo-pil{
+.titulo-pil {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 5px ;
+  padding: 5px;
   margin-bottom: 10px !important;
   background-color: var(--violeta-claro);
 }
 
-.texto{
+.texto {
   display: flex;
   justify-content: space-around;
   border-radius: 15px;
   font-size: 12px;
+  margin-bottom: 50px;
 }
 
-.texto-violeta{
+.texto-violeta {
   color: #5e35b1;
 }
 
-:host mat-button-toggle-group{
+:host mat-button-toggle-group {
   border-radius: 15px;
   border: 5px inset rgba(0, 0, 0, 0.4);
 }
 
-:host mat-button-toggle{
+:host mat-button-toggle {
   background-color: var(--blanco);
   text-align: left !important;
   padding: 0px;
   max-height: 40px;
 }
 
-.logopil{
+.logopil {
   height: 45px;
   margin-left: 70px;
-  top:5px;
+  top: 5px;
   margin-bottom: 5px;
   width: auto;
   position: absolute;
   z-index: 1;
- 
 }
 
-.titulo-money{
+.titulo-money {
   visibility: hidden;
+}
+
+mat-icon {
+  position: relative;
+  bottom: 2px;
+}
+.side-bar {
+  margin-top: 100px;
+}
+
+.icon{
+  position: relative;
+  right: 3px;
+  bottom: 3px;
 }
