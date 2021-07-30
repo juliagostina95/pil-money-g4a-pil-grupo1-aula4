@@ -1,0 +1,20 @@
+h1{
+  font-weight: 800;
+  color: var(--violeta);
+}
+
+span{
+  font-weight: 600;
+  color: var(--violeta-claro);
+}
+
+section{
+  display: flex;
+  font-weight: 600;
+  color: var(--violeta-claro);
+}
+
+.icono{
+  color: var(--violeta-claro);
+  font-size: 65px !important;
+}

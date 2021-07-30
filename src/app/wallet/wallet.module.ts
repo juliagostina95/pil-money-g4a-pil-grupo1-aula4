@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +19,6 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { IngresaryretirarComponent } from './pages/ingresaryretirar/ingresaryretirar.component';
@@ -32,7 +32,11 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
+<<<<<<< HEAD
 import { AgregarCuentaComponent } from './pages/agregar-cuenta/agregar-cuenta.component';
+=======
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
+>>>>>>> 73fa5c35bccbdf8af2f34b48ff831ba6601d94a2
 
 
 @NgModule({
@@ -51,9 +55,14 @@ import { AgregarCuentaComponent } from './pages/agregar-cuenta/agregar-cuenta.co
     TransferirComponent,
     ContactosComponent,
     ContraseniaComponent,
+<<<<<<< HEAD
     AgregarCuentaComponent
+=======
+    PreguntasComponent
+>>>>>>> 73fa5c35bccbdf8af2f34b48ff831ba6601d94a2
   ],
   imports: [
+    MatExpansionModule,
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
