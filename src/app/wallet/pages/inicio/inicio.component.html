@@ -1,10 +1,14 @@
-<div class="principio">PIL MONEY</div>
+<div class="principio">
+  <h3 class="pil-m">PIL MONEY</h3>
+<mat-form-field appearance="fill">
+  <mat-select [(value)]="selected">
+    <mat-option value="Cuenta MN">Cuenta MN</mat-option>
+    <mat-option routerLink="/wallet/agregar" value="Agregar Cuenta +">Agregar Cuenta +</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
 
-<div class="cuenta">Cuenta MN</div>
-
-<div class="v1"></div>
-<div class="arrow-up"></div>
-
+<div class="card2">
 <mat-card class="text-center mx-5 mb-5 texto-violeta tamano">
   <h4 class="bienvenidos">¡Hola “usuario”, estas en tu cuenta!</h4>
   <mat-card-content class="dosImg">
@@ -32,3 +36,4 @@
     </div>
   </mat-card-content>
 </mat-card>
+</div>

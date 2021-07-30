@@ -1,0 +1,29 @@
+<h3>Indicanos que tipo de cuenta deseas crear</h3>
+
+<div class="row align-items-center">
+    <div class="col-sm-6" >  
+        <section class="example-section">
+            <mat-radio-group [(ngModel)]="labelPosition">
+              <p><mat-radio-button class="example-margin margin-extra" value="Cuenta Pesos">Cuenta Pesos</mat-radio-button></p>
+              <p><mat-radio-button class="example-margin margin-extra" value="Cuenta USD">Cuenta USD</mat-radio-button></p>
+              <p><mat-radio-button class="example-margin margin-extra" value="Cuenta CRYPTO">Cuenta CRYPTO</mat-radio-button></p>
+              
+            </mat-radio-group>
+        </section>
+    </div>
+
+    <div class="col-sm-6">
+        <p>Número de CUIL:</p>
+        <mat-form-field appearance="fill" floatLabel="always">
+            <input matInput type="text" class="example-right-align" placeholder="0">
+           
+        </mat-form-field>
+        <p>Tu Contraseña:</p>
+        <mat-form-field appearance="fill" floatLabel="always">
+            <input matInput type="password" class="example-right-align" placeholder="0">
+         </mat-form-field>
+       
+    </div>
+    <button mat-flat-button>Realizar</button>
+</div>
+

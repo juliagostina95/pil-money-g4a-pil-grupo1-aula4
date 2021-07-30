@@ -41,13 +41,12 @@
 
 .logopil{
   height: 45px;
-  margin-left: 70px;
+  margin-left: 150px;
   top:5px;
   margin-bottom: 5px;
   width: auto;
-  position: absolute;
+  position: fixed;
   z-index: 1;
- 
 }
 
 .titulo-money{

@@ -1,1 +1,31 @@
-<p>ingresaryretirar works!</p>
+<div class="cuadrado-m ">
+    <p>Podes ingresar dinero desde cualquier home banking o billetera externa mediante el CVU o Alias que figuran en tus cuentas</p>
+    <span>Ejemplo:</span>
+    <img [src]="cuentaEj" class="cuenta-ejemplo" />
+</div>
+
+<h3> Retirá tu dinero</h3>
+
+<div class="seg-seccion row align-items-center">
+    <div class="col-sm-6 ele-pil">
+        <p>Elegí la cuenta PIL</p>
+    <mat-form-field appearance="fill">
+        <mat-select [(value)]="selected">
+          <mat-option value="Cuenta Pesos 1">Cuenta Pesos 1</mat-option>
+          <mat-option value="Cuenta Pesos 2">Cuenta Pesos 2</mat-option>
+        </mat-select>
+      </mat-form-field>
+        </div>
+
+    <div class="col-sm-6 ing-d">
+        <p>Ingresá la cuenta destino</p>
+        <mat-form-field appearance="fill" floatLabel="always">
+            <input matInput type="text" class="example-right-align" placeholder="CVU / Alias">
+         </mat-form-field>
+       
+    </div>
+   
+</div>
+
+
+<button>Confirmar</button>

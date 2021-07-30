@@ -13,4 +13,11 @@ export class InicioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selected = 'Cuenta MN';
+
+  checked = false;
+  indeterminate = false;
+  labelPosition: 'plazoFijoARS' | 'plazoFijoUSD' | 'FCIARS' | 'FCIUSD' = 'plazoFijoARS';
+  disabled = false;
+  labelRenovacion: 'si' | 'no' = 'si';
 }
