@@ -32,11 +32,8 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
 import { TransferirComponent } from './pages/transferir/transferir.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
-<<<<<<< HEAD
 import { AgregarCuentaComponent } from './pages/agregar-cuenta/agregar-cuenta.component';
-=======
 import { PreguntasComponent } from './pages/preguntas/preguntas.component';
->>>>>>> 73fa5c35bccbdf8af2f34b48ff831ba6601d94a2
 
 
 @NgModule({
@@ -55,11 +52,8 @@ import { PreguntasComponent } from './pages/preguntas/preguntas.component';
     TransferirComponent,
     ContactosComponent,
     ContraseniaComponent,
-<<<<<<< HEAD
-    AgregarCuentaComponent
-=======
+    AgregarCuentaComponent,
     PreguntasComponent
->>>>>>> 73fa5c35bccbdf8af2f34b48ff831ba6601d94a2
   ],
   imports: [
     MatExpansionModule,
