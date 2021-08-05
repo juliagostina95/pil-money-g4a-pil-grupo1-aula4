@@ -1,4 +1,72 @@
 
+  .principio{
+  display: flex;
+  flex-direction: row;
+  margin-left: 50px;
+  justify-content: space-between;
+  color: #5e35b1;
+  margin-bottom: 10px;
+  margin-top: -300px;
+  font-size: 13px;
+  }
+
+.bienvenidos {
+  font-size: 25px;
+  color: white;
+  position:absolute;
+  bottom: 30px;
+  margin-left: 480px;
+  z-index: 1;
+ }
+
+ mat-form-field{
+   position: relative;
+   bottom: 10px;
+   margin-right: 50px;
+ }
+
+ .pil-m{
+   font-weight: bold;
+   position: relative;
+   bottom: 17px;
+ }
+
 .texto-violeta{
   color: #5e35b1;
+ 
+}
+
+.card2{
+  position: relative;
+top: 70px;
+}
+
+.tamano{
+  width:1425px;
+  background-image: cover;
+  height: 300px;
+  overflow:hidden;
+  
+}
+
+.imagen1{
+  border-radius: 4px;
+  opacity: 40%;
+  z-index: -1;
+  margin-bottom: -100px;
+  }
+
+.logopil{
+  height: 180px;
+  margin-left: -100px;
+  top:30px;
+  width: auto;
+  position: absolute;
+  z-index: 1;
+ 
+}
+
+.dosImg{
+ margin-top: -80px;
+ margin-left: -30px;
 }

@@ -1,3 +1,4 @@
+import { RoutesGuard } from './guards/routes.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './landing/about-us/about-us.component';
@@ -6,7 +7,6 @@ import { LoginPageComponent } from './users/login-page/login-page.component';
 import { RegistrationPageComponent } from './users/registration-page/registration-page.component';
 import { LandingPageComponent } from './landing/landing-page/landing-page.component';
 import { ErrorPageComponent } from './error-404/error-page/error-page.component';
-import { WalletPageComponent } from './wallet/wallet-page/wallet-page.component';
 
 const routes: Routes = [
   {
@@ -20,7 +20,8 @@ const routes: Routes = [
   },
   {
     path:'wallet',
-    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule)
+    loadChildren: () => import('./wallet/wallet.module').then(m => m.WalletModule),
+
   },
   {
     path: 'register',

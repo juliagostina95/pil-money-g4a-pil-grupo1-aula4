@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  logo     : string = 'assets/imagenes/money-check-alt-solid.svg';
-  imgMoney : string = 'assets/imagenes/kisspng-money-bag-drawing-clip-art-stack-of-money-5b0490b132c9c0.795382731527025841208.png';
+  logoPil    : string = 'assets/imagenes/pil-Money-Logo.png';
+  imgMoney : string = 'assets/imagenes/stephen-phillips-hostreviews-co-uk-em37kS8WJJQ-unsplash.jpg';
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selected = 'Cuenta MN';
+
+  checked = false;
+  indeterminate = false;
+  labelPosition: 'plazoFijoARS' | 'plazoFijoUSD' | 'FCIARS' | 'FCIUSD' = 'plazoFijoARS';
+  disabled = false;
+  labelRenovacion: 'si' | 'no' = 'si';
 }

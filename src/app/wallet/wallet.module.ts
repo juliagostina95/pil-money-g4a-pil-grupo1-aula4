@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +16,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatTableModule } from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 import { WalletRoutingModule } from './wallet-routing.module';
 import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
 import { IngresaryretirarComponent } from './pages/ingresaryretirar/ingresaryretirar.component';
@@ -26,6 +29,11 @@ import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
+import { TransferirComponent } from './pages/transferir/transferir.component';
+import { ContactosComponent } from './pages/contactos/contactos.component';
+import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
+import { AgregarCuentaComponent } from './pages/agregar-cuenta/agregar-cuenta.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 
 
 @NgModule({
@@ -40,9 +48,18 @@ import { InvertirComponent } from './pages/invertir/invertir.component';
     MisDatosComponent,
     InicioComponent,
     SugerenciasComponent,
-    InvertirComponent
+    InvertirComponent,
+    TransferirComponent,
+    ContactosComponent,
+    ContraseniaComponent,
+    AgregarCuentaComponent,
+    PreguntasComponent
   ],
   imports: [
+    MatExpansionModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
     MatRadioModule,
     ReactiveFormsModule,
     FormsModule,

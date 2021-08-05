@@ -11,11 +11,19 @@ export class InvertirComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selected = '30dias';
+
   checked = false;
-    indeterminate = false;
-    labelPosition: 'plazoFijoARS' | 'plazoFijoUSD' | 'FCIARS' | 'FCIUSD' = 'plazoFijoARS';
-    disabled = false;
+  indeterminate = false;
+  labelPosition: 'plazoFijoARS' | 'plazoFijoUSD' | 'FCIARS' | 'FCIUSD' = 'plazoFijoARS';
+  disabled = false;
+  labelRenovacion: 'si' | 'no' = 'si';
+
+  
 }
+
+  
+
 
 
   

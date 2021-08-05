@@ -1,0 +1,44 @@
+#datos{
+    text-align: center;
+    color: var(--violeta);
+    font-weight: 600;
+    margin-bottom: 100px;
+}
+
+.datos{
+  color: var(--violeta);
+    font-weight: 600;
+    margin-left: 200px;
+    background-color: white;
+    width: 30%;
+    height: 540px;
+}
+
+p{
+  height: 60px;
+  margin-top: 20px;
+}
+
+.cambiar{
+  height: 35px;
+  background-color: var(--verde);
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  margin-bottom: 150px;
+  margin-left: 300px;
+  display: flex;
+  margin-top: -30px;
+
+}
+
+
+#contraseña{
+  background-color: var(--violeta);
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  height: 55px;
+  width: 50%;
+  margin-left: 230px;
+}

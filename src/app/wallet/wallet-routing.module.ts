@@ -11,14 +11,25 @@ import { MisDatosComponent } from './pages/mis-datos/mis-datos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { SugerenciasComponent } from './pages/sugerencias/sugerencias.component';
 import { InvertirComponent } from './pages/invertir/invertir.component';
+import { TransferirComponent } from './pages/transferir/transferir.component';
+import { ContactosComponent } from './pages/contactos/contactos.component';
+import { ContraseniaComponent } from './pages/contrasenia/contrasenia.component';
+import { AgregarCuentaComponent } from './pages/agregar-cuenta/agregar-cuenta.component';
+import { PreguntasComponent } from './pages/preguntas/preguntas.component'
+import { RoutesGuard } from '../guards/routes.guard';
 
 const routes:Routes = [
   {
     path:'',
+    canActivate: [RoutesGuard],
     children:[
       {
         path:'inicio',
         component:InicioComponent
+      },
+      {
+        path:'agregar',
+        component:AgregarCuentaComponent
       },
       {
         path:'ingresaryretirar',
@@ -49,8 +60,24 @@ const routes:Routes = [
         component:MisDatosComponent
       },
       {
+        path: 'contactos',
+        component: ContactosComponent
+      },
+      {
+        path: 'password',
+        component: ContraseniaComponent
+      },
+      {
+        path: 'preguntas',
+        component: PreguntasComponent
+      },
+      {
          path: 'sugerencias',
          component: SugerenciasComponent
+      },
+      {
+        path: 'transferir',
+        component: TransferirComponent
       },
       {
         path:'**',
