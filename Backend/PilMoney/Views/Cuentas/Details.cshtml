@@ -1,0 +1,58 @@
+﻿@model PilMoney.Models.Cuentas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cuentas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeCaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeCaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoMonedas.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoMonedas.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuarios.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuarios.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CVU }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

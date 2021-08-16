@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PilMoneyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="idCompra" />
+    </Key>
+    <Property Name="idCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Compras_Cuentas" FromRole="Compras" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Contactos">
+    <Key>
+      <PropertyRef Name="idContacto" />
+    </Key>
+    <Property Name="CVUContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AliasContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idContacto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Contactos_Cuentas" FromRole="Contactos" ToRole="Cuentas" />
+    <NavigationProperty Name="Transferencias" Relationship="Self.FK_Transferencias_Contactos" FromRole="Contactos" ToRole="Transferencias" />
+  </EntityType>
+  <EntityType Name="Cuentas">
+    <Key>
+      <PropertyRef Name="CVU" />
+    </Key>
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Saldo" Type="Double" />
+    <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TipoDeCaja" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IdTipoMoneda" Type="Int32" Nullable="false" />
+    <Property Name="CUIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="Self.FK_Compras_Cuentas" FromRole="Cuentas" ToRole="Compras" />
+    <NavigationProperty Name="Contactos" Relationship="Self.FK_Contactos_Cuentas" FromRole="Cuentas" ToRole="Contactos" />
+    <NavigationProperty Name="TipoMonedas" Relationship="Self.FK_Cuentas_TipoMonedas1" FromRole="Cuentas" ToRole="TipoMonedas" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Cuentas_Usuarios" FromRole="Cuentas" ToRole="Usuarios" />
+    <NavigationProperty Name="Depositos" Relationship="Self.FK_Depositos_Cuentas1" FromRole="Cuentas" ToRole="Depositos" />
+    <NavigationProperty Name="Inversiones" Relationship="Self.FK_Inversiones_Cuentas" FromRole="Cuentas" ToRole="Inversiones" />
+    <NavigationProperty Name="Servicios" Relationship="Self.FK_Servicios_Cuentas" FromRole="Cuentas" ToRole="Servicios" />
+    <NavigationProperty Name="Transferencias" Relationship="Self.FK_Transferencias_Cuentas" FromRole="Cuentas" ToRole="Transferencias" />
+    <NavigationProperty Name="Venta" Relationship="Self.FK_Venta_Cuentas" FromRole="Cuentas" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="Depositos">
+    <Key>
+      <PropertyRef Name="idDeposito" />
+    </Key>
+    <Property Name="idDeposito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Alias" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Depositos_Cuentas1" FromRole="Depositos" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Inversiones">
+    <Key>
+      <PropertyRef Name="idInversion" />
+    </Key>
+    <Property Name="idInversion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoInversion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Renovacion" Type="Byte" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Inversiones_Cuentas" FromRole="Inversiones" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Servicios">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fechaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaPago" Type="DateTime" Precision="3" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="Entidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Byte" Nullable="false" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Servicios_Cuentas" FromRole="Servicios" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoMonedas">
+    <Key>
+      <PropertyRef Name="idTipoMoneda" />
+    </Key>
+    <Property Name="idTipoMoneda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Cuentas_TipoMonedas1" FromRole="TipoMonedas" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Transferencias">
+    <Key>
+      <PropertyRef Name="idTransferencia" />
+    </Key>
+    <Property Name="idTransferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="idContacto" Type="Int32" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CVUDestino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AliasDestino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Contactos" Relationship="Self.FK_Transferencias_Contactos" FromRole="Transferencias" ToRole="Contactos" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Transferencias_Cuentas" FromRole="Transferencias" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="CUIL" />
+    </Key>
+    <Property Name="CUIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NombreCompleto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="imagenDNI" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Cuentas_Usuarios" FromRole="Usuarios" ToRole="Cuentas" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="idVenta" />
+    </Key>
+    <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Importe" Type="Double" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CVU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cuentas" Relationship="Self.FK_Venta_Cuentas" FromRole="Venta" ToRole="Cuentas" />
+  </EntityType>
+  <Association Name="FK_Compras_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contactos_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contactos" Type="Self.Contactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Contactos">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transferencias_Contactos">
+    <End Role="Contactos" Type="Self.Contactos" Multiplicity="0..1" />
+    <End Role="Transferencias" Type="Self.Transferencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contactos">
+        <PropertyRef Name="idContacto" />
+      </Principal>
+      <Dependent Role="Transferencias">
+        <PropertyRef Name="idContacto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cuentas_TipoMonedas1">
+    <End Role="TipoMonedas" Type="Self.TipoMonedas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoMonedas">
+        <PropertyRef Name="idTipoMoneda" />
+      </Principal>
+      <Dependent Role="Cuentas">
+        <PropertyRef Name="IdTipoMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cuentas_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="CUIL" />
+      </Principal>
+      <Dependent Role="Cuentas">
+        <PropertyRef Name="CUIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Depositos_Cuentas1">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="0..1" />
+    <End Role="Depositos" Type="Self.Depositos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Depositos">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Inversiones_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Inversiones" Type="Self.Inversiones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Inversiones">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Servicios_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Servicios">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Transferencias_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Transferencias" Type="Self.Transferencias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Transferencias">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venta_Cuentas">
+    <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cuentas">
+        <PropertyRef Name="CVU" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="CVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PilMoneyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Compras" EntityType="Self.Compras" />
+    <EntitySet Name="Contactos" EntityType="Self.Contactos" />
+    <EntitySet Name="Cuentas" EntityType="Self.Cuentas" />
+    <EntitySet Name="Depositos" EntityType="Self.Depositos" />
+    <EntitySet Name="Inversiones" EntityType="Self.Inversiones" />
+    <EntitySet Name="Servicios" EntityType="Self.Servicios" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TipoMonedas" EntityType="Self.TipoMonedas" />
+    <EntitySet Name="Transferencias" EntityType="Self.Transferencias" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <EntitySet Name="Venta" EntityType="Self.Venta" />
+    <AssociationSet Name="FK_Compras_Cuentas" Association="Self.FK_Compras_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contactos_Cuentas" Association="Self.FK_Contactos_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Contactos" EntitySet="Contactos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transferencias_Contactos" Association="Self.FK_Transferencias_Contactos">
+      <End Role="Contactos" EntitySet="Contactos" />
+      <End Role="Transferencias" EntitySet="Transferencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cuentas_TipoMonedas1" Association="Self.FK_Cuentas_TipoMonedas1">
+      <End Role="TipoMonedas" EntitySet="TipoMonedas" />
+      <End Role="Cuentas" EntitySet="Cuentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cuentas_Usuarios" Association="Self.FK_Cuentas_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Cuentas" EntitySet="Cuentas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Depositos_Cuentas1" Association="Self.FK_Depositos_Cuentas1">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Depositos" EntitySet="Depositos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Inversiones_Cuentas" Association="Self.FK_Inversiones_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Inversiones" EntitySet="Inversiones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Servicios_Cuentas" Association="Self.FK_Servicios_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Servicios" EntitySet="Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Transferencias_Cuentas" Association="Self.FK_Transferencias_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Transferencias" EntitySet="Transferencias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venta_Cuentas" Association="Self.FK_Venta_Cuentas">
+      <End Role="Cuentas" EntitySet="Cuentas" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

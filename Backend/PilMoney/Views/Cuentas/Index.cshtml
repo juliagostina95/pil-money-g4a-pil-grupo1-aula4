@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PilMoney.Models.Cuentas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeCaja)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoMonedas.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuarios.Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeCaja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoMonedas.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuarios.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CVU }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CVU }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CVU })
+        </td>
+    </tr>
+}
+
+</table>

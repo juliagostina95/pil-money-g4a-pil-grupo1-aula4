@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PilMoney.Models.Contactos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CVUContacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AliasContacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuentas.Alias)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVUContacto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AliasContacto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuentas.Alias)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idContacto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idContacto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idContacto })
+        </td>
+    </tr>
+}
+
+</table>

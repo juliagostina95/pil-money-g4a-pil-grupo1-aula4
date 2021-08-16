@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PilMoney.Models.Transferencias>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Importe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CVUDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AliasDestino)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contactos.CVUContacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuentas.Alias)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Importe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVUDestino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AliasDestino)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contactos.CVUContacto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cuentas.Alias)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idTransferencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idTransferencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idTransferencia })
+        </td>
+    </tr>
+}
+
+</table>

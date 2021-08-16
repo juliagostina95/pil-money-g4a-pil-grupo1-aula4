@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="058c9fe3299842c1afc4ef24142f5d7d" Name="Diagram1">
+        <EntityTypeShape EntityType="PilMoneyModel.Compras" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Contactos" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Cuentas" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Depositos" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Inversiones" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Servicios" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.TipoMonedas" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Transferencias" Width="1.5" PointX="7.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Usuarios" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PilMoneyModel.Venta" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <AssociationConnector Association="PilMoneyModel.FK_Compras_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Contactos_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Transferencias_Contactos" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Cuentas_TipoMonedas1" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Cuentas_Usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Depositos_Cuentas1" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Inversiones_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Servicios_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Transferencias_Cuentas" ManuallyRouted="false" />
+        <AssociationConnector Association="PilMoneyModel.FK_Venta_Cuentas" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,58 @@
+﻿@model PilMoney.Models.Inversiones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inversiones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoInversion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoInversion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renovacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renovacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuentas.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuentas.Alias)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idInversion }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

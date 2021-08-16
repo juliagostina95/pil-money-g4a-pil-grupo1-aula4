@@ -1,0 +1,66 @@
+﻿@model PilMoney.Models.Transferencias
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transferencias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Importe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Importe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVUDestino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVUDestino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AliasDestino)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AliasDestino)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contactos.CVUContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contactos.CVUContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuentas.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuentas.Alias)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idTransferencia }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

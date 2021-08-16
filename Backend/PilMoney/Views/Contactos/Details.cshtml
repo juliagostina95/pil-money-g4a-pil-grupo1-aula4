@@ -1,0 +1,42 @@
+﻿@model PilMoney.Models.Contactos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contactos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CVUContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVUContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AliasContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AliasContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuentas.Alias)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuentas.Alias)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idContacto }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
