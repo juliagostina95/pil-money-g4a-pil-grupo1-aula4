@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+ using System;
+ using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class TipoMonedas
+   
+    public class TipoMonedas
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoMonedas()
-        {
-            this.Cuentas = new HashSet<Cuentas>();
+        private int idTipoMoneda;
+        private string nombre;
+        private Cuentas cuentas;
+
+        public TipoMonedas(int idTipoMoneda, string nombre, Cuentas cuentas){
+            this.idTipoMoneda = idTipoMoneda;
+            this.nombre = nombre;
+            this.cuentas = cuentas;
         }
-    
-        public int idTipoMoneda { get; set; }
-        public string nombre { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cuentas> Cuentas { get; set; }
+
+        public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
+        public string Nombre {get => nombre; set => nombre = value;}
+        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
     }
 }

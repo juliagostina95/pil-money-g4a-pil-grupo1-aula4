@@ -7,26 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+ using System;
+ using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Contactos
+   
+    public class Contactos
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Contactos()
-        {
-            this.Transferencias = new HashSet<Transferencias>();
+        private int idContacto;
+        private string cvu;
+        private string aliasContacto;
+        private string cvuContacto;
+        private Cuentas cuentas;
+
+        public Contactos(int idContacto, string cvu; string aliasContacto, string cvuContacto, Cuentas cuentas){
+            this.idContacto = idContacto;
+            this.cvu = cvu;
+            this.aliasContacto = aliasContacto;
+            this.cvuContacto = cvuContacto;
+            this.cuentas = cuentas;
         }
-    
-        public string CVUContacto { get; set; }
-        public string AliasContacto { get; set; }
-        public string CVU { get; set; }
-        public int idContacto { get; set; }
-    
-        public virtual Cuentas Cuentas { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transferencias> Transferencias { get; set; }
+        public int IdContacto {get => idContacto; set => idContacto = value;}
+        public string CVU {get => cvu; set => cvu = value;}
+        public string AliasContacto {get => aliasContacto; set => aliasContacto = value;}
+        public string CVUContacto {get => cvuContacto; set => cvuContacto = value;}
     }
 }

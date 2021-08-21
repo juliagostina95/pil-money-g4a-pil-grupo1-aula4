@@ -7,28 +7,41 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class Usuarios
+    public class Usuarios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuarios()
-        {
-            this.Cuentas = new HashSet<Cuentas>();
+        private string cuil;
+        private string email;
+        private string contraseña;
+        private string nombreCompleto;
+        private System.DateTime fechaNacimiento;
+        private string telefono;
+        private Byte[] imagenDNI;
+        private Cuentas cuentas
+
+        public Usuarios(string cuil; string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, Cuentas cuentas){
+            this.cuil = cuil;
+            this.estado = email;
+            this.contraseña = contraseña;
+            this.nombreCompleto = nombreCompleto;
+            this.fechaNacimiento = fechaNacimiento;
+            this.telefono = telefono;
+            this.imagenDNI = imagenDNI;
+            this.cuentas = cuentas;
         }
-    
-        public string CUIL { get; set; }
-        public string Email { get; set; }
-        public string Contraseña { get; set; }
-        public string NombreCompleto { get; set; }
-        public System.DateTime FechaNacimiento { get; set; }
-        public string Telefono { get; set; }
-        public byte[] imagenDNI { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cuentas> Cuentas { get; set; }
+
+        public string CUIL {get => cuil; set => cuil = value;}
+        public string Email {get => email; set => email = value;}
+        public string Contrase {get => contraseña; set => contraseña = value;}
+        public string NombreCompleto {get => nombreCompleto; set => nombreCompleto = value;}
+        public System.DateTime FechaNacimiento {get => fechaNacimiento; set => fechaNacimiento = value;}
+        public string Telefono {get => telefono; set => telefono = value;}
+        public Byte[] ImagenDNI {get => imagenDNI; set => imagenDNI = value;}
+        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
     }
 }

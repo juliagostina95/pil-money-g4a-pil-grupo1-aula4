@@ -7,18 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+ using System;
+ using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class Depositos
+    public class Depositos
     {
-        public int idDeposito { get; set; }
-        public double Importe { get; set; }
-        public string CVU { get; set; }
-        public string Alias { get; set; }
-    
-        public virtual Cuentas Cuentas { get; set; }
+        private int idDeposito;
+        private float importe;
+        private string cvu;
+        private string alias;
+        private Cuentas cuentas;
+
+        public Depositos(int idDeposito, float importe, string cvu, string alias, Cuentas cuentas){
+            this.idDeposito = idDeposito;
+            this.importe = importe;
+            this.cvu = cvu;
+            this.alias = alias;
+            this.cuentas = cuentas;
+        }
+
+        public int IdDeposito {get => idDeposito; set => idDeposito = valeu;}
+        public float Importe {get => importe; set => importe = value;}
+        public string CVU {get => cvu; set => cvu = value;}
+        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
     }
 }

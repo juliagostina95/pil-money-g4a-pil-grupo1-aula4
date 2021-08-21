@@ -7,20 +7,41 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+ using System;
+ using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class Inversiones
+    public class Inversiones
     {
-        public int idInversion { get; set; }
-        public string tipoInversion { get; set; }
-        public double Importe { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public Nullable<byte> Renovacion { get; set; }
-        public string CVU { get; set; }
-    
-        public virtual Cuentas Cuentas { get; set; }
+          private int idInversion;
+          private string tipoInversion;
+          private float importe;
+          private System.DateTime fecha;
+          private byte renovacion;
+          private string cvu;
+          private Cuentas cuentas;
+
+          public Inversiones(int idInversion, string tipoInversion, float importe, System.DateTime fecha, byte fecha, string cvu, Cuentas cuentas){
+
+              this.idInversion = idInversion;
+              this.tipoInversion = tipoInversion;
+              this.importe = importe;
+              this.fecha = fecha;
+              this.renovacion = renovacion;
+              this.cvu = cvu;
+              this.cuentas = cuentas;
+          }
+
+          public int IdInversion {get => idInversion; set => idInversion = value;}
+          public string TipoInversion {get => tipoInversion; set => tipoInversion = value;}
+          public float Importe {get => importe; set => importe = value;}
+          public System.DateTime Fecha {get => fecha; set => fecha = value;}
+          public byte Renovacion {get => renovacion; set => renovacion = value;}
+          public string CVU {get => cvu; set => cvu = value;}
+          public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+
     }
 }
+ 

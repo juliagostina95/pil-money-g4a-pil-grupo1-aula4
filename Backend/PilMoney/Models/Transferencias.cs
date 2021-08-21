@@ -7,22 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+ using System;
+ using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Transferencias
+   
+    public class Transferencias
     {
-        public int idTransferencia { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public double Importe { get; set; }
-        public Nullable<int> idContacto { get; set; }
-        public string CVU { get; set; }
-        public string CVUDestino { get; set; }
-        public string AliasDestino { get; set; }
-    
-        public virtual Contactos Contactos { get; set; }
-        public virtual Cuentas Cuentas { get; set; }
-    }
+        private int idTransferencia;
+        private System.DateTime fecha;
+        private float importe;
+        private int idContacto;
+        private string cvu;
+        private string cvuDestino;
+        private string aliasDestino;
+        private Contactos contactos;
+        private Cuentas cuentas;
+
+        public Transferencias(int idTransferencia, System.DateTime fecha, float importe, int idContacto, string cvu, string cvuDestino, string aliasDestino, Contactos contactos, Cuentas cuentas){
+            this.idTransferencia = idTransferencia;
+            this.fecha = fecha;
+            this.importe = importe;
+            this.idContacto = idContacto;
+            this.cvu = cvu;
+            this.cvuDestino = cvuDestino;
+            this.aliasDestino = aliasDestino;
+            this.contactos = contactos;
+            this.cuentas = cuentas;
+        }
+
+        public int IdTranferencia {get => idTransferencia; set => idTransferencia = value;}
+        public System.DateTime Fecha {get => fecha; set => fecha = value;}
+        public float Importe {get => importe; set => fecha = value;}
+        public int IdContacto {get => idContacto; set => idContacto = value;}
+        public string CVU {get => cvu; set => cvu = value;}
+        public string CVUDestino {get => cvuDestino; set => cvuDestino = value;}
+        public string AliasDestino {get => aliasDestino; set => aliasDestino = value;}
+        public Contactos Contactos {get => contactos; set => contactos = value;}
+        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+
 }
+    }
+
+  

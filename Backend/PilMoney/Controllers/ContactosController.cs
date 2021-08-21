@@ -1,132 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using PilMoney.Models;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
-    public class ContactosController : Controller
+    public class ContactosController : ApiController
     {
-        private PilMoneyEntities db = new PilMoneyEntities();
-
-        // GET: Contactos
-        public ActionResult Index()
+        // GET: api/Contactos
+        public IEnumerable<string> Get()
         {
-            var contactos = db.Contactos.Include(c => c.Cuentas);
-            return View(contactos.ToList());
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Contactos/Details/5
-        public ActionResult Details(int? id)
+        // GET: api/Contactos/5
+        public string Get(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Contactos contactos = db.Contactos.Find(id);
-            if (contactos == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contactos);
+            return "value";
         }
 
-        // GET: Contactos/Create
-        public ActionResult Create()
+        // POST: api/Contactos
+        public void Post([FromBody]string value)
         {
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias");
-            return View();
         }
 
-        // POST: Contactos/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CVUContacto,AliasContacto,CVU,idContacto")] Contactos contactos)
+        // PUT: api/Contactos/5
+        public void Put(int id, [FromBody]string value)
         {
-            if (ModelState.IsValid)
-            {
-                db.Contactos.Add(contactos);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", contactos.CVU);
-            return View(contactos);
         }
 
-        // GET: Contactos/Edit/5
-        public ActionResult Edit(int? id)
+        // DELETE: api/Contactos/5
+        public void Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Contactos contactos = db.Contactos.Find(id);
-            if (contactos == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", contactos.CVU);
-            return View(contactos);
-        }
-
-        // POST: Contactos/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CVUContacto,AliasContacto,CVU,idContacto")] Contactos contactos)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(contactos).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", contactos.CVU);
-            return View(contactos);
-        }
-
-        // GET: Contactos/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Contactos contactos = db.Contactos.Find(id);
-            if (contactos == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contactos);
-        }
-
-        // POST: Contactos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Contactos contactos = db.Contactos.Find(id);
-            db.Contactos.Remove(contactos);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

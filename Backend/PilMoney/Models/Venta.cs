@@ -7,18 +7,31 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+   using System;
+   using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class Venta
+ 
+    public class Venta
     {
-        public int idVenta { get; set; }
-        public double Importe { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public string CVU { get; set; }
-    
-        public virtual Cuentas Cuentas { get; set; }
+        private int idVenta;
+        private float importe;
+        private System.DateTime fecha;
+        private string cvu;
+        private Cuentas cuentas;
+
+        public Venta(int idVenta, float importe, System.DateTime fecha, string cvu, Cuentas cuentas){
+            this.idVenta = idVenta;
+            this.importe = importe;
+            this.fecha = fecha;
+            this.cvu = cvu;
+            this.cuentas = cuentas;
+        }
+
+        public int IdVenta {get => idVenta; set => idVenta = value;}
+        public float Importe {get => importe; set => importe = value;}
+        public System.DateTime Fecha {get => fecha; set => fecha = value;}
+        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
     }
 }

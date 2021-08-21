@@ -1,132 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using PilMoney.Models;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
-    public class ServiciosController : Controller
+    public class ServiciosController : ApiController
     {
-        private PilMoneyEntities db = new PilMoneyEntities();
-
-        // GET: Servicios
-        public ActionResult Index()
+        // GET: api/Servicios
+        public IEnumerable<string> Get()
         {
-            var servicios = db.Servicios.Include(s => s.Cuentas);
-            return View(servicios.ToList());
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Servicios/Details/5
-        public ActionResult Details(int? id)
+        // GET: api/Servicios/5
+        public string Get(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Servicios servicios = db.Servicios.Find(id);
-            if (servicios == null)
-            {
-                return HttpNotFound();
-            }
-            return View(servicios);
+            return "value";
         }
 
-        // GET: Servicios/Create
-        public ActionResult Create()
+        // POST: api/Servicios
+        public void Post([FromBody]string value)
         {
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias");
-            return View();
         }
 
-        // POST: Servicios/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idServicio,Descripcion,fechaVencimiento,fechaPago,Importe,Entidad,Estado,CVU")] Servicios servicios)
+        // PUT: api/Servicios/5
+        public void Put(int id, [FromBody]string value)
         {
-            if (ModelState.IsValid)
-            {
-                db.Servicios.Add(servicios);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", servicios.CVU);
-            return View(servicios);
         }
 
-        // GET: Servicios/Edit/5
-        public ActionResult Edit(int? id)
+        // DELETE: api/Servicios/5
+        public void Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Servicios servicios = db.Servicios.Find(id);
-            if (servicios == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", servicios.CVU);
-            return View(servicios);
-        }
-
-        // POST: Servicios/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idServicio,Descripcion,fechaVencimiento,fechaPago,Importe,Entidad,Estado,CVU")] Servicios servicios)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(servicios).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", servicios.CVU);
-            return View(servicios);
-        }
-
-        // GET: Servicios/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Servicios servicios = db.Servicios.Find(id);
-            if (servicios == null)
-            {
-                return HttpNotFound();
-            }
-            return View(servicios);
-        }
-
-        // POST: Servicios/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Servicios servicios = db.Servicios.Find(id);
-            db.Servicios.Remove(servicios);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

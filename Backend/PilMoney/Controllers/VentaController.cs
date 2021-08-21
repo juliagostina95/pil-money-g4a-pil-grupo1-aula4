@@ -7,31 +7,31 @@ using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
-    public class ComprasController : ApiController
+    public class VentaController : ApiController
     {
-        // GET: api/Compras
+        // GET: api/Venta
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Compras/5
+        // GET: api/Venta/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Compras
+        // POST: api/Venta
         public void Post([FromBody]string value)
         {
         }
 
-        // PUT: api/Compras/5
+        // PUT: api/Venta/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Compras/5
+        // DELETE: api/Venta/5
         public void Delete(int id)
         {
         }

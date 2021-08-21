@@ -7,22 +7,44 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class Servicios
+    public class Servicios
     {
-        public int idServicio { get; set; }
-        public string Descripcion { get; set; }
-        public System.DateTime fechaVencimiento { get; set; }
-        public Nullable<System.DateTime> fechaPago { get; set; }
-        public double Importe { get; set; }
-        public string Entidad { get; set; }
-        public byte Estado { get; set; }
-        public string CVU { get; set; }
-    
-        public virtual Cuentas Cuentas { get; set; }
+       private int idServicio;
+       private string descripcion;
+       private System.DateTime fechaVencimiento;
+       private System.DateTime fechaPago;
+       private float importe;
+       private string entidad;
+       private byte estado;
+       private string cvu;
+       private Cuentas cuentas;
+
+       public Servicios(int idServicio, string descripcion, System.DateTime fechaVencimiento, System.DateTime fechaPago, float importe, string entidad, byte estado, string cvu, Cuentas cuentas){
+           this.idServicio = idServicio;
+           this.descripcion = descripcion;
+           this.fechaVencimiento = fechaVencimiento;
+           this.fechaPago = fechaPago;
+           this.importe = importe;
+           this.entidad = entidad;
+           this.estado = estado;
+           this.cvu = cvu;
+           this.cuentas = cuentas;
+       }
+
+       public int IdServicio {get => idServicio; set => idServicio = value;}
+       public string Descripcion {get => descripcion; set => descripcion = value;}
+       public System.DateTime FechaVencimiento {get => fechaVencimiento; set => fechaVencimiento = value;}
+       public System.DateTime FechaPago {get => fechaPago; set => fechaPago = value;}
+       public float Importe {get => importe; set => importe = value;}
+       public string Entidad {get => entidad; set => entidad = value;}
+       public byte Estado {get => estado; set => estado = value;}
+       public string CVU {get => cvu; set => cvu = value;}
+       public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
     }
 }

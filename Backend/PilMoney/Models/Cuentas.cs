@@ -7,47 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace PilMoney.Models
 {
-    using System;
-    using System.Collections.Generic;
     
-    public partial class Cuentas
+    public class Cuentas
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cuentas()
-        {
-            this.Compras = new HashSet<Compras>();
-            this.Contactos = new HashSet<Contactos>();
-            this.Depositos = new HashSet<Depositos>();
-            this.Inversiones = new HashSet<Inversiones>();
-            this.Servicios = new HashSet<Servicios>();
-            this.Transferencias = new HashSet<Transferencias>();
-            this.Venta = new HashSet<Venta>();
-        }
-    
-        public string CVU { get; set; }
-        public Nullable<double> Saldo { get; set; }
-        public string Alias { get; set; }
-        public string TipoDeCaja { get; set; }
-        public int IdTipoMoneda { get; set; }
-        public string CUIL { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Compras> Compras { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Contactos> Contactos { get; set; }
-        public virtual TipoMonedas TipoMonedas { get; set; }
-        public virtual Usuarios Usuarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Depositos> Depositos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Inversiones> Inversiones { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Servicios> Servicios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transferencias> Transferencias { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Venta> Venta { get; set; }
+       private string cvu;
+       private float saldo;
+       private string alias;
+       private string tipoDeCaja;
+       private int idTipoMoneda;
+       private string cuil;
+       
+       public Cuentas(string cvu, float saldo, string alias, string tipoDeCaja, int idTipoMoneda, string cuil){
+           this.cvu = cvu;
+           this.saldo = saldo;
+           this.alias = alias;
+           this.tipoDeCaja = tipoDeCaja;
+           this.idTipoMoneda = idTipoMoneda;
+           this.cuil = cuil;
+       }
+
+       public string CVU {get => cvu; set => cvu = value;}
+       public float Saldo {get => saldo; set => saldo = value;}
+       public string Alias {get => alias; set => alias = value;}
+       public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
+       public string CUIL {get => cuil; set => cuil = value;}
     }
 }

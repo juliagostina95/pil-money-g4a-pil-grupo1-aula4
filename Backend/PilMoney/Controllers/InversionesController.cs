@@ -1,132 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using PilMoney.Models;
+using System.Net.Http;
+using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
-    public class InversionesController : Controller
+    public class InversionesController : ApiController
     {
-        private PilMoneyEntities db = new PilMoneyEntities();
-
-        // GET: Inversiones
-        public ActionResult Index()
+        // GET: api/Inversiones
+        public IEnumerable<string> Get()
         {
-            var inversiones = db.Inversiones.Include(i => i.Cuentas);
-            return View(inversiones.ToList());
+            return new string[] { "value1", "value2" };
         }
 
-        // GET: Inversiones/Details/5
-        public ActionResult Details(int? id)
+        // GET: api/Inversiones/5
+        public string Get(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Inversiones inversiones = db.Inversiones.Find(id);
-            if (inversiones == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inversiones);
+            return "value";
         }
 
-        // GET: Inversiones/Create
-        public ActionResult Create()
+        // POST: api/Inversiones
+        public void Post([FromBody]string value)
         {
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias");
-            return View();
         }
 
-        // POST: Inversiones/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idInversion,tipoInversion,Importe,Fecha,Renovacion,CVU")] Inversiones inversiones)
+        // PUT: api/Inversiones/5
+        public void Put(int id, [FromBody]string value)
         {
-            if (ModelState.IsValid)
-            {
-                db.Inversiones.Add(inversiones);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", inversiones.CVU);
-            return View(inversiones);
         }
 
-        // GET: Inversiones/Edit/5
-        public ActionResult Edit(int? id)
+        // DELETE: api/Inversiones/5
+        public void Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Inversiones inversiones = db.Inversiones.Find(id);
-            if (inversiones == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", inversiones.CVU);
-            return View(inversiones);
-        }
-
-        // POST: Inversiones/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idInversion,tipoInversion,Importe,Fecha,Renovacion,CVU")] Inversiones inversiones)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(inversiones).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.CVU = new SelectList(db.Cuentas, "CVU", "Alias", inversiones.CVU);
-            return View(inversiones);
-        }
-
-        // GET: Inversiones/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Inversiones inversiones = db.Inversiones.Find(id);
-            if (inversiones == null)
-            {
-                return HttpNotFound();
-            }
-            return View(inversiones);
-        }
-
-        // POST: Inversiones/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Inversiones inversiones = db.Inversiones.Find(id);
-            db.Inversiones.Remove(inversiones);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

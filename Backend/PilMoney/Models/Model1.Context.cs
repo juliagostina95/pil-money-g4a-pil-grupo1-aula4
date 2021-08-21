@@ -31,10 +31,10 @@ namespace PilMoney.Models
         public virtual DbSet<Depositos> Depositos { get; set; }
         public virtual DbSet<Inversiones> Inversiones { get; set; }
         public virtual DbSet<Servicios> Servicios { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TipoMonedas> TipoMonedas { get; set; }
         public virtual DbSet<Transferencias> Transferencias { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<Venta> Venta { get; set; }
+       
     }
 }
