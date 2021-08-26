@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   margin: 10px auto;
-  font-size: 13px;
+  font-size: 19px;
 }
 
 .titulo-pil {
@@ -34,16 +34,14 @@
 
 :host mat-button-toggle {
   background-color: var(--blanco);
-  text-align: left !important;
-  padding: 0px;
+  text-align: top !important;
+  padding: 0px 25px;
   max-height: 40px;
 }
 
 .logopil {
   height: 45px;
   margin-left: 150px;
-  top:5px;
-  top: 5px;
   margin-bottom: 5px;
   width: auto;
   position: fixed;
@@ -55,15 +53,46 @@
 }
 
 mat-icon {
+  margin-top: 5px;
+  display: flex;
   position: relative;
-  bottom: 2px;
+  left: -22px;
 }
+
 .side-bar {
   margin-top: 100px;
 }
 
-.icon{
+.icon {
   position: relative;
   right: 3px;
   bottom: 3px;
+}
+
+p {
+  position: relative;
+  bottom: 34px;
+  text-align: left;
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.ayuda {
+  position: relative;
+  bottom: -1px;
+  right: 20px;
+}
+
+.tamano {
+  position: relative;
+  width: 100px;
+  height: 0px;
+  bottom: -10px;
+  padding-left: 15px;
+}
+
+.cerrar {
+  position: relative;
+  bottom: -5px;
+  font-size: 16px;
 }
