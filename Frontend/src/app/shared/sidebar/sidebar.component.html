@@ -27,46 +27,46 @@
         routerLinkActive="./wallet/inicio"
       >
         <mat-icon>account_balance_wallet</mat-icon>
-        Mi cuenta
+        <p>Mi cuenta</p>
       </mat-button-toggle>
       <mat-button-toggle
         value="underline"
         routerLink="./wallet/ingresaryretirar"
       >
         <mat-icon>payments</mat-icon>
-        Ingresar y Retirar
+        <p>Ingresar y Retirar</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="underline" routerLink="./wallet/transferencias">
         <mat-icon>multiple_stop</mat-icon>
-        Transferencias
+        <p>Transferencias</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="italic" routerLink="./wallet/pagos">
         <mat-icon>paid</mat-icon>
-        Pagos y Servicios
+        <p>Pagos y Servicios</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="underline" routerLink="./wallet/inversiones">
         <mat-icon>trending_up</mat-icon>
-        Inversiones
+        <p>Inversiones</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="underline" routerLink="./wallet/compra">
         <mat-icon>local_atm</mat-icon>
-        Compra y Venta
+        <p>Compra y Venta</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="underline" routerLink="./wallet/misdatos">
         <mat-icon>account_circle</mat-icon>
-        Mis Datos
+        <p>Mis Datos</p>
       </mat-button-toggle>
     </mat-button-toggle-group>
   </section>
 
   <span class="titulo"
     ><mat-icon class="icon">help_outline</mat-icon>
-    <h6>Ayuda</h6></span
+    <p class="ayuda">Ayuda</p></span
   >
   <section class="texto">
     <mat-button-toggle-group
@@ -78,24 +78,25 @@
     >
       <mat-button-toggle value="bold" routerLink="./wallet/preguntas">
         <mat-icon>question_answer</mat-icon>
-        Preguntas
+        <p>Preguntas</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="underline" routerLink="./wallet/contactos">
         <mat-icon>contact_support</mat-icon>
-        Contactos
+        <p>Contactos</p>
       </mat-button-toggle>
 
       <mat-button-toggle value="italic" routerLink="./wallet/sugerencias">
         <mat-icon>settings_suggest</mat-icon>
-        Sugerencias
+        <p>Sugerencias</p>
       </mat-button-toggle>
     </mat-button-toggle-group>
   </section>
   <div class="row mt-4 text-center">
     <div class="col">
       <button mat-raised-button color="warn">
-        <mat-icon>logout</mat-icon>Cerrar Sesión
+        <mat-icon class="tamano">logout</mat-icon>
+        <p class="cerrar">Cerrar Sesión</p>
       </button>
     </div>
   </div>
