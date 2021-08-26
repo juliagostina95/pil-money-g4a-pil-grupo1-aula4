@@ -23,9 +23,9 @@ namespace PilMoney.Models
        private string entidad;
        private byte estado;
        private string cvu;
-       private Cuentas cuentas;
+    
 
-       public Servicios(int idServicio, string descripcion, System.DateTime fechaVencimiento, System.DateTime fechaPago, float importe, string entidad, byte estado, string cvu, Cuentas cuentas){
+       public Servicios(int idServicio, string descripcion, System.DateTime fechaVencimiento, System.DateTime fechaPago, float importe, string entidad, byte estado, string cvu){
            this.idServicio = idServicio;
            this.descripcion = descripcion;
            this.fechaVencimiento = fechaVencimiento;
@@ -34,7 +34,7 @@ namespace PilMoney.Models
            this.entidad = entidad;
            this.estado = estado;
            this.cvu = cvu;
-           this.cuentas = cuentas;
+          
        }
 
        public int IdServicio {get => idServicio; set => idServicio = value;}
@@ -45,6 +45,6 @@ namespace PilMoney.Models
        public string Entidad {get => entidad; set => entidad = value;}
        public byte Estado {get => estado; set => estado = value;}
        public string CVU {get => cvu; set => cvu = value;}
-       public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+    
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,35 @@ namespace PilMoney.Controllers
     public class ComprasController : ApiController
     {
         // GET: api/Compras
-        public IEnumerable<string> Get()
+        public IEnumerable<Compras> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorCompras gCompra = new GestorCompras();
+            return gCompra.ListarCompra();
         }
 
         // GET: api/Compras/5
-        public string Get(int id)
+
+        public Compras Get(int idCompra)
         {
-            return "value";
+            GestorCompras gCompra = new GestorCompras();
+            return gCompra.ObtenerComprasPorId(idCompra);
         }
 
         // POST: api/Compras
-        public void Post([FromBody]string value)
+        public void Post(Compras c)
         {
+            GestorCompras gCompras = new GestorCompras();
+            gCompras.RegistrarCompra(c);
         }
 
         // PUT: api/Compras/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+      
 
         // DELETE: api/Compras/5
-        public void Delete(int id)
+        public void Delete(int idCompra)
         {
+            GestorCompras gCompras = new GestorCompras();
+            gCompras.EliminarCompra(idCompra);
         }
     }
 }

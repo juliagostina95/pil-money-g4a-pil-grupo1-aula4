@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,34 @@ namespace PilMoney.Controllers
     public class InversionesController : ApiController
     {
         // GET: api/Inversiones
-        public IEnumerable<string> Get()
+        public IEnumerable<Inversiones> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorInversiones gInversion = new GestorInversiones();
+            return gInversion.ListarInversiones();
         }
 
         // GET: api/Inversiones/5
-        public string Get(int id)
+        public Inversiones Get(int idInversion)
         {
-            return "value";
+            GestorInversiones gInversion = new GestorInversiones();
+            return gInversion.ObtenerInversionPorId(idInversion);
         }
 
         // POST: api/Inversiones
-        public void Post([FromBody]string value)
+        public void Post(Inversiones i)
         {
+            GestorInversiones gInversion = new GestorInversiones();
+            gInversion.RegistrarInversion(i);
         }
 
         // PUT: api/Inversiones/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        
 
         // DELETE: api/Inversiones/5
-        public void Delete(int id)
+        public void Delete(int idInversion)
         {
+            GestorInversiones gInversion = new GestorInversiones();
+            gInversion.EliminarInversion(idInversion);
         }
     }
 }

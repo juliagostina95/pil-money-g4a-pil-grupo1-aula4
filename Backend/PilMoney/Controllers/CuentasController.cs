@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,25 @@ namespace PilMoney.Controllers
     public class CuentasController : ApiController
     {
         // GET: api/Cuentas
-        public IEnumerable<string> Get()
+        public IEnumerable<Cuentas> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorCuentas gCuentas = new GestorCuentas();
+            return gCuentas.ListarCuenta();
         }
 
         // GET: api/Cuentas/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+       
         // POST: api/Cuentas
-        public void Post([FromBody]string value)
+        public void Post(Cuentas c)
         {
+            GestorCuentas gCuentas = new GestorCuentas();
+            gCuentas.RegistrarCuenta(c);
         }
 
         // PUT: api/Cuentas/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        
 
         // DELETE: api/Cuentas/5
-        public void Delete(int id)
-        {
-        }
+       
     }
 }

@@ -36,5 +36,6 @@ namespace PilMoney.Models
        public string Alias {get => alias; set => alias = value;}
        public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
        public string CUIL {get => cuil; set => cuil = value;}
+       public string TipoDeCaja{get => tipoDeCaja; set => tipoDeCaja = value;}
     }
 }

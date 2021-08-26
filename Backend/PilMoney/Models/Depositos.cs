@@ -19,19 +19,19 @@ namespace PilMoney.Models
         private float importe;
         private string cvu;
         private string alias;
-        private Cuentas cuentas;
+       
 
-        public Depositos(int idDeposito, float importe, string cvu, string alias, Cuentas cuentas){
+        public Depositos(int idDeposito, float importe, string cvu, string alias){
             this.idDeposito = idDeposito;
             this.importe = importe;
             this.cvu = cvu;
             this.alias = alias;
-            this.cuentas = cuentas;
+           
         }
 
         public int IdDeposito {get => idDeposito; set => idDeposito = valeu;}
         public float Importe {get => importe; set => importe = value;}
         public string CVU {get => cvu; set => cvu = value;}
-        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+        public string Alias {get => alias; set => alias = value;}
     }
 }

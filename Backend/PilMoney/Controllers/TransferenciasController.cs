@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,34 @@ namespace PilMoney.Controllers
     public class TransferenciasController : ApiController
     {
         // GET: api/Transferencias
-        public IEnumerable<string> Get()
+        public IEnumerable<Transferencias> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorTransferencias gTransferencia = new GestorTransferencias();
+            return gTransferencia.ListarTransferencia();
         }
 
         // GET: api/Transferencias/5
-        public string Get(int id)
+        public Transferencias Get(int idTransferencia)
         {
-            return "value";
+            GestorTransferencias gTransferencia = new GestorTransferencias();
+            return gTransferencia.ObtenerTransferenciasPorId(idTransferencia);
         }
 
         // POST: api/Transferencias
-        public void Post([FromBody]string value)
+        public void Post(Transferencias t)
         {
+            GestorTransferencias gTransferencia = new GestorTransferencias();
+            gTransferencia.RegistrarTransferencia(t);
         }
 
         // PUT: api/Transferencias/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        
 
         // DELETE: api/Transferencias/5
-        public void Delete(int id)
+        public void Delete(int idTransferencia)
         {
+            GestorTransferencias gTransferencia = new GestorTransferencias();
+            gTransferencia.EliminarTransferencia(idTransferencia);
         }
     }
 }

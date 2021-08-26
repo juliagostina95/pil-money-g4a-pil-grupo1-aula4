@@ -19,14 +19,14 @@ namespace PilMoney.Models
         private string cvu;
         private string aliasContacto;
         private string cvuContacto;
-        private Cuentas cuentas;
+       
 
-        public Contactos(int idContacto, string cvu; string aliasContacto, string cvuContacto, Cuentas cuentas){
+        public Contactos(int idContacto, string cvu, string aliasContacto, string cvuContacto){
             this.idContacto = idContacto;
             this.cvu = cvu;
             this.aliasContacto = aliasContacto;
             this.cvuContacto = cvuContacto;
-            this.cuentas = cuentas;
+           
         }
         public int IdContacto {get => idContacto; set => idContacto = value;}
         public string CVU {get => cvu; set => cvu = value;}

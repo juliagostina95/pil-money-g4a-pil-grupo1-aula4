@@ -1,39 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
 namespace PilMoney.Models
 {
     public class GestorUsuarios
+
     {
         string StrConn = ConfigurationManager.ConnectionStrings["PilMoneyEntities"].ToString();
 
-        public string obtenerUsuario(string email)
+        public void RegistrarUsuario(Usuarios nuevo)
         {
-        
-            using (SqlConnection conn = new SqlConnection(StrConn)){
-                conn.Open();
+            SqlConnection cx = new SqlConnection(StrConn);
+            cx.Open();
 
-                SqlCommand comm = new SqlCommand("obtenerUsuario", conn);
-                comm.CommandType = System.Data.CommandType.StoredProcedure;
-                
-                comm.Parameters.Add(new SqlConnection("@email", email));
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "INSERT INTO Usuarios(cuil, email, contraseña, nombreCompleto, fechaNacimiento, telefono, imagenDNI) VALUES (@CUIL, @Email, @Contraseña, @NombreCompleto, @FechaNacimiento, @Telefono, @ImagenDNI)";
+            cm.Parameters.Add(new SqlParameter("@CUIL", nuevo.CUIL));
+            cm.Parameters.Add(new SqlParameter("@Email", nuevo.Email));
+            cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contrase));
+            cm.Parameters.Add(new SqlParameter("@NombreCompleto", nuevo.NombreCompleto));
+            cm.Parameters.Add(new SqlParameter("@Telefono", nuevo.Telefono));
+            cm.Parameters.Add(new SqlParameter("@ImagenDNI", nuevo.ImagenDNI));
 
-                SqlDataReader dr = comm.ExecuteReader();
-                if (dr.Read()){
-                   string nombre_completo = dr.GetString(4).Trim();
 
-                   return nombreCompleto;
-                }
+            cm.ExecuteNonQuery();
 
-                else{
-                    return "DefaultUser";
-                }
-
-               
-            }
-          
+            cx.Close();
         }
+
+        public void ModificarUsuario(Usuarios u)
+        {
+            SqlConnection cx = new SqlConnection(StrConn);
+            cx.Open();
+
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "UPDATE Usuarios SET telefono=@Telefono, nombreCompleto=@NombreCompleto, contraseña=@Contraseña, email=@Email WHERE cuil=@CUIL";
+            cm.Parameters.Add(new SqlParameter("@CUIL", u.CUIL));
+            cm.Parameters.Add(new SqlParameter("@Telefono", u.Telefono));
+            cm.Parameters.Add(new SqlParameter("@NombreCompleto", u.NombreCompleto));
+            cm.Parameters.Add(new SqlParameter("@Contraseña", u.Contrase));
+            cm.Parameters.Add(new SqlParameter("@Email", u.Email));
+
+            cm.ExecuteNonQuery();
+
+            cx.Close();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,34 @@ namespace PilMoney.Controllers
     public class ServiciosController : ApiController
     {
         // GET: api/Servicios
-        public IEnumerable<string> Get()
+        public IEnumerable<Servicios> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorServicios gServicio = new GestorServicios();
+            return gServicio.ListarServicios();
         }
 
         // GET: api/Servicios/5
-        public string Get(int id)
+        public Servicios Get(int idServicio)
         {
-            return "value";
+            GestorServicios gServicio = new GestorServicios();
+            return gServicio.ObtenerServicioPorId(idServicio);
         }
 
         // POST: api/Servicios
-        public void Post([FromBody]string value)
+        public void Post(Servicios s)
         {
+            GestorServicios gServicio = new GestorServicios();
+            gServicio.RegistrarServicio(s);
         }
 
         // PUT: api/Servicios/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+       
 
         // DELETE: api/Servicios/5
-        public void Delete(int id)
+        public void Delete(int idServicio)
         {
+            GestorServicios gServicio = new GestorServicios();
+            gServicio.EliminarServicio(idServicio);
         }
     }
 }

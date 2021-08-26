@@ -168,6 +168,16 @@
     <Compile Include="Models\Depositos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GestorCompras.cs" />
+    <Compile Include="Models\GestorContactos.cs" />
+    <Compile Include="Models\GestorCuentas.cs" />
+    <Compile Include="Models\GestorDepositos.cs" />
+    <Compile Include="Models\GestorInversiones.cs" />
+    <Compile Include="Models\GestorServicios.cs" />
+    <Compile Include="Models\GestorTipoMonedas.cs" />
+    <Compile Include="Models\GestorTransferencias.cs" />
+    <Compile Include="Models\GestorUsuarios.cs" />
+    <Compile Include="Models\GestorVenta.cs" />
     <Compile Include="Models\Inversiones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

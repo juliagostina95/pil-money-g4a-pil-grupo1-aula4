@@ -24,7 +24,7 @@ namespace PilMoney.Models
         private Byte[] imagenDNI;
         private Cuentas cuentas
 
-        public Usuarios(string cuil; string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, Cuentas cuentas){
+        public Usuarios(string cuil, string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, Cuentas cuentas){
             this.cuil = cuil;
             this.estado = email;
             this.contraseña = contraseña;

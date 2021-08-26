@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,31 +10,33 @@ namespace PilMoney.Controllers
 {
     public class TipoMonedasController : ApiController
     {
+       
         // GET: api/TipoMonedas
-        public IEnumerable<string> Get()
+        public IEnumerable<TipoMonedas> Get()
         {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/TipoMonedas/5
-        public string Get(int id)
-        {
-            return "value";
+            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+            return gTipoMoneda.ObtenerTipoMoneda();
         }
 
         // POST: api/TipoMonedas
-        public void Post([FromBody]string value)
+        public void Post(TipoMonedas tm)
         {
+            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+            gTipoMoneda.RegistrarTipoMoneda(tm);
         }
 
         // PUT: api/TipoMonedas/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(TipoMonedas tm)
         {
+            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+            gTipoMoneda.ModificarTipoMoneda(tm);
         }
 
         // DELETE: api/TipoMonedas/5
-        public void Delete(int id)
+        public void Delete(int idTipoMoneda)
         {
+            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+            gTipoMoneda.EliminarTipoMoneda(idTipoMoneda);
         }
     }
 }

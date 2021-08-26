@@ -17,16 +17,16 @@ namespace PilMoney.Models
     {
         private int idTipoMoneda;
         private string nombre;
-        private Cuentas cuentas;
+       
 
-        public TipoMonedas(int idTipoMoneda, string nombre, Cuentas cuentas){
+        public TipoMonedas(int idTipoMoneda, string nombre){
             this.idTipoMoneda = idTipoMoneda;
             this.nombre = nombre;
-            this.cuentas = cuentas;
+          
         }
 
         public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
         public string Nombre {get => nombre; set => nombre = value;}
-        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+       
     }
 }

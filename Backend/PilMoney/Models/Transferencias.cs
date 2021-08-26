@@ -22,10 +22,9 @@ namespace PilMoney.Models
         private string cvu;
         private string cvuDestino;
         private string aliasDestino;
-        private Contactos contactos;
-        private Cuentas cuentas;
+      
 
-        public Transferencias(int idTransferencia, System.DateTime fecha, float importe, int idContacto, string cvu, string cvuDestino, string aliasDestino, Contactos contactos, Cuentas cuentas){
+        public Transferencias(int idTransferencia, System.DateTime fecha, float importe, int idContacto, string cvu, string cvuDestino, string aliasDestino){
             this.idTransferencia = idTransferencia;
             this.fecha = fecha;
             this.importe = importe;
@@ -33,8 +32,7 @@ namespace PilMoney.Models
             this.cvu = cvu;
             this.cvuDestino = cvuDestino;
             this.aliasDestino = aliasDestino;
-            this.contactos = contactos;
-            this.cuentas = cuentas;
+            
         }
 
         public int IdTranferencia {get => idTransferencia; set => idTransferencia = value;}
@@ -44,8 +42,7 @@ namespace PilMoney.Models
         public string CVU {get => cvu; set => cvu = value;}
         public string CVUDestino {get => cvuDestino; set => cvuDestino = value;}
         public string AliasDestino {get => aliasDestino; set => aliasDestino = value;}
-        public Contactos Contactos {get => contactos; set => contactos = value;}
-        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+     
 
 }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,30 +11,35 @@ namespace PilMoney.Controllers
     public class ContactosController : ApiController
     {
         // GET: api/Contactos
-        public IEnumerable<string> Get()
+        public IEnumerable<Contactos> Get()
         {
-            return new string[] { "value1", "value2" };
+            GestorContactos gContactos = new GestorContactos();
+            return gContactos.ListarContactos();
         }
 
-        // GET: api/Contactos/5
-        public string Get(int id)
+        // GET: api/Compras/5
+
+        public Contactos Get(int idContacto)
         {
-            return "value";
+            GestorContactos gContactos = new GestorContactos();
+            return gContactos.ObtenerContactoPorId(idContacto);
         }
 
         // POST: api/Contactos
-        public void Post([FromBody]string value)
+        public void Post(Contactos c)
         {
+            GestorContactos gContactos = new GestorContactos();
+            gContactos.RegistrarContacto(c);
         }
 
-        // PUT: api/Contactos/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        // PUT: api/TipoMonedas/5
+        
 
-        // DELETE: api/Contactos/5
-        public void Delete(int id)
+        // DELETE: api/TipoMonedas/5
+        public void Delete(int idContacto)
         {
+            GestorContactos gContactos = new GestorContactos();
+            gContactos.EliminarContacto(idContacto);
         }
     }
 }
