@@ -26,10 +26,19 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Compras
-        public void Post(Venta v)
+        public HttpResponseMessage Post(Venta v)
         {
-            GestorVenta gVenta = new GestorVenta();
-            gVenta.RegistrarVenta(v);
+            if (ModelState.IsValid)
+            {
+                GestorVenta gVenta = new GestorVenta();
+                gVenta.RegistrarVenta(v);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Compras/5

@@ -19,10 +19,19 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/TipoMonedas
-        public void Post(TipoMonedas tm)
+        public HttpResponseMessage Post(TipoMonedas tm)
         {
-            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
-            gTipoMoneda.RegistrarTipoMoneda(tm);
+            if (ModelState.IsValid)
+            {
+                GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+                gTipoMoneda.RegistrarTipoMoneda(tm);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
+
         }
 
         // PUT: api/TipoMonedas/5

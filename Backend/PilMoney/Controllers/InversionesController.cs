@@ -25,10 +25,18 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Inversiones
-        public void Post(Inversiones i)
+        public HttpResponseMessage Post(Inversiones i)
         {
-            GestorInversiones gInversion = new GestorInversiones();
-            gInversion.RegistrarInversion(i);
+            if (ModelState.IsValid)
+            {
+                GestorInversiones gInversion = new GestorInversiones();
+                gInversion.RegistrarInversion(i);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Inversiones/5

@@ -16,10 +16,19 @@ namespace PilMoney.Controllers
         // GET: api/Usuarios/5
        
         // POST: api/Usuarios
-        public void Post(Usuarios u)
+        public HttpResponseMessage Post(Usuarios u)
         {
-            GestorUsuarios gUsuarios = new GestorUsuarios();
-            gUsuarios.RegistrarUsuario(u);
+            if (ModelState.IsValid)
+            {
+                GestorUsuarios gUsuarios = new GestorUsuarios();
+                gUsuarios.RegistrarUsuario(u);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Usuarios/5

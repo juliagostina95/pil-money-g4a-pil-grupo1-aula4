@@ -25,10 +25,18 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Depositos
-        public void Post(Depositos d)
+        public HttpResponseMessage Post(Depositos d)
         {
-            GestorDepositos gDepositos = new GestorDepositos();
-            gDepositos.RegistrarDeposito(d);
+            if (ModelState.IsValid)
+            {
+                GestorDepositos gDepositos = new GestorDepositos();
+                gDepositos.RegistrarDeposito(d);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Depositos/5

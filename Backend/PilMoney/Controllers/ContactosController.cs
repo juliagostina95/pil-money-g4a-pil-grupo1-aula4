@@ -26,10 +26,18 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Contactos
-        public void Post(Contactos c)
+        public HttpResponseMessage Post(Contactos c)
         {
-            GestorContactos gContactos = new GestorContactos();
-            gContactos.RegistrarContacto(c);
+            if (ModelState.IsValid)
+            {
+                GestorContactos gContactos = new GestorContactos();
+                gContactos.RegistrarContacto(c);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/TipoMonedas/5

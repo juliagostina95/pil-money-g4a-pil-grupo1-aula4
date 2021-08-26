@@ -20,10 +20,18 @@ namespace PilMoney.Controllers
         // GET: api/Cuentas/5
        
         // POST: api/Cuentas
-        public void Post(Cuentas c)
+        public HttpResponseMessage Post(Cuentas c)
         {
-            GestorCuentas gCuentas = new GestorCuentas();
-            gCuentas.RegistrarCuenta(c);
+            if (ModelState.IsValid)
+            {
+                GestorCuentas gCuentas = new GestorCuentas();
+                gCuentas.RegistrarCuenta(c);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Cuentas/5

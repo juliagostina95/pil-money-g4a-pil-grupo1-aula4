@@ -25,10 +25,19 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Transferencias
-        public void Post(Transferencias t)
+        public HttpResponseMessage Post(Transferencias t)
         {
-            GestorTransferencias gTransferencia = new GestorTransferencias();
-            gTransferencia.RegistrarTransferencia(t);
+            if (ModelState.IsValid)
+            {
+                GestorTransferencias gTransferencia = new GestorTransferencias();
+                gTransferencia.RegistrarTransferencia(t);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Transferencias/5

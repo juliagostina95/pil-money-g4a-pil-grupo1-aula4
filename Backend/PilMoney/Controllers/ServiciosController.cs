@@ -25,10 +25,18 @@ namespace PilMoney.Controllers
         }
 
         // POST: api/Servicios
-        public void Post(Servicios s)
+        public HttpResponseMessage Post(Servicios s)
         {
-            GestorServicios gServicio = new GestorServicios();
-            gServicio.RegistrarServicio(s);
+            if (ModelState.IsValid)
+            {
+                GestorServicios gServicio = new GestorServicios();
+                gServicio.RegistrarServicio(s);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
         }
 
         // PUT: api/Servicios/5
