@@ -1,48 +1,49 @@
-<div class="container table-container" >
+<div class="container table-container">
 
     <h2 class="servicios">Mis Servicios</h2>
-    
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-    
-            <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-            <!-- Position Column -->
-            <ng-container matColumnDef="descripcion">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+        <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="descripcion">
             <th mat-header-cell *matHeaderCellDef> Descripción </th>
             <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-            </ng-container>
-        
-            <!-- Name Column -->
-            <ng-container matColumnDef="fecha">
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="fecha">
             <th mat-header-cell *matHeaderCellDef> Fecha </th>
-            <td mat-cell *matCellDef="let element"> {{element.fecha.getDate()}}/{{element.fecha.getMonth() + 1}}/{{element.fecha.getFullYear()}} </td>
-            </ng-container>
-        
-            <!-- Weight Column -->
-            <ng-container matColumnDef="monto">
+            <td mat-cell *matCellDef="let element"> {{element.fecha.getDate()}}/{{element.fecha.getMonth() +
+                1}}/{{element.fecha.getFullYear()}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="monto">
             <th mat-header-cell *matHeaderCellDef> Monto </th>
             <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
-            </ng-container>
+        </ng-container>
 
-            <ng-container matColumnDef="estado">
-                <th mat-header-cell *matHeaderCellDef> Estado </th>
-                <td  mat-cell *matCellDef="let element" class="colorEstado"> {{element.estado}} </td>
-                </ng-container>
-        
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element" class="colorEstado"> {{element.estado}} </td>
+        </ng-container>
 
-        <p class="plazoTitulo">Seleccioná el plazo</p>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
-            <mat-form-field appearance="fill">
-                <mat-select [(value)]="selected">
-                  <mat-option value="Cuenta Pesos">Cuenta Pesos</mat-option>
-                  <mat-option value="Cuenta Pesos2">Cuenta Pesos 2</mat-option>
-                </mat-select>
-              </mat-form-field>
+    <p class="plazoTitulo">Seleccioná el plazo</p>
 
-        <button mat-flat-button>Pagar Factura</button>
-    
-    </div>
+    <mat-form-field appearance="fill">
+        <mat-select [(value)]="selected">
+            <mat-option value="Cuenta Pesos">Cuenta Pesos</mat-option>
+            <mat-option value="Cuenta Pesos2">Cuenta Pesos 2</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-flat-button>Pagar Factura</button>
+
+</div>

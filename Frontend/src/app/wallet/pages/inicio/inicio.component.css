@@ -1,21 +1,25 @@
+.table-container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  .principio{
+.principio{
   display: flex;
   flex-direction: row;
   margin-left: 50px;
   justify-content: space-between;
   color: #5e35b1;
-  margin-bottom: 10px;
-  margin-top: -300px;
+  margin-bottom: 0;
+  margin-top: 0;
   font-size: 13px;
-  }
+}
 
 .bienvenidos {
   font-size: 25px;
-  color: white;
-  position:absolute;
-  bottom: 30px;
-  margin-left: 480px;
+  color: 5e35b1;
+  position: relative;
   z-index: 1;
  }
 
@@ -42,11 +46,9 @@ top: 70px;
 }
 
 .tamano{
-  width:1425px;
   background-image: cover;
   height: 300px;
   overflow:hidden;
-  
 }
 
 .imagen1{
@@ -59,7 +61,7 @@ top: 70px;
 .logopil{
   height: 180px;
   margin-left: -100px;
-  top:30px;
+  top:100px;
   width: auto;
   position: absolute;
   z-index: 1;
