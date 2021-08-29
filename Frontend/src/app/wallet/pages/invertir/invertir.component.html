@@ -5,13 +5,29 @@
         </div>
     </div>
     <div class="row align-items-center">
-        <div class="col-sm-5" >  
+        <div class="col-sm-5">
             <section class="example-section">
                 <mat-radio-group [(ngModel)]="labelPosition">
-                  <p><mat-radio-button class="example-margin margin-extra" value="plazoFijoARS">Plazo fijo (ARS)</mat-radio-button></p>
-                  <p><mat-radio-button class="example-margin margin-extra" value="plazoFijoUSD">Plazo fijo (USD)</mat-radio-button></p>
-                  <p><mat-radio-button class="example-margin margin-extra" value="FCIARS">FCI (ARS)</mat-radio-button></p>
-                  <p><mat-radio-button class="example-margin margin-extra" value="FCIUSD">FCI (USD)</mat-radio-button></p>
+                    <p>
+                        <mat-radio-button class="example-margin margin-extra" value="plazoFijoARS">
+                            Plazo fijo (ARS)
+                        </mat-radio-button>
+                    </p>
+                    <p>
+                        <mat-radio-button class="example-margin margin-extra" value="plazoFijoUSD">
+                            Plazo fijo (USD)
+                        </mat-radio-button>
+                    </p>
+                    <p>
+                        <mat-radio-button class="example-margin margin-extra" value="FCIARS">
+                            FCI (ARS)
+                        </mat-radio-button>
+                    </p>
+                    <p>
+                        <mat-radio-button class="example-margin margin-extra" value="FCIUSD">
+                            FCI (USD)
+                        </mat-radio-button>
+                    </p>
                 </mat-radio-group>
             </section>
         </div>
@@ -25,18 +41,24 @@
             <p>Seleccioná el plazo</p>
             <mat-form-field appearance="fill">
                 <mat-select [(value)]="selected">
-                  <mat-option value="30dias">A 30 días (+20%)</mat-option>
-                  <mat-option value="anual">Anual (+50%)</mat-option>
+                    <mat-option value="30dias">A 30 días (+20%)</mat-option>
+                    <mat-option value="anual">Anual (+50%)</mat-option>
                 </mat-select>
-              </mat-form-field>
+            </mat-form-field>
             <p>¿Renovación automática?</p>
             <section class="example-section">
                 <mat-radio-group [(ngModel)]="labelRenovacion" class="row justify-content-between">
-                  <mat-radio-button class="col-3 example-margin" value="si">Si</mat-radio-button>
-                  <mat-radio-button class="col-3 example-margin" style="margin-right: 30px;" value="no">No</mat-radio-button>
+                    <mat-radio-button class="col-3 example-margin" value="si">
+                        Si
+                    </mat-radio-button>
+                    <mat-radio-button class="col-3 example-margin" style="margin-right: 30px;" value="no">
+                        No
+                    </mat-radio-button>
                 </mat-radio-group>
             </section>
-            <button mat-flat-button>Realizar</button>
+            <button mat-flat-button>
+                Realizar
+            </button>
         </div>
     </div>
 </div>

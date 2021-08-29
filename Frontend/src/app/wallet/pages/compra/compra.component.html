@@ -9,11 +9,10 @@
     </mat-select>
   </mat-form-field>
   <h6 class="text-danger mb-5">
-      {{validarCotizacion(opcionElegida)}}
+    {{validarCotizacion(opcionElegida)}}
   </h6>
   <div *ngIf="opcionElegida !== -1">
-    <section *ngIf="opcionElegida !== 1 && opcionElegida !== 3;else venta"
-             class="justify-content-evenly">
+    <section *ngIf="opcionElegida !== 1 && opcionElegida !== 3;else venta" class="flex-column flex-sm-column flex-md-row justify-content-evenly">
       <div class="parte1">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Cuanto vas a comprar</mat-label>
@@ -29,23 +28,21 @@
       </div>
     </section>
     <ng-template #venta>
-      <section class="justify-content-evenly">
+      <section class="flex-column flex-sm-column flex-md-row justify-content-evenly">
         <div class="parte1">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Cuanto vas a vender</mat-label>
-          <input matInput placeholder="Monto..." type="number" autocomplete="off" name="monto" [(ngModel)]='monto'>
-        </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cuanto vas a vender</mat-label>
+            <input matInput placeholder="Monto..." type="number" autocomplete="off" name="monto" [(ngModel)]='monto'>
+          </mat-form-field>
         </div>
         <mat-icon class="icono">arrow_right_alt</mat-icon>
         <div class="parte2">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Cuanto vas a recibir</mat-label>
-          <input matInput placeholder="Monto..." [value]="operacion(monto)" type="number" readonly>
-        </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cuanto vas a recibir</mat-label>
+            <input matInput placeholder="Monto..." [value]="operacion(monto)" type="number" readonly>
+          </mat-form-field>
         </div>
       </section>
     </ng-template>
-
   </div>
-
 </div>

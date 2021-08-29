@@ -23,7 +23,7 @@
 
 .botonEnviar {
     margin-top: 100px;
-    font-weight: 500;
+    font-size: 2vmax;
     width: 25%;
-
+    min-width: 100px;
 }
