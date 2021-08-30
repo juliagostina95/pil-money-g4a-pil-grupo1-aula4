@@ -41,15 +41,14 @@
 
 .logopil {
   height: 45px;
-  margin-left: 150px;
+  margin-left: 10%;
   margin-bottom: 5px;
   width: auto;
-  position: fixed;
   z-index: 1;
 }
 
 .titulo-money {
-  visibility: hidden;
+  font-weight: bold;
 }
 
 mat-icon {
@@ -60,7 +59,8 @@ mat-icon {
 }
 
 .side-bar {
-  margin-top: 100px;
+  margin-top: 15%;
+  min-width: 230px;
 }
 
 .icon {
