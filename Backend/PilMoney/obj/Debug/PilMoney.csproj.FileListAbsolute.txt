@@ -229,3 +229,11 @@ C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Memory.xm
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Numerics.Vectors.xml
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Text.Encodings.Web.xml
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Logging.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Logging.xml
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.IdentityModel.Tokens.Jwt.xml

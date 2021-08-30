@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PilMoney.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -13,8 +14,8 @@ namespace PilMoney
     
             // Rutas de API web
             config.MapHttpAttributeRoutes();
-            //config.MessageHandlers.Add(new TokenValidationHandler());
-            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            config.MessageHandlers.Add(new TokenValidationHandler());
+            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
