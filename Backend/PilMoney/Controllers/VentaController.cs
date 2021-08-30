@@ -11,18 +11,20 @@ namespace PilMoney.Controllers
     public class VentaController : ApiController
     {
         // GET: api/Compras
-        public IEnumerable<Venta> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorVenta gVenta = new GestorVenta();
-            return gVenta.ListarVenta();
+            List<Venta> l = gVenta.ListarVenta();
+            return Ok(l);
         }
 
         // GET: api/Compras/5
 
-        public Venta Get(int idVenta)
+        public Venta Get(int id)
         {
             GestorVenta gVenta = new GestorVenta();
-            return gVenta.ObtenerVentaPorId(idVenta);
+            return gVenta.ObtenerVentaPorId(id);
         }
 
         // POST: api/Compras
@@ -45,10 +47,10 @@ namespace PilMoney.Controllers
 
 
         // DELETE: api/Compras/5
-        public void Delete(int idVenta)
+        public void Delete(int id)
         {
             GestorVenta gVenta = new GestorVenta();
-            gVenta.EliminarVenta(idVenta);
+            gVenta.EliminarVenta(id);
         }
     }
 }

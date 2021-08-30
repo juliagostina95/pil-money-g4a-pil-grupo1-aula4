@@ -11,17 +11,19 @@ namespace PilMoney.Controllers
     public class ServiciosController : ApiController
     {
         // GET: api/Servicios
-        public IEnumerable<Servicios> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorServicios gServicio = new GestorServicios();
-            return gServicio.ListarServicios();
+            List<Servicios> l = gServicio.ListarServicios();
+            return Ok(l);
         }
 
         // GET: api/Servicios/5
-        public Servicios Get(int idServicio)
+        public Servicios Get(int id)
         {
             GestorServicios gServicio = new GestorServicios();
-            return gServicio.ObtenerServicioPorId(idServicio);
+            return gServicio.ObtenerServicioPorId(id);
         }
 
         // POST: api/Servicios
@@ -43,10 +45,10 @@ namespace PilMoney.Controllers
        
 
         // DELETE: api/Servicios/5
-        public void Delete(int idServicio)
+        public void Delete(int id)
         {
             GestorServicios gServicio = new GestorServicios();
-            gServicio.EliminarServicio(idServicio);
+            gServicio.EliminarServicio(id);
         }
     }
 }

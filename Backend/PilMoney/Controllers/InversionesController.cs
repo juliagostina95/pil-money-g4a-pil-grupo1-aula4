@@ -1,4 +1,5 @@
-﻿using PilMoney.Models;
+﻿using Microsoft.AspNetCore.Cors;
+using PilMoney.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,25 +7,31 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
+
 namespace PilMoney.Controllers
 {
+    [RoutePrefix("api/inversiones")]
     public class InversionesController : ApiController
     {
         // GET: api/Inversiones
-        public IEnumerable<Inversiones> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorInversiones gInversion = new GestorInversiones();
-            return gInversion.ListarInversiones();
+            List<Inversiones> l = gInversion.ListarInversiones();
+            return Ok(l);
         }
 
         // GET: api/Inversiones/5
-        public Inversiones Get(int idInversion)
+       [HttpGet]
+        public Inversiones Get(int id)
         {
             GestorInversiones gInversion = new GestorInversiones();
-            return gInversion.ObtenerInversionPorId(idInversion);
+            return gInversion.ObtenerInversionPorId(id);
         }
 
         // POST: api/Inversiones
+      [HttpPost]
         public HttpResponseMessage Post(Inversiones i)
         {
             if (ModelState.IsValid)
@@ -40,13 +47,14 @@ namespace PilMoney.Controllers
         }
 
         // PUT: api/Inversiones/5
-        
+
 
         // DELETE: api/Inversiones/5
-        public void Delete(int idInversion)
+        [HttpDelete]
+        public void Delete(int id)
         {
             GestorInversiones gInversion = new GestorInversiones();
-            gInversion.EliminarInversion(idInversion);
+            gInversion.EliminarInversion(id);
         }
     }
 }

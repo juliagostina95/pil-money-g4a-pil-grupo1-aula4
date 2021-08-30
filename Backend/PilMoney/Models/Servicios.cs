@@ -19,13 +19,13 @@ namespace PilMoney.Models
        private string descripcion;
        private System.DateTime fechaVencimiento;
        private System.DateTime fechaPago;
-       private float importe;
+       private double importe;
        private string entidad;
        private byte estado;
        private string cvu;
     
 
-       public Servicios(int idServicio, string descripcion, System.DateTime fechaVencimiento, System.DateTime fechaPago, float importe, string entidad, byte estado, string cvu){
+       public Servicios(int idServicio, string descripcion, System.DateTime fechaVencimiento, System.DateTime fechaPago, double importe, string entidad, byte estado, string cvu){
            this.idServicio = idServicio;
            this.descripcion = descripcion;
            this.fechaVencimiento = fechaVencimiento;
@@ -41,7 +41,7 @@ namespace PilMoney.Models
        public string Descripcion {get => descripcion; set => descripcion = value;}
        public System.DateTime FechaVencimiento {get => fechaVencimiento; set => fechaVencimiento = value;}
        public System.DateTime FechaPago {get => fechaPago; set => fechaPago = value;}
-       public float Importe {get => importe; set => importe = value;}
+       public double Importe {get => importe; set => importe = value;}
        public string Entidad {get => entidad; set => entidad = value;}
        public byte Estado {get => estado; set => estado = value;}
        public string CVU {get => cvu; set => cvu = value;}

@@ -16,12 +16,12 @@ namespace PilMoney.Models
     public class Depositos
     {
         private int idDeposito;
-        private float importe;
+        private double importe;
         private string cvu;
         private string alias;
        
 
-        public Depositos(int idDeposito, float importe, string cvu, string alias){
+        public Depositos(int idDeposito, double importe, string cvu, string alias){
             this.idDeposito = idDeposito;
             this.importe = importe;
             this.cvu = cvu;
@@ -29,8 +29,8 @@ namespace PilMoney.Models
            
         }
 
-        public int IdDeposito {get => idDeposito; set => idDeposito = valeu;}
-        public float Importe {get => importe; set => importe = value;}
+        public int IdDeposito {get => idDeposito; set => idDeposito = value;}
+        public double Importe {get => importe; set => importe = value;}
         public string CVU {get => cvu; set => cvu = value;}
         public string Alias {get => alias; set => alias = value;}
     }

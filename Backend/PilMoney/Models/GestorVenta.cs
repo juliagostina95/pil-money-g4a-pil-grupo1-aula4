@@ -41,9 +41,9 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                float importe = dr.GetFloat(2);
-                System.DateTime fecha = dr.GetDateTime(3);
-                string cvu = dr.GetString(4);
+                float importe = dr.GetFloat(1);
+                System.DateTime fecha = dr.GetDateTime(2);
+                string cvu = dr.GetString(3);
 
 
                 v = new Venta(idVenta, importe, fecha, cvu);
@@ -69,10 +69,10 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int idVenta = dr.GetInt32(1);
-                float importe = dr.GetFloat(2);
-                System.DateTime fecha = dr.GetDateTime(3);
-                string cvu = dr.GetString(4);
+                int idVenta = dr.GetInt32(0);
+                float importe = dr.GetFloat(1);
+                System.DateTime fecha = dr.GetDateTime(2);
+                string cvu = dr.GetString(3);
 
                 Venta v = new Venta(idVenta, importe, fecha, cvu);
                 lista.Add(v);

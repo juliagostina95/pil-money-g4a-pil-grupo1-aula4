@@ -22,26 +22,30 @@ namespace PilMoney.Models
         private System.DateTime fechaNacimiento;
         private string telefono;
         private Byte[] imagenDNI;
-        private Cuentas cuentas
+        private int idUsuario;
+        
+        
 
-        public Usuarios(string cuil, string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, Cuentas cuentas){
+        public Usuarios(string cuil, string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, int idUsuario){
             this.cuil = cuil;
-            this.estado = email;
+            this.email = email;
             this.contraseña = contraseña;
             this.nombreCompleto = nombreCompleto;
             this.fechaNacimiento = fechaNacimiento;
             this.telefono = telefono;
             this.imagenDNI = imagenDNI;
-            this.cuentas = cuentas;
+            this.idUsuario = idUsuario;
+          
         }
 
         public string CUIL {get => cuil; set => cuil = value;}
         public string Email {get => email; set => email = value;}
-        public string Contrase {get => contraseña; set => contraseña = value;}
+        public string Contraseña {get => contraseña; set => contraseña = value;}
         public string NombreCompleto {get => nombreCompleto; set => nombreCompleto = value;}
         public System.DateTime FechaNacimiento {get => fechaNacimiento; set => fechaNacimiento = value;}
         public string Telefono {get => telefono; set => telefono = value;}
         public Byte[] ImagenDNI {get => imagenDNI; set => imagenDNI = value;}
-        public Cuentas Cuentas {get => cuentas; set => cuentas = value;}
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+       
     }
 }

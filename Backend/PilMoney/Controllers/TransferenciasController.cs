@@ -11,17 +11,19 @@ namespace PilMoney.Controllers
     public class TransferenciasController : ApiController
     {
         // GET: api/Transferencias
-        public IEnumerable<Transferencias> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorTransferencias gTransferencia = new GestorTransferencias();
-            return gTransferencia.ListarTransferencia();
+            List<Transferencias> l = gTransferencia.ListarTransferencia();
+            return Ok(l);
         }
 
         // GET: api/Transferencias/5
-        public Transferencias Get(int idTransferencia)
+        public Transferencias Get(int id)
         {
             GestorTransferencias gTransferencia = new GestorTransferencias();
-            return gTransferencia.ObtenerTransferenciasPorId(idTransferencia);
+            return gTransferencia.ObtenerTransferenciasPorId(id);
         }
 
         // POST: api/Transferencias
@@ -44,10 +46,10 @@ namespace PilMoney.Controllers
         
 
         // DELETE: api/Transferencias/5
-        public void Delete(int idTransferencia)
+        public void Delete(int id)
         {
             GestorTransferencias gTransferencia = new GestorTransferencias();
-            gTransferencia.EliminarTransferencia(idTransferencia);
+            gTransferencia.EliminarTransferencia(id);
         }
     }
 }

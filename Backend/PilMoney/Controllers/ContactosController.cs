@@ -11,18 +11,20 @@ namespace PilMoney.Controllers
     public class ContactosController : ApiController
     {
         // GET: api/Contactos
-        public IEnumerable<Contactos> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorContactos gContactos = new GestorContactos();
-            return gContactos.ListarContactos();
+            List<Contactos> l = gContactos.ListarContactos();
+            return Ok(l);
         }
 
         // GET: api/Compras/5
 
-        public Contactos Get(int idContacto)
+        public Contactos Get(int id)
         {
             GestorContactos gContactos = new GestorContactos();
-            return gContactos.ObtenerContactoPorId(idContacto);
+            return gContactos.ObtenerContactoPorId(id);
         }
 
         // POST: api/Contactos
@@ -44,10 +46,10 @@ namespace PilMoney.Controllers
         
 
         // DELETE: api/TipoMonedas/5
-        public void Delete(int idContacto)
+        public void Delete(int id)
         {
             GestorContactos gContactos = new GestorContactos();
-            gContactos.EliminarContacto(idContacto);
+            gContactos.EliminarContacto(id);
         }
     }
 }

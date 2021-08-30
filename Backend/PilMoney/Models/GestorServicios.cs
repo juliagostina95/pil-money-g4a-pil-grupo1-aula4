@@ -19,7 +19,7 @@ namespace PilMoney.Models
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "INSERT INTO Servicios(descripcion, fechaVencimiento, fechaPago, importe, entidad, estado, cvu) VALUES (@Descripcion, @FechaVencimiento, @FechaPago, @Importe, @Entidad, @Estado, @CVU)";
             cm.Parameters.Add(new SqlParameter("@Descripcion", nuevo.Descripcion));
-            cm.Parameters.Add(new SqlParameter("@FechaVencimientos", nuevo.FechaVencimiento));
+            cm.Parameters.Add(new SqlParameter("@FechaVencimiento", nuevo.FechaVencimiento));
             cm.Parameters.Add(new SqlParameter("@FechaPago", nuevo.FechaPago));
             cm.Parameters.Add(new SqlParameter("@Importe", nuevo.Importe));
             cm.Parameters.Add(new SqlParameter("@Entidad", nuevo.Entidad));
@@ -40,7 +40,7 @@ namespace PilMoney.Models
 
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "SELECT * FROM Servicios WHERE idServicio=@IdServicio";
-            cm.Parameters.Add(new SqlParameter("@IdInversion", idServicio));
+            cm.Parameters.Add(new SqlParameter("@IdServicio", idServicio));
 
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
@@ -48,7 +48,7 @@ namespace PilMoney.Models
                 string descripcion = dr.GetString(1);
                 System.DateTime fechaVencimiento= dr.GetDateTime(2);
                 System.DateTime fechaPago = dr.GetDateTime(3);
-                float importe = dr.GetFloat(4);
+                double importe = dr.GetDouble(4);
                 string entidad = dr.GetString(5);
                 byte estado = dr.GetByte(6);
                 string cvu = dr.GetString(7);
@@ -77,14 +77,14 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int idServicio = dr.GetInt32(1);
-                string descripcion = dr.GetString(2);
-                System.DateTime fechaVencimiento = dr.GetDateTime(3);
-                System.DateTime fechaPago = dr.GetDateTime(4);
-                float importe = dr.GetFloat(5);
-                string entidad = dr.GetString(6);
-                byte estado = dr.GetByte(7);
-                string cvu = dr.GetString(8);
+                int idServicio = dr.GetInt32(0);
+                string descripcion = dr.GetString(1);
+                System.DateTime fechaVencimiento = dr.GetDateTime(2);
+                System.DateTime fechaPago = dr.GetDateTime(3);
+                double importe = dr.GetDouble(4);
+                string entidad = dr.GetString(5);
+                byte estado = dr.GetByte(6);
+                string cvu = dr.GetString(7);
 
 
 
@@ -104,8 +104,8 @@ namespace PilMoney.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "DELETE FROM Inversiones WHERE idInversion=@IdInversion";
-            cm.Parameters.Add(new SqlParameter("@IdDeposito", idServicio));
+            cm.CommandText = "DELETE FROM Servicios WHERE idServicio=@IdServicio";
+            cm.Parameters.Add(new SqlParameter("@IdServicio", idServicio));
 
             cm.ExecuteNonQuery();
 

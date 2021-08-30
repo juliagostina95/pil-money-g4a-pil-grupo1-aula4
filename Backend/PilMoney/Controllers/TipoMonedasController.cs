@@ -10,12 +10,14 @@ namespace PilMoney.Controllers
 {
     public class TipoMonedasController : ApiController
     {
-       
+
         // GET: api/TipoMonedas
-        public IEnumerable<TipoMonedas> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
-            return gTipoMoneda.ObtenerTipoMoneda();
+            List<TipoMonedas> l = gTipoMoneda.ObtenerTipoMoneda();
+            return Ok(l);
         }
 
         // POST: api/TipoMonedas
@@ -42,10 +44,10 @@ namespace PilMoney.Controllers
         }
 
         // DELETE: api/TipoMonedas/5
-        public void Delete(int idTipoMoneda)
+        public void Delete(int id)
         {
             GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
-            gTipoMoneda.EliminarTipoMoneda(idTipoMoneda);
+            gTipoMoneda.EliminarTipoMoneda(id);
         }
     }
 }

@@ -17,13 +17,13 @@ namespace PilMoney.Models
     {
           private int idInversion;
           private string tipoInversion;
-          private float importe;
+          private double importe;
           private System.DateTime fecha;
           private byte renovacion;
           private string cvu;
      
 
-          public Inversiones(int idInversion, string tipoInversion, float importe, System.DateTime fecha, byte fecha, string cvu){
+          public Inversiones(int idInversion, string tipoInversion, double importe, System.DateTime fecha, byte renovacion, string cvu){
 
               this.idInversion = idInversion;
               this.tipoInversion = tipoInversion;
@@ -36,7 +36,7 @@ namespace PilMoney.Models
 
           public int IdInversion {get => idInversion; set => idInversion = value;}
           public string TipoInversion {get => tipoInversion; set => tipoInversion = value;}
-          public float Importe {get => importe; set => importe = value;}
+          public double Importe {get => importe; set => importe = value;}
           public System.DateTime Fecha {get => fecha; set => fecha = value;}
           public byte Renovacion {get => renovacion; set => renovacion = value;}
           public string CVU {get => cvu; set => cvu = value;}

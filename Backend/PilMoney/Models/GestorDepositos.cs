@@ -42,9 +42,9 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                float importe = dr.GetFloat(2);
-                string cvu = dr.GetString(3);
-                string alias = dr.GetString(4);
+                double importe = dr.GetDouble(1);
+                string cvu = dr.GetString(2);
+                string alias = dr.GetString(3);
 
 
                 d = new Depositos(idDeposito, importe, cvu, alias);
@@ -70,10 +70,10 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int idDeposito = dr.GetInt32(1);
-                float importe = dr.GetFloat(2);
-                string cvu = dr.GetString(3);
-                string alias = dr.GetString(4);
+                int idDeposito = dr.GetInt32(0);
+                double importe = dr.GetDouble(1);
+                string cvu = dr.GetString(2);
+                string alias = dr.GetString(3);
 
                 Depositos d = new Depositos(idDeposito, importe, cvu, alias);
                 lista.Add(d);

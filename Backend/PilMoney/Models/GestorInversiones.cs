@@ -43,11 +43,11 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             if (dr.Read())
             {
-                string tipoInversion = dr.GetString(2);
-                float importe = dr.GetFloat(3);
-                System.DateTime fecha = dr.GetDateTime(4);
-                byte renovacion = dr.GetByte(5);
-                string cvu = dr.GetString(6);
+                string tipoInversion = dr.GetString(1);
+                double importe = dr.GetDouble(2);
+                System.DateTime fecha = dr.GetDateTime(3);
+                byte renovacion = dr.GetByte(4);
+                string cvu = dr.GetString(5);
 
 
                 i = new Inversiones(idInversion, tipoInversion, importe, fecha, renovacion, cvu);
@@ -73,12 +73,12 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int idInversion = dr.GetInt32(1);
-                string tipoInversion = dr.GetString(2);
-                float importe = dr.GetFloat(3);
-                System.DateTime fecha = dr.GetDateTime(4);
-                byte renovacion = dr.GetByte(5);
-                string cvu = dr.GetString(6);
+                int idInversion = dr.GetInt32(0);
+                string tipoInversion = dr.GetString(1);
+                double importe = dr.GetDouble(2);
+                System.DateTime fecha = dr.GetDateTime(3);
+                byte renovacion = dr.GetByte(4);
+                string cvu = dr.GetString(5);
 
 
                 Inversiones i = new Inversiones(idInversion, tipoInversion, importe, fecha, renovacion, cvu);
@@ -98,7 +98,7 @@ namespace PilMoney.Models
 
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "DELETE FROM Inversiones WHERE idInversion=@IdInversion";
-            cm.Parameters.Add(new SqlParameter("@IdDeposito", idInversion));
+            cm.Parameters.Add(new SqlParameter("@IdInversion", idInversion));
 
             cm.ExecuteNonQuery();
 

@@ -17,7 +17,7 @@ namespace PilMoney.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "INSERT INTO Contactos(cvu, aliasContacto, cvuContacto) VALUES  @CVU, @AliasContacto, @CVUContacto)";
+            cm.CommandText = "INSERT INTO Contactos(cvu, aliasContacto, cvuContacto) VALUES  (@CVU, @AliasContacto, @CVUContacto)";
             cm.Parameters.Add(new SqlParameter("@CVU", nueva.CVU));
             cm.Parameters.Add(new SqlParameter("@AliasContacto", nueva.AliasContacto));
             cm.Parameters.Add(new SqlParameter("@CVUContacto", nueva.CVUContacto));
@@ -43,8 +43,8 @@ namespace PilMoney.Models
             {
              
                 string cvu = dr.GetString(2);
-                string aliasContacto = dr.GetString(3);
-                string cvuContacto = dr.GetString(4);
+                string aliasContacto = dr.GetString(1);
+                string cvuContacto = dr.GetString(0);
 
 
 
@@ -71,10 +71,10 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                int idContacto = dr.GetInt32(1);
+                int idContacto = dr.GetInt32(3);
                 string cvu = dr.GetString(2);
-                string aliasContacto = dr.GetString(3);
-                string cvuContacto = dr.GetString(4);
+                string aliasContacto = dr.GetString(1);
+                string cvuContacto = dr.GetString(0);
 
                 Contactos c = new Contactos(idContacto, cvu, aliasContacto, cvuContacto);
                 lista.Add(c);

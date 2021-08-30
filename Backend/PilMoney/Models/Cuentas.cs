@@ -16,13 +16,13 @@ namespace PilMoney.Models
     public class Cuentas
     {
        private string cvu;
-       private float saldo;
+       private double saldo;
        private string alias;
        private string tipoDeCaja;
        private int idTipoMoneda;
        private string cuil;
        
-       public Cuentas(string cvu, float saldo, string alias, string tipoDeCaja, int idTipoMoneda, string cuil){
+       public Cuentas(string cvu, double saldo, string alias, string tipoDeCaja, int idTipoMoneda, string cuil){
            this.cvu = cvu;
            this.saldo = saldo;
            this.alias = alias;
@@ -32,7 +32,7 @@ namespace PilMoney.Models
        }
 
        public string CVU {get => cvu; set => cvu = value;}
-       public float Saldo {get => saldo; set => saldo = value;}
+       public double Saldo {get => saldo; set => saldo = value;}
        public string Alias {get => alias; set => alias = value;}
        public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
        public string CUIL {get => cuil; set => cuil = value;}

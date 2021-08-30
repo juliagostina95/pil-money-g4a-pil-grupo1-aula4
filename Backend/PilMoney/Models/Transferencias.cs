@@ -17,14 +17,14 @@ namespace PilMoney.Models
     {
         private int idTransferencia;
         private System.DateTime fecha;
-        private float importe;
+        private double importe;
         private int idContacto;
         private string cvu;
         private string cvuDestino;
         private string aliasDestino;
       
 
-        public Transferencias(int idTransferencia, System.DateTime fecha, float importe, int idContacto, string cvu, string cvuDestino, string aliasDestino){
+        public Transferencias(int idTransferencia, System.DateTime fecha, double importe, int idContacto, string cvu, string cvuDestino, string aliasDestino){
             this.idTransferencia = idTransferencia;
             this.fecha = fecha;
             this.importe = importe;
@@ -37,7 +37,7 @@ namespace PilMoney.Models
 
         public int IdTranferencia {get => idTransferencia; set => idTransferencia = value;}
         public System.DateTime Fecha {get => fecha; set => fecha = value;}
-        public float Importe {get => importe; set => fecha = value;}
+        public double Importe {get => importe; set => importe = value;}
         public int IdContacto {get => idContacto; set => idContacto = value;}
         public string CVU {get => cvu; set => cvu = value;}
         public string CVUDestino {get => cvuDestino; set => cvuDestino = value;}

@@ -11,14 +11,16 @@ namespace PilMoney.Controllers
     public class CuentasController : ApiController
     {
         // GET: api/Cuentas
-        public IEnumerable<Cuentas> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorCuentas gCuentas = new GestorCuentas();
-            return gCuentas.ListarCuenta();
+            List<Cuentas> l = gCuentas.ListarCuenta();
+            return Ok(l);
         }
 
         // GET: api/Cuentas/5
-       
+
         // POST: api/Cuentas
         public HttpResponseMessage Post(Cuentas c)
         {

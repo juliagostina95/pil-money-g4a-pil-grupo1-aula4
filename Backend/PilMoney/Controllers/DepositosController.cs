@@ -11,17 +11,19 @@ namespace PilMoney.Controllers
     public class DepositosController : ApiController
     {
         // GET: api/Depositos
-        public IEnumerable<Depositos> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorDepositos gDepositos = new GestorDepositos();
-            return gDepositos.ListarDeposito();
+            List<Depositos> l = gDepositos.ListarDeposito();
+            return Ok(l);
         }
 
         // GET: api/Depositos/5
-        public Depositos Get(int idDeposito)
+        public Depositos Get(int id)
         {
             GestorDepositos gDepositos = new GestorDepositos();
-            return gDepositos.ObtenerDepositoPorId(idDeposito);
+            return gDepositos.ObtenerDepositoPorId(id);
         }
 
         // POST: api/Depositos
@@ -43,10 +45,10 @@ namespace PilMoney.Controllers
         
 
         // DELETE: api/Depositos/5
-        public void Delete(int idDeposito)
+        public void Delete(int id)
         {
             GestorDepositos gDepositos = new GestorDepositos();
-            gDepositos.EliminarDeposito(idDeposito);
+            gDepositos.EliminarDeposito(id);
         }
     }
 }

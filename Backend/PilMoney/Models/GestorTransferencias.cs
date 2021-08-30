@@ -45,9 +45,9 @@ namespace PilMoney.Models
                 SqlDataReader dr = cm.ExecuteReader();
                 if (dr.Read())
                 {
-                    System.DateTime fecha = dr.GetDateTime(2);
-                    float importe = dr.GetFloat(3);
-                    int idContacto = dr.GetInt32(4);
+                    System.DateTime fecha = dr.GetDateTime(1);
+                    double importe = dr.GetDouble(2);
+                    int idContacto = dr.GetInt32(3);
                     string cvu = dr.GetString(4);
                     string cvuDestino = dr.GetString(5);
                     string aliasDestino = dr.GetString(6);
@@ -76,10 +76,10 @@ namespace PilMoney.Models
                 SqlDataReader dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
-                    int idTransferencia = dr.GetInt32(1);
-                    System.DateTime fecha = dr.GetDateTime(2);
-                    float importe = dr.GetFloat(3);
-                    int idContacto = dr.GetInt32(4);
+                    int idTransferencia = dr.GetInt32(0);
+                    System.DateTime fecha = dr.GetDateTime(1);
+                    double importe = dr.GetDouble(2);
+                    int idContacto = dr.GetInt32(3);
                     string cvu = dr.GetString(4);
                     string cvuDestino = dr.GetString(5);
                     string aliasDestino = dr.GetString(6);

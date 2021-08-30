@@ -9,19 +9,24 @@
 
     using System;
     using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 namespace PilMoney.Models
 {
-    
+    [DataContract]
     public class Compras
     {
+       [DataMember]
        private int idCompra;
-       private float importe;
-       private System.DateTime fecha;
-       private string cvu;
+        [DataMember]
+        private double importe;
+        [DataMember]
+        private System.DateTime fecha;
+        [DataMember]
+        private string cvu;
       
 
-       public Compras(int idCompra, float importe, System.DateTime fecha, string cvu){
+       public Compras(int idCompra, double importe, System.DateTime fecha, string cvu){
 
            this.idCompra = idCompra;
            this.importe = importe;
@@ -31,7 +36,7 @@ namespace PilMoney.Models
        }
 
        public int IdCompra {get => idCompra; set => idCompra = value;}
-       public float Importe {get => importe; set => importe = value;}
+       public double Importe {get => importe; set => importe = value;}
        public System.DateTime Fecha {get => fecha; set => fecha = value;}
        public string CVU {get => cvu; set => cvu = value;}
        

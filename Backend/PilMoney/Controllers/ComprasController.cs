@@ -11,18 +11,20 @@ namespace PilMoney.Controllers
     public class ComprasController : ApiController
     {
         // GET: api/Compras
-        public IEnumerable<Compras> Get()
+        [HttpGet]
+        public IHttpActionResult Get()
         {
             GestorCompras gCompra = new GestorCompras();
-            return gCompra.ListarCompra();
+             List < Compras > l = gCompra.ListarCompra();
+            return Ok(l);
         }
 
         // GET: api/Compras/5
-
-        public Compras Get(int idCompra)
+        [HttpGet]
+        public Compras Get(int id)
         {
             GestorCompras gCompra = new GestorCompras();
-            return gCompra.ObtenerComprasPorId(idCompra);
+            return gCompra.ObtenerComprasPorId(id);
         }
 
         // POST: api/Compras
@@ -41,13 +43,13 @@ namespace PilMoney.Controllers
         }
 
         // PUT: api/Compras/5
-      
+
 
         // DELETE: api/Compras/5
-        public void Delete(int idCompra)
+        public void Delete(int id)
         {
             GestorCompras gCompras = new GestorCompras();
-            gCompras.EliminarCompra(idCompra);
+            gCompras.EliminarCompra(id);
         }
     }
 }

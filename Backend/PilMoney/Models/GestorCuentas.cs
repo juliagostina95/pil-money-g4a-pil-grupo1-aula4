@@ -44,12 +44,12 @@ namespace PilMoney.Models
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                string cvu = dr.GetString(1);
+                string cvu = dr.GetString(0);
                 string alias = dr.GetString(2);
-                float saldo = dr.GetFloat(3);
-                string tipoDeCaja = dr.GetString(4);
-                int idtipoMoneda = dr.GetInt32(5);
-                string cuil = dr.GetString(6);
+                double saldo = dr.GetDouble(1);
+                string tipoDeCaja = dr.GetString(3);
+                int idtipoMoneda = dr.GetInt32(4);
+                string cuil = dr.GetString(5);
 
 
                 Cuentas c = new Cuentas(cvu, saldo, alias, tipoDeCaja, idtipoMoneda, cuil);
