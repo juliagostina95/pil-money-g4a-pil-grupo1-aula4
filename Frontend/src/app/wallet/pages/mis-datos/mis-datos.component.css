@@ -1,37 +1,38 @@
-#datos{
+#titulo{
     text-align: center;
     color: var(--violeta);
     font-weight: 600;
-    margin-bottom: 100px;
+    margin-bottom: 4%;
 }
 
 .datos{
   color: var(--violeta);
-    font-weight: 600;
-    margin-left: 200px;
-    background-color: white;
-    width: 30%;
-    height: 540px;
+  font-weight: 600;
+  margin-left: 10%;
+  background-color: white;
+  width: 90%;
+  min-width: 400px;
+  height: 100%;
+  padding: 5%;
 }
 
 p{
-  height: 60px;
-  margin-top: 20px;
+  height: 55px;
+  margin-left: 5%;
 }
 
 .cambiar{
+  position: relative;
   height: 35px;
   background-color: var(--verde);
   font-weight: bold;
   color: white;
   font-size: 15px;
   margin-bottom: 150px;
-  margin-left: 300px;
+  margin-left: 70%;
   display: flex;
   margin-top: -30px;
-
 }
-
 
 #contraseña{
   background-color: var(--violeta);
@@ -40,5 +41,7 @@ p{
   font-size: 15px;
   height: 55px;
   width: 50%;
-  margin-left: 230px;
+  min-width: 200px;
+  margin-left: 20%;
+  margin-top: 5%;
 }
