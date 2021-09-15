@@ -237,3 +237,6 @@ C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.Identi
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Logging.xml
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\Microsoft.IdentityModel.Tokens.xml
 C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Web.Cors.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Web.Http.Cors.dll
+C:\Frontend\pil-money-g4a-pil-grupo1-aula4\Backend\PilMoney\bin\System.Web.Http.Cors.xml

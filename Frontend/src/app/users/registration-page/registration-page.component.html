@@ -33,7 +33,7 @@
     <mat-form-field class="full-width-input">
       <mat-label class="label-uno">Contraseña*</mat-label>
       <input
-        formControlName="password"
+        formControlName="contraseña"
         pattern="^[0-9a-zA-ZÀ-ÿ\s]{1,40}$"
         minlength="8"
         maxlength="15"
@@ -53,7 +53,7 @@
         type="file"
         name="mi-archivo"
         id="mi-archivo"
-        formControlName="file"
+        formControlName="imagenDNI"
         (change)="capturarFile($event)"
         required
       />
@@ -64,7 +64,39 @@
     <div *ngIf="previsualizacion">
       <img width="150px" [src]="previsualizacion" alt="" class="img-default" />
     </div>
-
+    <mat-form-field appearance="fill" class="calendario">
+      <mat-label class="label-cuatro">Fecha de Nacimiento*</mat-label>
+      <input class="input-calendario" matInput [matDatepicker]="picker" required formControlName="fechaNacimiento">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="full-width-input input-cuil">
+      <mat-label class="label-uno">Cuil*</mat-label>
+      <input
+        type="text"
+        matInput
+        class="input-name"
+        formControlName="cuil"
+      />
+    </mat-form-field>
+    <mat-form-field class="full-width-input input-telefono">
+      <mat-label class="label-uno">Telefono*</mat-label>
+      <input
+        type="text"
+        matInput
+        class="input-name"
+        formControlName="telefono"
+      />
+    </mat-form-field>
+    <mat-form-field class="full-width-input input-nombreCompleto">
+      <mat-label class="label-uno">Nombre Completo*</mat-label>
+      <input
+        type="text"
+        matInput
+        class="input-name"
+        formControlName="nombreCompleto"
+      />
+    </mat-form-field>
     <div class="button-registro">
       <button
         type="submit"

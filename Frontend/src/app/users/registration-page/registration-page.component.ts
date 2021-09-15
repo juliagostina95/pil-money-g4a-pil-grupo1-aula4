@@ -1,3 +1,4 @@
+import { RegisterService } from './../../services/register.service';
 import { RegisterI } from '../../interfaces/register.interface';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -27,7 +28,7 @@ export class RegistrationPageComponent implements OnInit {
     public formBuilder: FormBuilder,
     public sanitizer: DomSanitizer,
     private router: Router,
-    private userService: UsersService,
+    private userService: RegisterService,
     private toast: ToastrService,
     public commonForm: FormService
   ) {
@@ -38,9 +39,13 @@ export class RegistrationPageComponent implements OnInit {
   public previsualizacion: string = '';
   public archivos: any = [];
   myForm = this.formBuilder.group({
-    file: new FormControl('', [Validators.required]),
+    imagenDNI: new FormControl('', [Validators.required]),
     email: this.commonForm.email,
-    password: this.commonForm.password,
+    contraseña: this.commonForm.contraseña,
+    nombreCompleto: new FormControl('', [Validators.required]),
+    telefono: new FormControl('', [Validators.required]),
+    cuil: new FormControl('', [Validators.required]),
+    fechaNacimiento: new FormControl('', [Validators.required]),
   });
 
   extraerBase64 = async ($event: any) =>
@@ -77,14 +82,14 @@ export class RegistrationPageComponent implements OnInit {
   }
 
   register(form: RegisterI) {
-    this.userService.register(form).subscribe(
+    this.userService.crearUsuario(form).subscribe(
       (data) => {
-        if (data) {
-          setTimeout(() => {
-            this.router.navigate(['/login']);
-          }, 1500);
+         {
+
+             this.router.navigate(['/login']);
+
           this.toast.success('Cuenta Registrada', 'Correcto');
-          this.userService.loged = true;
+
         }
       },
       (error) => {

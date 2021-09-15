@@ -18,7 +18,7 @@ namespace PilMoney.Models
 
             SqlCommand cm = cx.CreateCommand();
             cm.CommandText = "INSERT INTO TipoMonedas(nombre) VALUES (@Nombre)";
-            cm.Parameters.Add(new SqlParameter("@Nombre", nuevo.Nombre));
+            cm.Parameters.Add(new SqlParameter("@Nombre",  nuevo.Nombre ));
 
             cm.ExecuteNonQuery();
 
@@ -79,5 +79,30 @@ namespace PilMoney.Models
             return tiposDeMonedas;
         }
 
+
+        public TipoMonedas ObtenerTipoMonedaPorId(int idTipoMoneda)
+        {
+            TipoMonedas tm = null;
+            SqlConnection cx = new SqlConnection(StrConn);
+            cx.Open();
+            SqlCommand cm = cx.CreateCommand();
+            cm.CommandText = "SELECT * FROM TipoMonedas WHERE idTipoMoneda=@IdTipoMoneda";
+            cm.Parameters.Add(new SqlParameter("@IdTipoMoneda", idTipoMoneda));
+
+            SqlDataReader dr = cm.ExecuteReader();
+            if (dr.Read())
+            {
+                
+                string nombre = dr.GetString(1);
+               
+
+                tm = new TipoMonedas(idTipoMoneda,nombre);
+            }
+
+            dr.Close();
+            cx.Close();
+
+            return tm;
+        }
     }
 }

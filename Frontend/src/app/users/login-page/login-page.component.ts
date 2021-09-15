@@ -1,9 +1,11 @@
+import { LoginI } from './../../interfaces/login.interface';
+import { RegisterI } from './../../interfaces/register.interface';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
-import { LoginI } from '../../interfaces/login.interface';
+
 import { ToastrService } from 'ngx-toastr';
 import { FormService } from 'src/app/services/form.service';
 
@@ -17,6 +19,7 @@ export class LoginPageComponent implements OnInit {
   fullImagePath: string
   fullImagePathDos: string
   hide: boolean = false;
+  usuario! : LoginI;
 
   constructor(public formBuilder: FormBuilder, public sanitizer: DomSanitizer, private router: Router, private user: UsersService, private toast: ToastrService, public commonForm: FormService) {
 
@@ -27,21 +30,19 @@ export class LoginPageComponent implements OnInit {
 
   myForm = this.formBuilder.group({
     email : this.commonForm.email,
-    password : this.commonForm.password
+    contraseña : this.commonForm.contraseña
   })
 
-  login(form : LoginI) {
+  login(form: LoginI) {
 
-    this.user.login(form).subscribe(data =>{
-      if(data){
-        setTimeout(() =>{
+    this.user.login(form).subscribe(
+      data =>{
+
           this.router.navigate(['./wallet/inicio']);
-         }, 2000)
-         this.toast.success('Se Inicio Sesion con la Cuenta Registrada', 'Correcto')
+          console.log("DATA"+ JSON.stringify(data));
+          this.toast.success('Se Inicio Sesion con la Cuenta Registrada', 'Correcto')
 
-       this.user.loged = true
 
-      }
 
     }, error =>{
       console.log(error)

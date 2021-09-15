@@ -8,6 +8,8 @@ import{MatIconModule} from '@angular/material/icon';
 import{MatButtonModule} from '@angular/material/button'
 import{MatDialogModule} from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -20,6 +22,8 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     RouterModule
   ],
   exports: [LoginPageComponent, RegistrationPageComponent]

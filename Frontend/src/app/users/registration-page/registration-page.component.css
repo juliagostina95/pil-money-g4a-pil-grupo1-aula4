@@ -58,8 +58,9 @@ input{
   border-left: none;
   border-right: none;
   outline: none;
-  background-color:aliceblue;
   font-weight: 500;
+  background-color:aliceblue;
+
 }
 
 .label-uno{
@@ -307,3 +308,47 @@ input{
     }
   }
 
+.calendario{
+  margin-left: -100px;
+  position: relative;
+  left: 110px;
+  margin-top: 40px;
+  bottom: 30px;
+}
+
+.label-cuatro{
+  margin-bottom: -100px;
+  font-weight: 500;
+}
+
+.input-calendario{
+  background-color: transparent;
+}
+
+.input-cuil{
+  margin-left: -200px;
+  position: relative;
+  left: 90px;
+  margin-top: 100px;
+  top: 40px;
+  margin-bottom: 30px;
+
+}
+
+.input-telefono{
+  margin-left: -400px;
+  position: relative;
+  left: 310px;
+  margin-top: 100px;
+  top: 120px;
+  margin-bottom: 80px;
+}
+
+.input-nombreCompleto{
+  margin-left: -400px;
+  position: relative;
+  left: 530px;
+  margin-top: 100px;
+  top: 200px;
+  margin-bottom: 170px;
+}

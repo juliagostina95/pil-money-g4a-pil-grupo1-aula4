@@ -1,57 +1,70 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { RegisterI } from '../interfaces/register.interface';
-import { map} from 'rxjs/operators'
-import { LoginI } from '../interfaces/login.interface';
-import { ResponseI } from '../interfaces/response.interface';
-import { ToastrService } from 'ngx-toastr';
+import { RegisterI } from './../interfaces/register.interface';
+import { LoginI } from './../interfaces/login.interface';
+import { Inject, Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { BehaviorSubject, Observable } from "rxjs";
 
+
+import { map} from 'rxjs/operators'
+import { ToastrService } from 'ngx-toastr';
+import { ProviderMeta } from '@angular/compiler';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class UsersService {
 
-  urlRegister:string = "http://localhost:3000/users";
-  urlLogin:string = "http://localhost:3000/login";
+  urlLogin: string = "https://localhost:44385/api/login/authenticate";
 
-  constructor(private http:HttpClient, private toast: ToastrService) { }
+  loggedIn= new BehaviorSubject<boolean>(false);
+  currentUserSubject: BehaviorSubject<LoginI>;
+  currentUser: Observable<LoginI>;
 
   loged: boolean = false;
   tokenOtro: any = localStorage.getItem('token')
 
-  register(form:RegisterI):Observable<ResponseI | void>{
-    let direccion = this.urlRegister;
-    return this.http.post<ResponseI>(direccion,form).pipe(
-      map((res: ResponseI) =>{
-            return res;
-      })
-    )
-  }
+  constructor(private http:HttpClient, private toast: ToastrService) {
 
-  logout() : void{
-    localStorage.removeItem('token');
-  }
 
-  login(form:LoginI):Observable<ResponseI | void>{
-    let direccion = this.urlLogin;
-    return this.http.post<ResponseI>(direccion,form).pipe(
-      map((res: ResponseI) =>{
-            this.saveToken(res.accessToken)
-            this.getToken(res.accessToken)
-            return res;
-      }),
-    )
-  }
-
-  saveToken(token: string) : void{
-     localStorage.setItem('token', token);
+  console.log("Servicio de Atuenticación está corriendo");
+  this.currentUserSubject = new BehaviorSubject<LoginI>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
+  this.currentUser = this.currentUserSubject.asObservable();
 
   }
 
-  getToken(token: string) : void{
-    localStorage.getItem(token);
+  login(usuario: LoginI): Observable<any> {  //de inicio de sesión viene acá y general el token.
+    return this.http.post<any>(this.urlLogin, usuario)
+      .pipe(map(data => {
+        localStorage.setItem('currentUser', JSON.stringify(data ));
+        this.currentUserSubject.next(data);
+        this.loggedIn.next(true);
+        console.log(data);   //
+
+        return data;
+      }));
   }
+
+  logout(): void{
+    localStorage.removeItem('currentUser');
+    this.loggedIn.next(false);
+
+  }
+
+  get usuarioAutenticado(): LoginI{
+    return this.currentUserSubject.value;
+  }
+
+  get estaAutenticado(): Observable<boolean> {
+
+    return this.loggedIn.asObservable();
+  }
+
+
 
 }

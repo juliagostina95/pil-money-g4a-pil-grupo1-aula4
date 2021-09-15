@@ -1,19 +1,19 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
-using System.Linq;
 using System.Security.Claims;
-using System.Web;
-
-
+using Microsoft.IdentityModel.Tokens;
 
 namespace PilMoney.Controllers
 {
-    public class TokenGenerator
+    /// <summary>
+    /// JWT Token generator class using "secret-key"
+    /// more info: https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html
+    /// </summary>
+    internal static class TokenGenerator
     {
         public static string GenerateTokenJwt(string username)
         {
+            // appsetting for Token JWT
             var secretKey = ConfigurationManager.AppSettings["JWT_SECRET_KEY"];
             var audienceToken = ConfigurationManager.AppSettings["JWT_AUDIENCE_TOKEN"];
             var issuerToken = ConfigurationManager.AppSettings["JWT_ISSUER_TOKEN"];

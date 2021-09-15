@@ -1,20 +1,20 @@
 <div>
     <h3>Indicanos que tipo de cuenta deseas crear</h3>
-
+<form>
     <div class="row align-items-center">
         <div class="col-sm-6">
             <section class="example-section">
-                <mat-radio-group [(ngModel)]="labelPosition">
+                <mat-radio-group [(ngModel)]="labelPosition" [ngModelOptions]="{standalone: true}" ngDefaultControl>
                     <p>
-                        <mat-radio-button class="example-margin margin-extra" value="Cuenta Pesos">Cuenta Pesos
+                        <mat-radio-button class="example-margin margin-extra" value="ARS">Cuenta Pesos
                         </mat-radio-button>
                     </p>
                     <p>
-                        <mat-radio-button class="example-margin margin-extra" value="Cuenta USD">Cuenta USD
+                        <mat-radio-button class="example-margin margin-extra" value="USD" >Cuenta USD
                         </mat-radio-button>
                     </p>
                     <p>
-                        <mat-radio-button class="example-margin margin-extra" value="Cuenta CRYPTO">Cuenta CRYPTO
+                        <mat-radio-button class="example-margin margin-extra" value="BIT" >Cuenta CRYPTO
                         </mat-radio-button>
                     </p>
 
@@ -34,6 +34,8 @@
             </mat-form-field>
 
         </div>
-        <button mat-flat-button>Realizar</button>
+        <button type="submit" mat-flat-button (click)="enviarMoneda(nombre)">Realizar</button>
     </div>
+  </form>
 </div>
+

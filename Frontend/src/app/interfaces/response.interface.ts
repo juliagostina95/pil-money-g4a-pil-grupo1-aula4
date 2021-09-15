@@ -1,7 +1,7 @@
-import { RegisterI } from "./register.interface";
 import { LoginI } from "./login.interface";
+import { RegisterI } from "./register.interface";
 
 export interface ResponseI extends RegisterI, LoginI{
-  accessToken: string
+  token: string
 }
 

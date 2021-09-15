@@ -8,16 +8,28 @@ using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
+    [System.Web.Http.Cors.EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class TipoMonedasController : ApiController
     {
 
         // GET: api/TipoMonedas
+        /*
         [HttpGet]
         public IHttpActionResult Get()
         {
             GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
             List<TipoMonedas> l = gTipoMoneda.ObtenerTipoMoneda();
             return Ok(l);
+        }
+        */
+
+        // GET: api/TipoMonedas/1
+
+        [HttpGet]
+        public TipoMonedas Get(int id)
+        {
+            GestorTipoMonedas gTipoMoneda = new GestorTipoMonedas();
+            return gTipoMoneda.ObtenerTipoMonedaPorId(id);
         }
 
         // POST: api/TipoMonedas

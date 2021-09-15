@@ -21,7 +21,7 @@ import { RoutesGuard } from '../guards/routes.guard';
 const routes:Routes = [
   {
     path:'',
-    canActivate: [RoutesGuard],
+   /*  canActivate: [RoutesGuard], */
     children:[
       {
         path:'inicio',

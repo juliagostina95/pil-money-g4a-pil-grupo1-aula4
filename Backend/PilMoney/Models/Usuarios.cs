@@ -21,19 +21,19 @@ namespace PilMoney.Models
         private string nombreCompleto;
         private System.DateTime fechaNacimiento;
         private string telefono;
-        private Byte[] imagenDNI;
+        private string ImagenDNI;
         private int idUsuario;
         
         
 
-        public Usuarios(string cuil, string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, Byte[] imagenDNI, int idUsuario){
+        public Usuarios(string cuil, string email, string contraseña, string nombreCompleto, System.DateTime fechaNacimiento, string telefono, string ImagenDNI, int idUsuario){
             this.cuil = cuil;
             this.email = email;
             this.contraseña = contraseña;
             this.nombreCompleto = nombreCompleto;
             this.fechaNacimiento = fechaNacimiento;
             this.telefono = telefono;
-            this.imagenDNI = imagenDNI;
+            this.ImagenDNI = ImagenDNI;
             this.idUsuario = idUsuario;
           
         }
@@ -44,7 +44,7 @@ namespace PilMoney.Models
         public string NombreCompleto {get => nombreCompleto; set => nombreCompleto = value;}
         public System.DateTime FechaNacimiento {get => fechaNacimiento; set => fechaNacimiento = value;}
         public string Telefono {get => telefono; set => telefono = value;}
-        public Byte[] ImagenDNI {get => imagenDNI; set => imagenDNI = value;}
+        public string imagenDNI {get => ImagenDNI; set => ImagenDNI = value;}
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
        
     }

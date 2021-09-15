@@ -15,7 +15,7 @@ export class FormService {
   public archivos: any = []
 
   email = new FormControl('', [Validators.required]);
-  password =  new FormControl('', [Validators.required])
+  contraseña =  new FormControl('', [Validators.required])
 
    emailErrores(){
     let mensaje;
@@ -32,17 +32,17 @@ export class FormService {
 
   passwordErrores(){
     let mensaje;
-    if((this.password.dirty || this.password.touched) && this.password.errors){
+    if((this.contraseña.dirty || this.contraseña.touched) && this.contraseña.errors){
       mensaje = "El campo esta sin llenar";
 
      }
 
-     if(this.password.hasError('pattern') && this.password.errors){
+     if(this.contraseña.hasError('pattern') && this.contraseña.errors){
       mensaje = "El campo esta incorrecto";
 
     }
 
-    else if(this.password.hasError('minlength') && this.password.errors){
+    else if(this.contraseña.hasError('minlength') && this.contraseña.errors){
       mensaje = "El minimo de letras es 8";
 
     }
@@ -52,5 +52,7 @@ export class FormService {
   goBack() {
     this._location.back();
   }
+
+
 
 }
