@@ -219,6 +219,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InversionesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\NombreUsuarioController.cs" />
     <Compile Include="Controllers\ServiciosController.cs" />
     <Compile Include="Controllers\TipoMonedasController.cs" />
     <Compile Include="Controllers\TokenGenerator.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Models\GestorDepositos.cs" />
     <Compile Include="Models\GestorInversiones.cs" />
     <Compile Include="Models\GestorLogin.cs" />
+    <Compile Include="Models\GestorNombreUsuario.cs" />
     <Compile Include="Models\GestorServicios.cs" />
     <Compile Include="Models\GestorTipoMonedas.cs" />
     <Compile Include="Models\GestorTransferencias.cs" />
@@ -266,6 +268,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\NombreUsuario.cs" />
     <Compile Include="Models\Servicios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

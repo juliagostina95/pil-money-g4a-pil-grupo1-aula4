@@ -15,7 +15,7 @@
   <form
     [formGroup]="myForm"
     class="example-form"
-    (ngSubmit)="register(myForm.value)"
+    (ngSubmit)="userService.register(myForm.value)"
   >
     <mat-form-field class="full-width-input">
       <mat-label class="label-uno">Correo Electronico*</mat-label>

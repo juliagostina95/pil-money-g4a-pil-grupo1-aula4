@@ -13,6 +13,7 @@ import { UsersService } from '../../services/users.service';
 import { error } from '@angular/compiler/src/util';
 import { ToastrService } from 'ngx-toastr';
 import { FormService } from 'src/app/services/form.service';
+import { CuentasService } from 'src/app/services/cuentas.service';
 
 @Component({
   selector: 'app-registration-page',
@@ -28,9 +29,10 @@ export class RegistrationPageComponent implements OnInit {
     public formBuilder: FormBuilder,
     public sanitizer: DomSanitizer,
     private router: Router,
-    private userService: RegisterService,
+    public userService: RegisterService,
     private toast: ToastrService,
-    public commonForm: FormService
+    public commonForm: FormService,
+    public cuentasService: CuentasService
   ) {
     this.fullImagePath = '/assets/imagenes/img1.jpg';
     this.fullImagePathDos = '/assets/imagenes/img2.jpg';
@@ -47,6 +49,7 @@ export class RegistrationPageComponent implements OnInit {
     cuil: new FormControl('', [Validators.required]),
     fechaNacimiento: new FormControl('', [Validators.required]),
   });
+
 
   extraerBase64 = async ($event: any) =>
     new Promise((resolve, _reject) => {
@@ -81,23 +84,6 @@ export class RegistrationPageComponent implements OnInit {
     this.archivos = [];
   }
 
-  register(form: RegisterI) {
-    this.userService.crearUsuario(form).subscribe(
-      (data) => {
-         {
-
-             this.router.navigate(['/login']);
-
-          this.toast.success('Cuenta Registrada', 'Correcto');
-
-        }
-      },
-      (error) => {
-        console.log(error);
-        this.toast.error('La cuenta ya esta Registrada', 'Error');
-      }
-    );
-  }
-
+  
   ngOnInit(): void {}
 }

@@ -1,12 +1,14 @@
 export interface RegisterI{
-  email:string;
-  contraseña: string;
-  imagenDNI: string;
-  cuil: string;
-  telefono: string;
+  email?:string;
+  contraseña?: string;
+  imagenDNI?: string;
+  cuil?: string;
+  telefono?: string;
   nombreCompleto: string;
-  fechaNacimiento: any;
+  fechaNacimiento?: any;
 
 }
 
-
+export interface ResponseI {
+  register: RegisterI;
+}

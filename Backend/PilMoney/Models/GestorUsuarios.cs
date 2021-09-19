@@ -33,14 +33,14 @@ namespace PilMoney.Models
             cm.Parameters.Add(new SqlParameter("@Telefono", nuevo.Telefono));
             cm.Parameters.Add(new SqlParameter("@imagenDNI", encriptedImagen));
 
-           
+
             cm.ExecuteNonQuery();
 
             cx.Close();
-            
+
         }
- 
-        
+
+
 
         public void ModificarUsuario(Usuarios u)
         {
@@ -80,7 +80,7 @@ namespace PilMoney.Models
                 System.DateTime fechaNacimiento = dr.GetDateTime(4);
                 string telefono = dr.GetString(5);
                 string imagenDNI = dr.GetString(7);
-               
+
                 int idUsuario = Convert.ToInt32(dr.GetValue(6) is DBNull ? 0 : dr.GetValue(6));
 
                 Usuarios u = new Usuarios(cuil, email, contraseña, nombreCompleto, fechaNacimiento, telefono, imagenDNI, idUsuario);
@@ -109,7 +109,7 @@ namespace PilMoney.Models
         {
             SHA256 sha256 = SHA256Managed.Create();
             ASCIIEncoding encoding = new ASCIIEncoding();
-            byte[] stream = null;   
+            byte[] stream = null;
             StringBuilder sb = new StringBuilder();
             stream = sha256.ComputeHash(encoding.GetBytes(str));
             for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
@@ -117,7 +117,9 @@ namespace PilMoney.Models
 
         }
 
-       
+    
+
+        
 
 
 
