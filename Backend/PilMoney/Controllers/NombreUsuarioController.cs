@@ -15,11 +15,11 @@ namespace PilMoney.Controllers
     {
         // GET: api/NombreUsuario
         [HttpGet]
-        public IHttpActionResult GetNombre(string nm)
+        public NombreUsuario GetNombre(string nm)
         {
             GestorNombreUsuario gNombreUsuario = new GestorNombreUsuario();
-            NombreUsuario o = gNombreUsuario.ObtenerNombreUsuario(nm);
-            return Ok(o);
+            return gNombreUsuario.ObtenerNombreUsuario(nm);
+           
         }
     }
 }

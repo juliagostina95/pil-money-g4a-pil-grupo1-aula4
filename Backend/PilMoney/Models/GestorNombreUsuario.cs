@@ -9,9 +9,10 @@ namespace PilMoney.Models
 {
     public class GestorNombreUsuario
     {
+        string StrConn = ConfigurationManager.ConnectionStrings["PilMoneyEntities"].ToString();
         public NombreUsuario ObtenerNombreUsuario(string nm)
         {
-            string StrConn = ConfigurationManager.ConnectionStrings["PilMoneyEntities"].ToString();
+            
             NombreUsuario nombreUsuario = null;
             SqlConnection cx = new SqlConnection(StrConn);
             cx.Open();
