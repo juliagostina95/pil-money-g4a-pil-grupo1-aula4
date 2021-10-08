@@ -1,3 +1,4 @@
+import { cuentas } from './../../interfaces/cuenta.interface';
 import { RegisterService } from './../../services/register.service';
 import { RegisterI } from '../../interfaces/register.interface';
 import { Component, OnInit } from '@angular/core';
@@ -15,6 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FormService } from 'src/app/services/form.service';
 import { CuentasService } from 'src/app/services/cuentas.service';
 
+
 @Component({
   selector: 'app-registration-page',
   templateUrl: './registration-page.component.html',
@@ -24,7 +26,7 @@ export class RegistrationPageComponent implements OnInit {
   fullImagePath: string;
   fullImagePathDos: string;
   hide: boolean = false;
-
+ 
   constructor(
     public formBuilder: FormBuilder,
     public sanitizer: DomSanitizer,
@@ -36,19 +38,25 @@ export class RegistrationPageComponent implements OnInit {
   ) {
     this.fullImagePath = '/assets/imagenes/img1.jpg';
     this.fullImagePathDos = '/assets/imagenes/img2.jpg';
+
   }
 
   public previsualizacion: string = '';
   public archivos: any = [];
   myForm = this.formBuilder.group({
     imagenDNI: new FormControl('', [Validators.required]),
-    email: this.commonForm.email,
+    email: new FormControl('', [Validators.required]),
     contraseña: this.commonForm.contraseña,
-    nombreCompleto: new FormControl('', [Validators.required]),
+    nombreCompleto: this.commonForm.nombreCompleto,
     telefono: new FormControl('', [Validators.required]),
     cuil: new FormControl('', [Validators.required]),
     fechaNacimiento: new FormControl('', [Validators.required]),
   });
+
+
+
+
+
 
 
   extraerBase64 = async ($event: any) =>
@@ -84,6 +92,36 @@ export class RegistrationPageComponent implements OnInit {
     this.archivos = [];
   }
 
-  
-  ngOnInit(): void {}
+
+  register(form: RegisterI) {
+    this.userService.crearCuenta();
+    this.userService.crearUsuario(form).subscribe(
+      (data) => {
+         {
+
+             this.router.navigate(['/login']);
+
+          this.toast.success('Cuenta Registrada', 'Correcto');
+
+        }
+
+
+
+      }
+
+      ,
+      (error) => {
+        console.log(error);
+        this.toast.error('La cuenta ya esta Registrada', 'Error');
+      }
+    );
+
+    }
+
+
+
+  ngOnInit(): void {
+
+
+  }
 }

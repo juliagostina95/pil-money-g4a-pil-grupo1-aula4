@@ -1,7 +1,7 @@
 import { LoginI } from './../../interfaces/login.interface';
 import { RegisterI } from './../../interfaces/register.interface';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
@@ -29,7 +29,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   myForm = this.formBuilder.group({
-    email : this.commonForm.email,
+    nombreCompleto : this.commonForm.nombreCompleto,
     contraseña : this.commonForm.contraseña
   })
 
@@ -39,7 +39,7 @@ export class LoginPageComponent implements OnInit {
       data =>{
 
           this.router.navigate(['./wallet/inicio']);
-          console.log("DATA"+ JSON.stringify(data));
+          /* console.log("DATA"+ JSON.stringify(data)); */
           this.toast.success('Se Inicio Sesion con la Cuenta Registrada', 'Correcto')
 
 
@@ -48,11 +48,18 @@ export class LoginPageComponent implements OnInit {
       console.log(error)
       this.toast.error('No esta registrada esta cuenta de Usuario', 'Error')
     })
+
+
   }
+
+
+
+
 
   ngOnInit(): void {
 
-    this.user.logout()
+   /*  this.user.logout() */
 
   }
 }
+

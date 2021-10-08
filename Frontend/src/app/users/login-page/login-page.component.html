@@ -16,15 +16,14 @@
   <section class="container">
     <form [formGroup]="myForm" (ngSubmit)="login(myForm.value)">
       <mat-form-field class="full-width-input">
-        <mat-label class="label-uno">Correo Electronico*</mat-label>
+        <mat-label class="label-uno">Nombre Completo*</mat-label>
         <input
-          type="email"
-          formControlName="email"
-          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-          minlength="5"
-          maxlength="25"
+          type="text"
+          formControlName="nombreCompleto"
+
           matInput
         />
+
       </mat-form-field>
       <mat-error class="error">{{ commonForm.emailErrores() }}</mat-error>
       <mat-form-field class="full-width-input">
@@ -48,6 +47,7 @@
         [disabled]="myForm.invalid"
         mat-stroked-button
         disabled
+
       >
         Aceptar
       </button>

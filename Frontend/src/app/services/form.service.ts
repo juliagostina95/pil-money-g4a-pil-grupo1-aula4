@@ -14,16 +14,16 @@ export class FormService {
   public previsualizacion: string = '';
   public archivos: any = []
 
-  email = new FormControl('', [Validators.required]);
+  nombreCompleto = new FormControl('', [Validators.required]);
   contraseña =  new FormControl('', [Validators.required])
 
    emailErrores(){
     let mensaje;
-    if((this.email.dirty || this.email.touched) && this.email.errors){
+    if((this.nombreCompleto.dirty || this.nombreCompleto.touched) && this.nombreCompleto.errors){
       mensaje = "El campo esta sin llenar";
 
     }
-    if(this.email.hasError('pattern') && this.email.errors){
+    if(this.nombreCompleto.hasError('pattern') && this.nombreCompleto.errors){
       mensaje = "El campo esta incorrecto";
 
     }

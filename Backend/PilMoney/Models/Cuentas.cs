@@ -31,11 +31,22 @@ namespace PilMoney.Models
            this.cuil = cuil;
        }
 
+
        public string CVU {get => cvu; set => cvu = value;}
        public double Saldo {get => saldo; set => saldo = value;}
        public string Alias {get => alias; set => alias = value;}
        public int IdTipoMoneda {get => idTipoMoneda; set => idTipoMoneda = value;}
        public string CUIL {get => cuil; set => cuil = value;}
        public string TipoDeCaja{get => tipoDeCaja; set => tipoDeCaja = value;}
+    }
+    public class CuentasAlias
+    {
+        private string alias;
+
+        public CuentasAlias(string alias)
+        {
+            this.alias = alias;
+        }
+        public string Alias { get => alias; set => alias = value; }
     }
 }

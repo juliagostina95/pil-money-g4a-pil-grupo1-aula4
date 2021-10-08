@@ -1,12 +1,16 @@
+import { cuentas, cuentasAlias } from './../interfaces/cuenta.interface';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterI, ResponseI } from './../interfaces/register.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import {HttpParams} from "@angular/common/http";
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 
+const params = new HttpParams()
+    .set('cuil', '"$key"')
+    .set('limitToFirst', "1");
 
 
 @Injectable({
@@ -16,7 +20,9 @@ export class RegisterService {
 
   url:string = 'https://localhost:44385/api/usuarios/';
   usuario!: RegisterI;
-  urlNombre:string ='https://localhost:44385/api/nombreUsuario/';
+  urlCuenta:string ='https://localhost:44385/api/cuentas/';
+  cuenta!: cuentas;
+
 
   constructor(private http:HttpClient, private router: Router, private toast: ToastrService) { }
 
@@ -27,35 +33,10 @@ export class RegisterService {
   }
 
 
-getNombreUsuario() : Observable<RegisterI>{
-
-  return this.http.get<RegisterI>(this.urlNombre)
-
-}
-
-register(form: RegisterI) {
-  this.crearUsuario(form).subscribe(
-    (data) => {
-       {
-
-           this.router.navigate(['/login']);
-
-        this.toast.success('Cuenta Registrada', 'Correcto');
-
-      }
-
-
-
-    }
-
-    ,
-    (error) => {
-      console.log(error);
-      this.toast.error('La cuenta ya esta Registrada', 'Error');
-    }
-  );
-
+  crearCuenta(){
+    return this.http.post<cuentas>(this.url, this.cuenta)
   }
+
 
 
 }

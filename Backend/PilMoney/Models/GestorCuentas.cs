@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 
 namespace PilMoney.Models
@@ -31,7 +33,7 @@ namespace PilMoney.Models
             cx.Close();
         }
 
-        public List<Cuentas> ListarCuenta()
+        public List<Cuentas> ListarCuenta(string Cuil)
         {
             List<Cuentas> lista = new List<Cuentas>();
 
@@ -39,8 +41,8 @@ namespace PilMoney.Models
             cx.Open();
 
             SqlCommand cm = cx.CreateCommand();
-            cm.CommandText = "SELECT * FROM Cuentas";
-
+            cm.CommandText = "SELECT * FROM Cuentas WHERE CUIL=@CUIL";
+            cm.Parameters.Add(new SqlParameter("@CUIL", Cuil));
             SqlDataReader dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -63,5 +65,9 @@ namespace PilMoney.Models
         }
 
         
+
+        
+
+       
     }
 }

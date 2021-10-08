@@ -8,14 +8,15 @@ using System.Web.Http;
 
 namespace PilMoney.Controllers
 {
+    [RoutePrefix("api/cuentas")]
     public class CuentasController : ApiController
     {
         // GET: api/Cuentas
         [HttpGet]
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(string cuil)
         {
             GestorCuentas gCuentas = new GestorCuentas();
-            List<Cuentas> l = gCuentas.ListarCuenta();
+            List<Cuentas> l = gCuentas.ListarCuenta(cuil);
             return Ok(l);
         }
 
@@ -36,10 +37,12 @@ namespace PilMoney.Controllers
             }
         }
 
-        // PUT: api/Cuentas/5
         
 
+        // PUT: api/Cuentas/5
+
+
         // DELETE: api/Cuentas/5
-       
+
     }
 }

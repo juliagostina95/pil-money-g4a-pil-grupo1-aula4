@@ -13,8 +13,8 @@
 
   <div class="card2" >
     <mat-card class="text-center mx-5 mb-5 texto-violeta tamano">
-          <h4 class="bienvenidos" *ngIf="dataUser">
-            ¡Hola {{dataUser.nombreCompleto | json}}, estás en tu cuenta!
+          <h4 class="bienvenidos">
+            ¡Hola {{nombreCompleto}}, estás en tu cuenta!
           </h4>
       <mat-card-content class="dosImg">
         <img [src]="logoPil" class="mat-card-image logopil" />
@@ -29,10 +29,10 @@
       <mat-card-title class="text-center">Cuenta - 12345678</mat-card-title>
       <mat-card-content>
         <div class="row">
-          <div class="col-sm-5">
+          <div class="col-sm-5" [(ngModel)]="cuentaAlias" ngDefaultControl >
             <h6>Caja de ahorro en pesos</h6>
             <h6>CVU - 12345678</h6>
-            <h6>Alias - mono.patin.pato</h6>
+            <h6>Alias - {{cuentaAlias}} </h6>
           </div>
           <div class="col-sm-7 text-center">
             <h6>Saldo Total</h6>

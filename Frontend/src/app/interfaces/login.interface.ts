@@ -1,5 +1,5 @@
 export interface LoginI{
-  email: string;
+  nombreCompleto: string;
   contraseña: string;
   token: string;
 }

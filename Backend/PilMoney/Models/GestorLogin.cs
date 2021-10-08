@@ -11,11 +11,12 @@ namespace PilMoney.Models
 {
     public class GestorLogin
     {
+        string strConn = ConfigurationManager.ConnectionStrings["PilMoneyEntities"].ToString();
         public bool ValidarLogin(LoginRequest ploginRequest)
         {
 
             string encriptedPassword = GetSha256(ploginRequest.Contraseña);
-            string strConn = ConfigurationManager.ConnectionStrings["PilMoneyEntities"].ToString();
+            
             bool result = false;
 
             using (SqlConnection conn = new SqlConnection(strConn))
@@ -24,8 +25,9 @@ namespace PilMoney.Models
 
                 SqlCommand comm = new SqlCommand("obtenerLogin", conn);
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
-                comm.Parameters.Add(new SqlParameter("@Email", ploginRequest.Email));
-                comm.Parameters.Add(new SqlParameter("@Contraseña", encriptedPassword));
+            
+                comm.Parameters.Add(new SqlParameter("@NombreCompleto", ploginRequest.NombreCompleto));
+                comm.Parameters.Add(new SqlParameter("@Contraseña", ploginRequest.Contraseña));
 
                 SqlDataReader reader = comm.ExecuteReader();
 
@@ -42,6 +44,9 @@ namespace PilMoney.Models
             return result;
 
         }
+
+       
+
         public string GetSha256(string str)
         {
             SHA256 sha256 = SHA256Managed.Create();

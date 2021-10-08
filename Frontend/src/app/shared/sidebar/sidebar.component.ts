@@ -1,3 +1,4 @@
+import { UsersService } from './../../services/users.service';
 import { Component } from '@angular/core';
 
 
@@ -9,6 +10,8 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   logoPil    : string = 'assets/imagenes/pil-Money-Logo.png';
 
-
+constructor(public user: UsersService){
+  
+}
 
 }

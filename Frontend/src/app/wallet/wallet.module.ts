@@ -4,7 +4,6 @@ import { FormsModule} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
-import { HeaderWalletComponent } from './header-wallet/header-wallet.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -39,7 +38,6 @@ import { PreguntasComponent } from './pages/preguntas/preguntas.component';
 @NgModule({
   declarations: [
     WalletPageComponent,
-    HeaderWalletComponent,
     TransferenciaComponent,
     IngresaryretirarComponent,
     PagosComponent,
