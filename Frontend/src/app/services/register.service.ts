@@ -27,7 +27,7 @@ export class RegisterService {
   constructor(private http:HttpClient, private router: Router, private toast: ToastrService) { }
 
   crearUsuario(usuario:RegisterI){
-
+    
     return this.http.post<RegisterI>(this.url, usuario)
 
   }

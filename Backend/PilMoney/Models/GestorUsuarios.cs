@@ -31,7 +31,7 @@ namespace PilMoney.Models
             cm.Parameters.Add(new SqlParameter("@NombreCompleto", nuevo.NombreCompleto));
             cm.Parameters.Add(new SqlParameter("@FechaNacimiento", nuevo.FechaNacimiento));
             cm.Parameters.Add(new SqlParameter("@Telefono", nuevo.Telefono));
-            cm.Parameters.Add(new SqlParameter("@imagenDNI", encriptedImagen));
+            cm.Parameters.Add(new SqlParameter("@imagenDNI", nuevo.imagenDNI));
 
 
             cm.ExecuteNonQuery();
