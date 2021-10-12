@@ -68,7 +68,6 @@ export class UsersService {
 
   getDecodedAccessToken(token: string): any {
     try{
-        console.log(this.getToken(token));
         return jwt_decode(this.getToken(token));
 
     }

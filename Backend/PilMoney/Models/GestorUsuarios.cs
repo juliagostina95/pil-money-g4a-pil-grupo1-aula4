@@ -27,11 +27,11 @@ namespace PilMoney.Models
             cm.CommandText = "INSERT INTO Usuarios(cuil, email, contraseña, nombreCompleto, fechaNacimiento, telefono, ImagenDNI) VALUES (@CUIL, @Email, @Contraseña, @NombreCompleto, @FechaNacimiento, @Telefono,  @imagenDNI)";
             cm.Parameters.Add(new SqlParameter("@CUIL", nuevo.CUIL));
             cm.Parameters.Add(new SqlParameter("@Email", nuevo.Email));
-            cm.Parameters.Add(new SqlParameter("@Contraseña", nuevo.Contraseña));
+            cm.Parameters.Add(new SqlParameter("@Contraseña", encriptedPassword));
             cm.Parameters.Add(new SqlParameter("@NombreCompleto", nuevo.NombreCompleto));
             cm.Parameters.Add(new SqlParameter("@FechaNacimiento", nuevo.FechaNacimiento));
             cm.Parameters.Add(new SqlParameter("@Telefono", nuevo.Telefono));
-            cm.Parameters.Add(new SqlParameter("@imagenDNI", nuevo.imagenDNI));
+            cm.Parameters.Add(new SqlParameter("@imagenDNI", encriptedImagen));
 
 
             cm.ExecuteNonQuery();

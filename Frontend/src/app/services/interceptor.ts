@@ -21,7 +21,7 @@ export class JwtInterceptor implements HttpInterceptor {
       });
 
     }
-    console.log("INTERCEPTOR: " + currentUser.token); //de login viene hasta acá y muestra por consola que generó el token.
+    /* console.log("INTERCEPTOR: " + currentUser.token); */ //de login viene hasta acá y muestra por consola que generó el token.
     return next.handle(req);
   }
 

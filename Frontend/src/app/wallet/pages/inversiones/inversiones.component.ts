@@ -29,6 +29,7 @@ export class InversionesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

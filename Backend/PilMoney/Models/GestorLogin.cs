@@ -27,7 +27,7 @@ namespace PilMoney.Models
                 comm.CommandType = System.Data.CommandType.StoredProcedure;
             
                 comm.Parameters.Add(new SqlParameter("@NombreCompleto", ploginRequest.NombreCompleto));
-                comm.Parameters.Add(new SqlParameter("@Contraseña", ploginRequest.Contraseña));
+                comm.Parameters.Add(new SqlParameter("@Contraseña", encriptedPassword));
 
                 SqlDataReader reader = comm.ExecuteReader();
 
